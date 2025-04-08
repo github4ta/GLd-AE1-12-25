@@ -2,15 +2,11 @@ package by.itacademy.evminova;
 
 public class Calculator {
 
-    private int firstNumber;
-    private int secNumber;
-
-    public Calculator(int firstNumber, int secNumber) {
-        this.firstNumber = firstNumber;
-        this.secNumber = secNumber;
+    public int getAddition(int a, int b) {
+        return a + b;
     }
 
-    public int getAddition(){
-        return firstNumber + secNumber;
+    public int multiply(int a, int b) {
+        return a * b;
     }
 }
