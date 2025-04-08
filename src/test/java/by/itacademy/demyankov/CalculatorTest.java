@@ -11,9 +11,24 @@ public class CalculatorTest {
         Calculator calculator = new Calculator();
               assertEquals(15,calculator.add(5,10));
     }
+
     @Test
-    public void testMultiply(){
+    public void testsubtraction() {
+        Calculator calculator = new Calculator();
+        assertEquals(99,calculator.subtraction(100,1));
+    }
+
+
+    @Test
+    public void testMultiplay(){
         Calculator calculator = new Calculator();
         assertEquals(10,calculator.multiplay(5,2));
     }
+
+    @Test
+    public void testDivinding(){
+        Calculator calculator = new Calculator();
+        assertEquals(5,calculator.dividing(10,2));
+    }
+
 }
