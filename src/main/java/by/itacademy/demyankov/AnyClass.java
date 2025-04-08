@@ -1,6 +1,6 @@
 package by.itacademy.demyankov;
 
-public class AnyTest {
+public class AnyClass {
     public static void main(String[] args) {
 
     }
