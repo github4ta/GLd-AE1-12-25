@@ -4,3 +4,4 @@
 - Kuleshov Roman
 - Demyankov Viktor
 - Ivkin Alexandr
+- Sikachyov Victor
