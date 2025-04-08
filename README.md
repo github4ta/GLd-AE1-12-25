@@ -2,3 +2,4 @@
 - Romanovska Aneta
 - Timoshenko Maksim
 - Kuleshov Roman
+- Demyankov Viktor
