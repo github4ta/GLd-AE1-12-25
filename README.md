@@ -5,6 +5,6 @@
 - Demyankov Viktor
 - Ivkin Alexandr
 - Sikachyov Victor
-- BayarankaYauheniya 
+- Bayaranka Yauheniya 
 - Evminova Irina
 - Radzetskaya Yuliya
