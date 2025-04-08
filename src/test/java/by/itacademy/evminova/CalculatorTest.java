@@ -18,6 +18,17 @@ public class CalculatorTest {
     public void testMultiply(){
         Calculator calculator = new Calculator();
         assertEquals(8, calculator.multiply(2, 4));
+    }
 
+    @Test
+    public void testSubstract(){
+        Calculator calculator = new Calculator();
+        assertEquals(8, calculator.subtract(10, 2));
+    }
+
+    @Test
+    public void testDevide(){
+        Calculator calculator = new Calculator();
+        assertEquals(5, calculator.devide(10, 2));
     }
 }
