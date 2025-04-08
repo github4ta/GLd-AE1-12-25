@@ -25,14 +25,14 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testDivision() {
+    public void testDivide() {
         Calculator calculator = new Calculator();
-        assertEquals(3, calculator.division(15, 5));
+        assertEquals(3, calculator.divide(15, 5));
     }
 
     @Test
-    public void testDivisionByZero() {
+    public void testDivideByZero() {
         Calculator calculator = new Calculator();
-        assertEquals(-1, calculator.division(15, 0));
+        assertEquals(-1, calculator.divide(15, 0));
     }
 }
