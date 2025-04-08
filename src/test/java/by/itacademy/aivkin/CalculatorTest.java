@@ -8,9 +8,13 @@ public class CalculatorTest {
 
     @Test
     public void testAdd() {
-        Calculator calculator = new Calculator(3, 5);
-        int actual = calculator.add();
+        Calculator calculator = new Calculator();
+        assertEquals(8, calculator.add(3, 5));
+    }
 
-        assertEquals(8, actual);
+    @Test
+    public void testMultiply() {
+        Calculator calculator = new Calculator();
+        assertEquals(15, calculator.multiply(3, 5));
     }
 }

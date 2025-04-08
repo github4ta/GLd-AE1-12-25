@@ -1,16 +1,11 @@
 package by.itacademy.aivkin;
 
 public class Calculator {
-
-    private int firstNumber;
-    private int secondNumber;
-
-    public Calculator(int firstNumber, int secondNumber) {
-        this.firstNumber = firstNumber;
-        this.secondNumber = secondNumber;
+    public int add(int a, int b) {
+        return a + b;
     }
 
-    public int add() {
-        return firstNumber + secondNumber;
+    public  int multiply(int a, int b) {
+        return  a * b;
     }
 }
