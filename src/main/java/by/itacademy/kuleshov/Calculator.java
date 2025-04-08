@@ -2,16 +2,23 @@ package by.itacademy.kuleshov;
 
 public class Calculator {
 
-    private int firstNumber;
-    private int secondNumber;
-
-    public Calculator(int firstNumber, int secondNumber) {
-        this.firstNumber = firstNumber;
-        this.secondNumber = secondNumber;
+    public int add(int a, int b) {
+        return a + b;
     }
 
-    public int add() {
-        return firstNumber + secondNumber;
+    public int subtract(int a, int b) {
+        return a - b;
     }
 
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+
+    public int division(int a, int b) {
+       if (b == 0) {
+           return -1;
+       } else {
+           return a / b;
+       }
+    }
 }
