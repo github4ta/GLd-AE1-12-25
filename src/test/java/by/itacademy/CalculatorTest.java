@@ -15,12 +15,14 @@ public class CalculatorTest {
         assertEquals(6, result);
     }
 
+
     @Test
     public void testSumIntValues() {
         Calculator calculator = new Calculator();
         int actual = calculator.sumIntValues(5, 2);
         assertEquals(7, actual);
     }
+
     @Test
     public void testSumForLong(){
         Calculator calculator = new Calculator();
@@ -42,5 +44,5 @@ public class CalculatorTest {
         double actual = calculator.subtract(3.0, 1.0);
         assertEquals(2, actual);
     }
-
 }
+
