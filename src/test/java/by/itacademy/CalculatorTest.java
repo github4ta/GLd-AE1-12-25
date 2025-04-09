@@ -22,6 +22,12 @@ public class CalculatorTest {
     }
 
     @Test
+    public void testSubtractInt() {
+            Calculator calculator = new Calculator();
+            int actual = calculator.subtract(4, 2);
+            assertEquals(2, actual);
+    }
+
     @DisplayName("Сумирования")
     public void testSummDouble() {
         Calculator calculator = new Calculator();
@@ -35,4 +41,7 @@ public class CalculatorTest {
         assertEquals(2, actual);
     }
 
-}
+    }
+
+
+
