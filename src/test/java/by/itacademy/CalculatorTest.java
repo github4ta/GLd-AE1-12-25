@@ -13,12 +13,21 @@ public class CalculatorTest {
         int actual = calculator.sumIntValues(5, 2);
         assertEquals(7, actual);
     }
+
     @Test
-    public void testSumForLong(){
+    public void testSumForLong() {
         Calculator calculator = new Calculator();
         long actual = calculator.sumLong(2L, 8L);
 
         assertEquals(10L, actual);
+    }
+
+    @Test
+    public void testDivide() {
+        Calculator calculator = new Calculator();
+        double actual = calculator.divide(95151, 58587);
+
+        assertEquals(1.624, actual, 0.001);
     }
 
     @Test
@@ -47,7 +56,6 @@ public class CalculatorTest {
     public void testDivideIntValues() {
         Calculator calculator = new Calculator();
         long actual = calculator.divide(27, 3);
-
         assertEquals(9, actual);
     }
 
@@ -56,7 +64,6 @@ public class CalculatorTest {
     public void testDivideByZeroIntValues() {
         Calculator calculator = new Calculator();
         long actual = calculator.divide(27, 0);
-
         assertEquals(0, actual);
     }
 }
