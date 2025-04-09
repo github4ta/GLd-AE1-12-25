@@ -15,7 +15,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testSumForLong(){
+    public void testSumForLong() {
         Calculator calculator = new Calculator();
         long actual = calculator.sumLong(2L, 8L);
 
