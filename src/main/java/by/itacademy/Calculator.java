@@ -1,7 +1,11 @@
 package by.itacademy;
 
 public class Calculator {
-    public static long sum (long firstNumber, long secondNumber){
+    public long sum (long firstNumber, long secondNumber){
         return firstNumber + secondNumber;
+    }
+
+    public double summDouble(double a, double b) {
+        return a + b;
     }
 }
