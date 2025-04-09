@@ -15,7 +15,6 @@ public class CalculatorTest {
         assertEquals(6, result);
     }
 
-
     @Test
     public void testSumIntValues() {
         Calculator calculator = new Calculator();
@@ -50,7 +49,7 @@ public class CalculatorTest {
     @DisplayName("Сумирования")
     public void testSummDouble() {
         Calculator calculator = new Calculator();
-        //assertEquals(18, calculator.sumDouble(5.2, 12.8));
+        assertEquals(18, calculator.sumDouble(5.2, 12.8));
     }
 
     @Test
@@ -76,4 +75,3 @@ public class CalculatorTest {
         assertEquals(0, actual);
     }
 }
-
