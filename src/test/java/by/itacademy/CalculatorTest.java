@@ -33,7 +33,7 @@ public class CalculatorTest {
     @Test
     public void testDivide() {
         Calculator calculator = new Calculator();
-        double actual = calculator.divide(95151, 58587);
+        double actual = calculator.divide(95151.0, 58587.0);
 
         assertEquals(1.624, actual, 0.001);
     }
@@ -63,7 +63,7 @@ public class CalculatorTest {
     @DisplayName("Проверка метода деление с переменными типа int")
     public void testDivideIntValues() {
         Calculator calculator = new Calculator();
-        long actual = calculator.divide(27, 3);
+        int actual = calculator.divide(27, 3);
         assertEquals(9, actual);
     }
 
@@ -71,7 +71,7 @@ public class CalculatorTest {
     @DisplayName("Проверка метода деление на ноль с переменными типа int")
     public void testDivideByZeroIntValues() {
         Calculator calculator = new Calculator();
-        long actual = calculator.divide(27, 0);
+        int actual = calculator.divide(27, 0);
         assertEquals(0, actual);
     }
 }
