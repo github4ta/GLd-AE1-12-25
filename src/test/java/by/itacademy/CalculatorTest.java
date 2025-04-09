@@ -9,16 +9,18 @@ public class CalculatorTest {
     @Test
     public void testSumForLong(){
         Calculator calculator = new Calculator();
-        long actual = calculator.sum(2L, 8L);
+        long actual = calculator.sumLong(2L, 8L);
 
         assertEquals(10L, actual);
     }
 
+    @Test
     @DisplayName("Сумирования")
     public void testSummDouble() {
         Calculator calculator = new Calculator();
-        assertEquals(18, calculator.summDouble(5.2, 12.8));
+        assertEquals(18, calculator.sumDouble(5.2, 12.8));
     }
+
     @Test
     void testSubtract() {
         Calculator calculator = new Calculator();

@@ -7,7 +7,7 @@ public class Calculator {
     public double subtract( double a, double b) {
         return a - b;
     }
-    public long sum (long firstNumber, long secondNumber){
+    public long sumLong (long firstNumber, long secondNumber){
         return firstNumber + secondNumber;
     }
 }
