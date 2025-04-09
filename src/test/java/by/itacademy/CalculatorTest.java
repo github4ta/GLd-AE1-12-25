@@ -13,10 +13,19 @@ public class CalculatorTest {
 
         assertEquals(10L, actual);
     }
-  
+
     @DisplayName("Сумирования")
     public void testSummDouble() {
         Calculator calculator = new Calculator();
         assertEquals(18, calculator.summDouble(5.2, 12.8));
     }
+    @Test
+    void testSubtract() {
+        Calculator calculator = new Calculator();
+        double actual = calculator.subtract(3.0, 1.0);
+
+        assertEquals(2, actual);
+    }
+
 }
+
