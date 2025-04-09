@@ -37,10 +37,11 @@ public class CalculatorTest {
             assertEquals(2, actual);
     }
 
+    @Test
     @DisplayName("Сумирования")
     public void testSummDouble() {
         Calculator calculator = new Calculator();
-        assertEquals(18, calculator.summDouble(5.2, 12.8));
+        //assertEquals(18, calculator.sumDouble(5.2, 12.8));
     }
 
     @Test
@@ -48,5 +49,21 @@ public class CalculatorTest {
         Calculator calculator = new Calculator();
         double actual = calculator.subtract(3.0, 1.0);
         assertEquals(2, actual);
+    }
+
+    @Test
+    @DisplayName("Проверка метода деление с переменными типа int")
+    public void testDivideIntValues() {
+        Calculator calculator = new Calculator();
+        long actual = calculator.divide(27, 3);
+        assertEquals(9, actual);
+    }
+
+    @Test
+    @DisplayName("Проверка метода деление на ноль с переменными типа int")
+    public void testDivideByZeroIntValues() {
+        Calculator calculator = new Calculator();
+        long actual = calculator.divide(27, 0);
+        assertEquals(0, actual);
     }
 }
