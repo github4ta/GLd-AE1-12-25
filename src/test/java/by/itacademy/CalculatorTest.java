@@ -13,6 +13,20 @@ public class CalculatorTest {
         int actual = calculator.sumIntValues(5, 2);
         assertEquals(7, actual);
     }
+    @Test
+    public void testSumForLong(){
+        Calculator calculator = new Calculator();
+        long actual = calculator.sumLong(2L, 8L);
+
+        assertEquals(10L, actual);
+    }
+
+    @Test
+    @DisplayName("Сумирования")
+    public void testSummDouble() {
+        Calculator calculator = new Calculator();
+        assertEquals(18, calculator.sumDouble(5.2, 12.8));
+    }
 
     @Test
     void testSubtract() {
@@ -21,10 +35,4 @@ public class CalculatorTest {
         assertEquals(2, actual);
     }
 
-    @Test
-    @DisplayName("Сумирования")
-    public void testSummDouble() {
-        Calculator calculator = new Calculator();
-        assertEquals(18, calculator.summDouble(5.2, 12.8));
-    }
 }
