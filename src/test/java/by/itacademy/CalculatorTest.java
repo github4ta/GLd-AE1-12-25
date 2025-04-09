@@ -6,9 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculatorTest {
     @Test
-    public void testSum() {
+    public void testSumIntValues() {
         Calculator calculator = new Calculator();
-        int actual = calculator.sum(5, 2);
+        int actual = calculator.sumIntValues(5, 2);
         assertEquals(7, actual);
     }
 }
