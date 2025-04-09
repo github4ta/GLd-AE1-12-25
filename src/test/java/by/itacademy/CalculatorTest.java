@@ -40,7 +40,7 @@ public class CalculatorTest {
     @DisplayName("Сумирования")
     public void testSummDouble() {
         Calculator calculator = new Calculator();
-        assertEquals(18, calculator.sumDouble(5.2, 12.8));
+        assertEquals(18, calculator.summDouble(5.2, 12.8));
     }
 
     @Test
