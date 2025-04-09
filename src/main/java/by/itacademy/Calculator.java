@@ -1,7 +1,7 @@
 package by.itacademy;
 
 public class Calculator {
-    public int subtract(int a, int b) {
+    public double subtract( double a, double b) {
         return a - b;
     }
 

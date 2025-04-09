@@ -9,7 +9,7 @@ public class CalculatorTest {
     @Test
     void testSubtract() {
         Calculator calculator = new Calculator();
-        int actual = calculator.subtract(3, 1);
+        double actual = calculator.subtract(3.0, 1.0);
 
         assertEquals(2, actual);
     }
