@@ -8,6 +8,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CalculatorTest {
 
     @Test
+    public void testMultiply() {
+        Calculator calculator = new Calculator();
+        int result = calculator.multiply(2, 3);
+
+        assertEquals(6, result);
+    }
+
+
+    @Test
     public void testSumIntValues() {
         Calculator calculator = new Calculator();
         int actual = calculator.sumIntValues(5, 2);
@@ -67,3 +76,4 @@ public class CalculatorTest {
         assertEquals(0, actual);
     }
 }
+
