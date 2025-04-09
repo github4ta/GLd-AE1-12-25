@@ -3,7 +3,7 @@ package by.itacademy.kuleshov;
 public class Calculator {
 
     public int add(int a, int b) {
-        long result = (long) a + b;
+        long result = (long) a + (long) b;
 
         if (result > Integer.MAX_VALUE) {
             result = Integer.MAX_VALUE;
@@ -17,7 +17,7 @@ public class Calculator {
     }
 
     public int subtract(int a, int b) {
-        long result = (long) a - b;
+        long result = (long) a - (long) b;
 
         if (result > Integer.MAX_VALUE) {
             result = Integer.MAX_VALUE;
@@ -31,7 +31,7 @@ public class Calculator {
     }
 
     public int multiply(int a, int b) {
-        long result = (long) a * b;
+        long result = (long) a * (long) b;
 
         if (result > Integer.MAX_VALUE) {
             result = Integer.MAX_VALUE;

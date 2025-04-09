@@ -12,7 +12,7 @@ public class CalculatorTest {
     @DisplayName("Проверка метода Сложение")
     public void testAdd() {
         Calculator calculator = new Calculator();
-        assertEquals(8, calculator.add(3, 5));
+        assertEquals(8, calculator.add(5, 5));
     }
 
     @Test
@@ -36,7 +36,7 @@ public class CalculatorTest {
     @DisplayName("Проверка метода Вычитание")
     public void testSubtract() {
         Calculator calculator = new Calculator();
-        assertEquals(15, calculator.subtract(19, 4));
+        assertEquals(15, calculator.subtract(12, 4));
     }
 
     @Test
