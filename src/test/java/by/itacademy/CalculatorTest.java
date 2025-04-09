@@ -1,4 +1,4 @@
-package by.itacademy.radzetskaya;
+package by.itacademy;
 
 import org.junit.jupiter.api.Test;
 

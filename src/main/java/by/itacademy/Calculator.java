@@ -1,4 +1,4 @@
-package by.itacademy.radzetskaya;
+package by.itacademy;
 
 public class Calculator {
     public static long sum (long firstNumber, long secondNumber){
