@@ -41,4 +41,13 @@ public class TestClass {
 
         assertEquals(2, actual, "Деление работает некорректно");
     }
+
+    @Test
+    @DisplayName("Проверка деления на ноль")
+    public void testDivideZero() {
+        Calculator calculator = new Calculator();
+        int actual = calculator.divide(4, 0);
+
+        assertEquals(0, actual, "Деление работает некорректно");
+    }
 }
