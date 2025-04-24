@@ -17,11 +17,7 @@ public class Users {
 
         List<User> filteredUsers = new ArrayList<>();
 
-        if (users == null) {
-            return null;
-        }
-
-        if (users.isEmpty()) {
+        if (users == null || users.isEmpty()) {
             return filteredUsers;
         }
 
