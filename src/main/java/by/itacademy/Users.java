@@ -8,7 +8,7 @@ public class Users {
         for (User user : users) {
             sum += user.getGrade();
         }
-        double averageGrade = sum / users.size();
+        double averageGrade = (double) sum / users.size();
         return averageGrade;
     }
 }
