@@ -14,6 +14,10 @@ public class Users {
     }
 
     public static List<User> getUsersWithGradeEqualOrOverAverage(List<User> users, double averageGrade) {
+        if (users == null) {
+            return null;
+        }
+
         List<User> filteredUsers = new ArrayList<>();
 
         for (User user : users) {
