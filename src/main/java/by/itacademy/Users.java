@@ -14,15 +14,16 @@ public class Users {
     }
 
     public static List<User> getUsersWithGradeEqualOrOverAverage(List<User> users, double averageGrade) {
+
+        List<User> filteredUsers = new ArrayList<>();
+
         if (users == null) {
             return null;
         }
 
         if (users.isEmpty()) {
-            return null;
+            return filteredUsers;
         }
-
-        List<User> filteredUsers = new ArrayList<>();
 
         for (User user : users) {
             if (user.getGrade() >= averageGrade) {
