@@ -18,6 +18,10 @@ public class Users {
             return null;
         }
 
+        if (users.isEmpty()) {
+            return null;
+        }
+
         List<User> filteredUsers = new ArrayList<>();
 
         for (User user : users) {
