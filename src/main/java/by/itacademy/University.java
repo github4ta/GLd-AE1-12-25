@@ -9,8 +9,10 @@ public class University {
         String str = scanner.nextLine();
         int n = Integer.parseInt(str);
         for (int i = 0; i < n; i++) {
-            str = scanner.nextLine();
-            System.out.println(str);
+            String name = scanner.next();
+            int grade = scanner.nextInt();
+            User user = new User(name, grade);
+            System.out.println(user);
         }
     }
 }
