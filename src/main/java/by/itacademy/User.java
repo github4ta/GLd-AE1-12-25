@@ -7,6 +7,7 @@ public class User {
     private int grade;
 
     public User(String name, int grade) {
+
         this.name = name;
         this.grade = grade;
     }
