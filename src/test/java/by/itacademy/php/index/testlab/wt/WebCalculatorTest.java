@@ -1,6 +1,8 @@
 package by.itacademy.php.index.testlab.wt;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,70 +12,73 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class WebCalculatorTest {
     private WebDriver driver;
-    @Test
-    public void setUp() {
 
-        WebDriver driver = new ChromeDriver();
+    @BeforeEach
+    public void setUp() {
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
         driver.get("https://svyatoslav.biz/testlab/wt/index.php");
     }
+
+    @AfterEach
+    public void tearDown() {
+        driver.quit();
+    }
+
+    @Test
     public void testCalculator() {
-        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
-        List<Integer> heights = Arrays.asList(150, 160, 170);
-        List<Integer> weights = Arrays.asList(50, 60, 70);
+        List<String> names = Arrays.asList("Alice", "Bob");
+        List<Integer> heights = Arrays.asList(150, 180);
+        List<Integer> weights = Arrays.asList(50, 80);
         List<String> genders = Arrays.asList("Мужской", "Женский");
 
         for (String name : names) {
             for (int height : heights) {
                 for (int weight : weights) {
                     for (String gender : genders) {
-                        performCalculation(name, height, weight, gender);
+                        performTest(name, height, weight, gender);
                     }
                 }
             }
         }
     }
 
-    private void performCalculation(String name, int height, int weight, String gender) {
-        // Заполнение формы
-        WebElement nameField = driver.findElement(By.name("name"));
-        WebElement heightField = driver.findElement(By.name("height"));
-        WebElement weightField = driver.findElement(By.name("weight"));
+    private void performTest(String name, int height, int weight, String gender) {
+        // Ввод имени
+        WebElement nameInput = driver.findElement(By.name("name"));
+        nameInput.clear();
+        nameInput.sendKeys(name);
+
+        // Ввод роста
+        WebElement heightInput = driver.findElement(By.name("height"));
+        heightInput.clear();
+        heightInput.sendKeys(String.valueOf(height));
+
+        // Ввод веса
+        WebElement weightInput = driver.findElement(By.name("weight"));
+        weightInput.clear();
+        weightInput.sendKeys(String.valueOf(weight));
 
         // Выбор пола
         if (gender.equals("Мужской")) {
-            driver.findElement(By.id("male")).click();
+            driver.findElement(By.id("M")).click();
         } else {
-            driver.findElement(By.id("female")).click();
+            driver.findElement(By.id("Ж")).click();
         }
 
-        // Ввод данных
-        nameField.clear();
-        nameField.sendKeys(name);
+        // Нажатие на кнопку расчета
+        WebElement calculateButton = driver.findElement(By.name("calculate"));
+        calculateButton.click();
 
-        heightField.clear();
-        heightField.sendKeys(String.valueOf(height));
+        // Получение результата и проверка (пример)
+        WebElement result = driver.findElement(By.id("result")); // Замените на правильный ID элемента результата
 
-        weightField.clear();
-        weightField.sendKeys(String.valueOf(weight));
-
-        // Отправка формы
-        driver.findElement(By.id("calculateButton")).click();
-
-        // Получение результата
-        WebElement resultElement = driver.findElement(By.id("result")); // Замените на правильный ID элемента результата
-        String resultText = resultElement.getText();
-
-        System.out.println("Результат для " + name + ", рост: " + height + ", вес: " + weight + ", пол: " + gender + ": " + resultText);
-
-        // Здесь вы можете добавить проверки на ожидаемые результаты в зависимости от введенных данных
-    }
-
-    @AfterEach
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
+        // Здесь вы можете добавить логику проверки результата в зависимости от введенных данных.
+        String expectedResult = "Ожидаемый результат"; // Замените на ожидаемый результат
+        assertEquals(expectedResult, result.getText());
     }
 }
