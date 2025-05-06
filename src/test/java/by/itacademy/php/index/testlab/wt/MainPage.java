@@ -1,6 +1,7 @@
 package by.itacademy.php.index.testlab.wt;
 
-//import ConfigProvider;
+
+import by.itacademy.php.index.testlab.wt.ConfigProvider;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -40,7 +41,7 @@ public class MainPage extends BaseSeleniumTest {
     private WebDriverWait wait;
 
     public MainPage() {
-        //driver.get(ConfigProvider.URL);
+        driver.get(ConfigProvider.URL);
         PageFactory.initElements(driver, this);
         wait = new WebDriverWait(driver, Duration.ofSeconds(30));
     }
