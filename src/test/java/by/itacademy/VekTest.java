@@ -9,13 +9,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class VekTest {
     @Test
-    public void test1(){
+    public void test1() {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
         driver.get("https://www.21vek.by");
 
         String submitButtonCookieLocator = "//div[@class=\"Button-module__buttonText\"]";
+        String submitButtonCookieLocator = "//button[@class=\"Button-module__button Button-module__blue-primary\"]";
         WebElement submitButtonCookie = driver.findElement(By.xpath(submitButtonCookieLocator));
         submitButtonCookie.click();
 
@@ -25,9 +26,29 @@ public class VekTest {
 
         String allActionsTitleLocator = "//h1[@class=\"style_title__c0jN1 Title-module__title Title-module__h1\"]";
         WebElement allActionsTitle = driver.findElement(By.xpath(allActionsTitleLocator));
-        String actual = allActionsTitle.getText() ;
+        String actual = allActionsTitle.getText();
 
         Assert.assertEquals("Все акции", actual);
+
+        driver.quit();
+    }
+
+    @Test
+    public void test2() {
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
+        driver.get("https://www.21vek.by");
+
+        String submitButtonCookieLocator = "//button[@class=\"Button-module__button Button-module__blue-primary\"]";
+        WebElement submitButtonCookie = driver.findElement(By.xpath(submitButtonCookieLocator));
+        submitButtonCookie.click();
+
+        String legalInformationBlockLocator = "//div[@class=\"styles_legalInformationBlock__iXOVK\"]";
+        WebElement legalInformationBlock = driver.findElement(By.xpath(legalInformationBlockLocator));
+        String actual = legalInformationBlock.getText();
+
+        Assert.assertTrue(actual.contains("© 2004–2025 21vek.by,"));
 
         driver.quit();
     }
