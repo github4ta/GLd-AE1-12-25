@@ -16,8 +16,8 @@ public class BaseSeleniumTest {
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(4, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
         driver.get("https://www.21vek.by");
         String submitButtonCookieLocator = "//button[@class=\"Button-module__button Button-module__blue-primary\"]";
         WebElement submitButtonCookie = driver.findElement(By.xpath(submitButtonCookieLocator));
