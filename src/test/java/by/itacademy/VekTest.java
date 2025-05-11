@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.time.Duration;
+
 public class VekTest {
 
     private WebDriver driver;
@@ -17,6 +19,7 @@ public class VekTest {
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 
         driver.get("https://www.21vek.by");
 
@@ -46,6 +49,23 @@ public class VekTest {
         String actual = legalInformationBlock.getText();
 
         Assert.assertTrue(actual.contains("© 2004–2025 21vek.by,"));
+    }
+
+    @Test
+    public void test3() {
+        String buttonUserAccountLocator = "//button[@class=\"styles_userToolsToggler__c2aHe\"]";
+        WebElement buttonUserAccount = driver.findElement(By.xpath(buttonUserAccountLocator));
+        buttonUserAccount.click();
+
+        String buttonLoginLocator = "//button[@data-testid=\"loginButton\"]";
+        WebElement buttonLogin = driver.findElement(By.xpath(buttonLoginLocator));
+        buttonLogin.click();
+
+        String titleLoginFormLocator = "//div[@class=\"LoginForm_title__OAEXy Text-module__text Text-module__large Text-module__bold\"]";
+        WebElement titleLoginForm = driver.findElement(By.xpath(titleLoginFormLocator));
+        String actual = titleLoginForm.getText();
+
+        Assert.assertEquals("Вход",actual);
     }
 
     @AfterEach
