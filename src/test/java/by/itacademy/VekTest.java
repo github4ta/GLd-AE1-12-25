@@ -19,7 +19,7 @@ public class VekTest {
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 
         driver.get("https://www.21vek.by");
 
@@ -65,6 +65,254 @@ public class VekTest {
         String actual = titleLoginForm.getText();
 
         Assert.assertEquals("Вход",actual);
+    }
+
+    @Test
+    public void test4_WithoutKreds() {
+        String buttonUserAccountLocator = "//button[@class=\"styles_userToolsToggler__c2aHe\"]";
+        WebElement buttonUserAccount = driver.findElement(By.xpath(buttonUserAccountLocator));
+        buttonUserAccount.click();
+
+        String buttonLoginLocator = "//button[@data-testid=\"loginButton\"]";
+        WebElement buttonLogin = driver.findElement(By.xpath(buttonLoginLocator));
+        buttonLogin.click();
+
+        String radioBattonEmailLocator = "//input[@type='checkbox' and @checked]/following-sibling::span[contains(text(), 'Электронной почте')]/ancestor::label";
+        WebElement radioButtonEmail = driver.findElement(By.xpath(radioBattonEmailLocator));
+        radioButtonEmail.click();
+
+        String buttonLoginSubmitLocator = "//button[@data-testid=\"loginSubmit\"]";
+        WebElement buttonLoginSubmit = driver.findElement(By.xpath(buttonLoginSubmitLocator));
+        buttonLoginSubmit.click();
+
+        String validationErrorMessageEmailLocator = "//span[contains(@class, 'message') and contains(., 'не указана')]";
+        WebElement validationErrorMessageEmail = driver.findElement(By.xpath(validationErrorMessageEmailLocator));
+        String actualEmail = validationErrorMessageEmail.getText();
+
+        Assert.assertEquals("Электронная почта не указана", actualEmail);
+
+        String validationErrorMessagePasswordLocator = "//span[contains(@class, 'message') and contains(., 'Пароль')]";
+        WebElement validationErrorMessagePassword = driver.findElement(By.xpath(validationErrorMessagePasswordLocator));
+        String actualPassword = validationErrorMessagePassword.getText();
+
+        Assert.assertEquals("Пароль не указан", actualPassword);
+    }
+
+    @Test
+    public void test5_WithoutPassord() {
+        String buttonUserAccountLocator = "//button[@class=\"styles_userToolsToggler__c2aHe\"]";
+        WebElement buttonUserAccount = driver.findElement(By.xpath(buttonUserAccountLocator));
+        buttonUserAccount.click();
+
+        String buttonLoginLocator = "//button[@data-testid=\"loginButton\"]";
+        WebElement buttonLogin = driver.findElement(By.xpath(buttonLoginLocator));
+        buttonLogin.click();
+
+        String radioBattonEmailLocator = "//input[@type='checkbox' and @checked]/following-sibling::span[contains(text(), 'Электронной почте')]/ancestor::label";
+        WebElement radioButtonEmail = driver.findElement(By.xpath(radioBattonEmailLocator));
+        radioButtonEmail.click();
+
+        WebElement emailInput = driver.findElement(By.xpath("//input[@label=\"Электронная почта\"]"));
+        emailInput.sendKeys("test@test.xyz");
+
+        String buttonLoginSubmitLocator = "//button[@data-testid=\"loginSubmit\"]";
+        WebElement buttonLoginSubmit = driver.findElement(By.xpath(buttonLoginSubmitLocator));
+        buttonLoginSubmit.click();
+
+        String validationErrorMessagePasswordLocator = "//span[contains(@class, 'message') and contains(., 'Пароль')]";
+        WebElement validationErrorMessagePassword = driver.findElement(By.xpath(validationErrorMessagePasswordLocator));
+        String actualPassword = validationErrorMessagePassword.getText();
+
+        Assert.assertEquals("Пароль не указан", actualPassword);
+    }
+
+    @Test
+    public void test6_WithoutEmail() {
+        String buttonUserAccountLocator = "//button[@class=\"styles_userToolsToggler__c2aHe\"]";
+        WebElement buttonUserAccount = driver.findElement(By.xpath(buttonUserAccountLocator));
+        buttonUserAccount.click();
+
+        String buttonLoginLocator = "//button[@data-testid=\"loginButton\"]";
+        WebElement buttonLogin = driver.findElement(By.xpath(buttonLoginLocator));
+        buttonLogin.click();
+
+        String radioBattonEmailLocator = "//input[@type='checkbox' and @checked]/following-sibling::span[contains(text(), 'Электронной почте')]/ancestor::label";
+        WebElement radioButtonEmail = driver.findElement(By.xpath(radioBattonEmailLocator));
+        radioButtonEmail.click();
+
+        WebElement passwordInput = driver.findElement(By.xpath("//input[@label=\"Пароль\"]"));
+        passwordInput.sendKeys("qwerty123456");
+
+        String buttonLoginSubmitLocator = "//button[@data-testid=\"loginSubmit\"]";
+        WebElement buttonLoginSubmit = driver.findElement(By.xpath(buttonLoginSubmitLocator));
+        buttonLoginSubmit.click();
+
+        String validationErrorMessageEmailLocator = "//span[contains(@class, 'message') and contains(., 'не указана')]";
+        WebElement validationErrorMessageEmail = driver.findElement(By.xpath(validationErrorMessageEmailLocator));
+        String actualEmail = validationErrorMessageEmail.getText();
+
+        Assert.assertEquals("Электронная почта не указана", actualEmail);
+    }
+
+    @Test
+    public void test7_WithWrongKreds() {
+        String buttonUserAccountLocator = "//button[@class=\"styles_userToolsToggler__c2aHe\"]";
+        WebElement buttonUserAccount = driver.findElement(By.xpath(buttonUserAccountLocator));
+        buttonUserAccount.click();
+
+        String buttonLoginLocator = "//button[@data-testid=\"loginButton\"]";
+        WebElement buttonLogin = driver.findElement(By.xpath(buttonLoginLocator));
+        buttonLogin.click();
+
+        String radioBattonEmailLocator = "//input[@type='checkbox' and @checked]/following-sibling::span[contains(text(), 'Электронной почте')]/ancestor::label";
+        WebElement radioButtonEmail = driver.findElement(By.xpath(radioBattonEmailLocator));
+        radioButtonEmail.click();
+
+        WebElement emailInput = driver.findElement(By.xpath("//input[@label=\"Электронная почта\"]"));
+        emailInput.sendKeys("test@test.xyz");
+
+        WebElement passwordInput = driver.findElement(By.xpath("//input[@label=\"Пароль\"]"));
+        passwordInput.sendKeys("qwerty123456");
+
+        String buttonLoginSubmitLocator = "//button[@data-testid=\"loginSubmit\"]";
+        WebElement buttonLoginSubmit = driver.findElement(By.xpath(buttonLoginSubmitLocator));
+        buttonLoginSubmit.click();
+
+        String validationErrorMessageEmailLocator = "//span[contains(@class, 'message') and contains(., 'Проверьте электронную почту или')]";
+        WebElement validationErrorMessageEmail = driver.findElement(By.xpath(validationErrorMessageEmailLocator));
+        String actualEmail = validationErrorMessageEmail.getText();
+
+        Assert.assertEquals("Проверьте электронную почту или \n" +
+                "зарегистрируйтесь", actualEmail);
+    }
+
+    @Test
+    public void test8_ClickLink() {
+        String buttonUserAccountLocator = "//button[@class=\"styles_userToolsToggler__c2aHe\"]";
+        WebElement buttonUserAccount = driver.findElement(By.xpath(buttonUserAccountLocator));
+        buttonUserAccount.click();
+
+        String buttonLoginLocator = "//button[@data-testid=\"loginButton\"]";
+        WebElement buttonLogin = driver.findElement(By.xpath(buttonLoginLocator));
+        buttonLogin.click();
+
+        String radioBattonEmailLocator = "//input[@type='checkbox' and @checked]/following-sibling::span[contains(text(), 'Электронной почте')]/ancestor::label";
+        WebElement radioButtonEmail = driver.findElement(By.xpath(radioBattonEmailLocator));
+        radioButtonEmail.click();
+
+        WebElement emailInput = driver.findElement(By.xpath("//input[@label=\"Электронная почта\"]"));
+        emailInput.sendKeys("test@test.xyz");
+
+        WebElement passwordInput = driver.findElement(By.xpath("//input[@label=\"Пароль\"]"));
+        passwordInput.sendKeys("qwerty123456");
+
+        String buttonLoginSubmitLocator = "//button[@data-testid=\"loginSubmit\"]";
+        WebElement buttonLoginSubmit = driver.findElement(By.xpath(buttonLoginSubmitLocator));
+        buttonLoginSubmit.click();
+
+        String linkButtonRegistrationLocator = "//a[@class=\"LinkButton-module__wrapper LinkButton-module__tiny LinkButton-module__regular LinkButton-module__blue\"]";
+        WebElement linkButtonRegistration = driver.findElement(By.xpath(linkButtonRegistrationLocator));
+        linkButtonRegistration.click();
+
+        String linkregistrationLocator = "//h5";
+        WebElement linkregistration = driver.findElement(By.xpath(linkregistrationLocator));
+        String registrationForm = linkregistration.getText();
+
+        Assert.assertEquals("Регистрация", registrationForm);
+    }
+
+    @Test
+    public void test9_WithIncorrectEmail() {
+        String buttonUserAccountLocator = "//button[@class=\"styles_userToolsToggler__c2aHe\"]";
+        WebElement buttonUserAccount = driver.findElement(By.xpath(buttonUserAccountLocator));
+        buttonUserAccount.click();
+
+        String buttonLoginLocator = "//button[@data-testid=\"loginButton\"]";
+        WebElement buttonLogin = driver.findElement(By.xpath(buttonLoginLocator));
+        buttonLogin.click();
+
+        String radioBattonEmailLocator = "//input[@type='checkbox' and @checked]/following-sibling::span[contains(text(), 'Электронной почте')]/ancestor::label";
+        WebElement radioButtonEmail = driver.findElement(By.xpath(radioBattonEmailLocator));
+        radioButtonEmail.click();
+
+        WebElement emailInput = driver.findElement(By.xpath("//input[@label=\"Электронная почта\"]"));
+        emailInput.sendKeys("test");
+
+        String buttonLoginSubmitLocator = "//button[@data-testid=\"loginSubmit\"]";
+        WebElement buttonLoginSubmit = driver.findElement(By.xpath(buttonLoginSubmitLocator));
+        buttonLoginSubmit.click();
+
+        String validationErrorMessageEmailLocator = "//span[contains(@class, 'message') and contains(., 'формат')]";
+        WebElement validationErrorMessageEmail = driver.findElement(By.xpath(validationErrorMessageEmailLocator));
+        String actualEmail = validationErrorMessageEmail.getText();
+
+        Assert.assertEquals("Неправильный формат электронной почты", actualEmail);
+    }
+
+    @Test
+    public void test10_WithIncorrectPassword() {
+        String buttonUserAccountLocator = "//button[@class=\"styles_userToolsToggler__c2aHe\"]";
+        WebElement buttonUserAccount = driver.findElement(By.xpath(buttonUserAccountLocator));
+        buttonUserAccount.click();
+
+        String buttonLoginLocator = "//button[@data-testid=\"loginButton\"]";
+        WebElement buttonLogin = driver.findElement(By.xpath(buttonLoginLocator));
+        buttonLogin.click();
+
+        String radioBattonEmailLocator = "//input[@type='checkbox' and @checked]/following-sibling::span[contains(text(), 'Электронной почте')]/ancestor::label";
+        WebElement radioButtonEmail = driver.findElement(By.xpath(radioBattonEmailLocator));
+        radioButtonEmail.click();
+
+        WebElement emailInput = driver.findElement(By.xpath("//input[@label=\"Электронная почта\"]"));
+        emailInput.sendKeys("evminova.iryna@yandex.ru");
+
+        WebElement passwordInput = driver.findElement(By.xpath("//input[@label=\"Пароль\"]"));
+        passwordInput.sendKeys("qwerty");
+
+        String buttonLoginSubmitLocator = "//button[@data-testid=\"loginSubmit\"]";
+        WebElement buttonLoginSubmit = driver.findElement(By.xpath(buttonLoginSubmitLocator));
+        buttonLoginSubmit.click();
+
+        String validationErrorMessagePasswordLocator = "//span[contains(@class, 'message') and contains(., 'пароль')]";
+        WebElement validationErrorMessagePassword = driver.findElement(By.xpath(validationErrorMessagePasswordLocator));
+        String actualPassword = validationErrorMessagePassword.getText();
+
+        Assert.assertEquals("Неправильный пароль. \n" + "Сбросить пароль?", actualPassword);
+    }
+
+    @Test
+    public void test11_ClickResetPassword() {
+        String buttonUserAccountLocator = "//button[@class=\"styles_userToolsToggler__c2aHe\"]";
+        WebElement buttonUserAccount = driver.findElement(By.xpath(buttonUserAccountLocator));
+        buttonUserAccount.click();
+
+        String buttonLoginLocator = "//button[@data-testid=\"loginButton\"]";
+        WebElement buttonLogin = driver.findElement(By.xpath(buttonLoginLocator));
+        buttonLogin.click();
+
+        String radioBattonEmailLocator = "//input[@type='checkbox' and @checked]/following-sibling::span[contains(text(), 'Электронной почте')]/ancestor::label";
+        WebElement radioButtonEmail = driver.findElement(By.xpath(radioBattonEmailLocator));
+        radioButtonEmail.click();
+
+        WebElement emailInput = driver.findElement(By.xpath("//input[@label=\"Электронная почта\"]"));
+        emailInput.sendKeys("evminova.iryna@yandex.ru");
+
+        WebElement passwordInput = driver.findElement(By.xpath("//input[@label=\"Пароль\"]"));
+        passwordInput.sendKeys("qwerty");
+
+        String buttonLoginSubmitLocator = "//button[@data-testid=\"loginSubmit\"]";
+        WebElement buttonLoginSubmit = driver.findElement(By.xpath(buttonLoginSubmitLocator));
+        buttonLoginSubmit.click();
+
+        String resetPasswordLocator = "//a[@class=\"LinkButton-module__wrapper LinkButton-module__tiny LinkButton-module__regular LinkButton-module__blue\"]";
+        WebElement resetPassword = driver.findElement(By.xpath(resetPasswordLocator));
+        resetPassword.click();
+
+        String linkregistrationLocator = "//h5";
+        WebElement linkregistration = driver.findElement(By.xpath(linkregistrationLocator));
+        String registrationForm = linkregistration.getText();
+
+        Assert.assertEquals("Сброс пароля", registrationForm);
     }
 
     @AfterEach
