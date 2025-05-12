@@ -5,8 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class MainPage extends BasePage {
-    private static final String BUTTON_USER_ACCOUNT_LOCATOR = "//button[@class=\"styles_userToolsToggler__c2aHe\"]";
-    private static final String BUTTON_LOGIN_LOCATOR = "//button[@data-testid=\"loginButton\"]";
+    private static final String BUTTON_USER_ACCOUNT_LOCATOR = "//button[@class='styles_userToolsToggler__c2aHe']";
+    private static final String BUTTON_LOGIN_LOCATOR = "//button[@data-testid='loginButton']";
 
 
     public MainPage(WebDriver driver) {
