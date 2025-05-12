@@ -3,14 +3,8 @@ package by.itacademy;
 import java.util.Objects;
 
 public class User {
-    private String name;
-    private int grade;
-
-    public User(String name, int grade) {
-
-        this.name = name;
-        this.grade = grade;
-    }
+    private  String name;
+    private  int grade;
 
     public String getName() {
         return name;
@@ -42,9 +36,15 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", grade=" + grade +
-                '}';
+        final StringBuffer sb = new StringBuffer("User{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", grade=").append(grade);
+        sb.append('}');
+        return sb.toString();
+    }
+
+    public User(String name, int grade) {
+        this.name = name;
+        this.grade = grade;
     }
 }
