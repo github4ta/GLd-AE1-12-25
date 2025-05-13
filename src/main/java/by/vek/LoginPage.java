@@ -13,7 +13,7 @@ public class LoginPage {
     }
 
     public void clickSubmitButtonCookie() {
-        WebElement submitButtonCookie = driver.findElement(By.xpath(LoginLocator.BUTTON_USER_ACCOUNT));
+        WebElement submitButtonCookie = driver.findElement(By.xpath(LoginLocator.SUBMIT_BUTTON_COOKIE));
         submitButtonCookie.click();
     }
 }
