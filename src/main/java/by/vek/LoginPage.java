@@ -16,4 +16,9 @@ public class LoginPage {
         WebElement submitButtonCookie = driver.findElement(By.xpath(LoginLocator.SUBMIT_BUTTON_COOKIE));
         submitButtonCookie.click();
     }
+
+    public void clickSubmitButton() {
+        WebElement submitButton = driver.findElement(By.xpath(LoginLocator.SUBMIT_BUTTON));
+        submitButton.click();
+    }
 }
