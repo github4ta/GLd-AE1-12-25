@@ -19,7 +19,7 @@ public class VekTest {
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
 
         driver.get("https://www.21vek.by");
 
@@ -56,15 +56,69 @@ public class VekTest {
         WebElement buttonUserAccount = driver.findElement(By.xpath(buttonUserAccountLocator));
         buttonUserAccount.click();
 
-        String buttonLoginLocator = "//button[@data-testid=\"loginButton\"]";
+//        String buttonLoginLocator = "//button[@data-testid=\"loginButton\"]";
+        String buttonLoginLocator = "//*[@id=\"DROP_DOWN_PORTAL\"]/div/div[1]/div[2]/button/div";
+        //*[@id="DROP_DOWN_PORTAL"]/div/div[1]/div[2]/button/div
         WebElement buttonLogin = driver.findElement(By.xpath(buttonLoginLocator));
         buttonLogin.click();
 
-        String titleLoginFormLocator = "//div[@class=\"LoginForm_title__OAEXy Text-module__text Text-module__large Text-module__bold\"]";
+//        String titleLoginFormLocator = "//div[@class=\"LoginForm_title__OAEXy Text-module__text Text-module__large Text-module__bold\"]";
+        String titleLoginFormLocator = "//*[@id=\"modal\"]/div/div/div[2]/div/div/div/div[1]";
+
         WebElement titleLoginForm = driver.findElement(By.xpath(titleLoginFormLocator));
         String actual = titleLoginForm.getText();
 
         Assert.assertEquals("Вход",actual);
+    }
+
+    @Test
+    public void testLoginFormOnlyLogin() {
+        String buttonUserAccountLocator = "//button[@class=\"styles_userToolsToggler__c2aHe\"]";
+        WebElement buttonUserAccount = driver.findElement(By.xpath(buttonUserAccountLocator));
+        buttonUserAccount.click();
+
+//        String buttonLoginLocator = "//button[@data-testid=\"loginButton\"]";
+        String buttonLoginLocator = "//*[@id=\"DROP_DOWN_PORTAL\"]/div/div[1]/div[2]/button/div";
+        WebElement buttonLogin = driver.findElement(By.xpath(buttonLoginLocator));
+        buttonLogin.click();
+
+        String loginInputLocator = "//*[@id=\"login-email\"]";
+        WebElement loginInput = driver.findElement(By.xpath(loginInputLocator));
+        loginInput.sendKeys("72727@gmail.com");
+
+        String loginButtonLocator = "//*[@id=\"modal\"]/div/div/div[2]/div/div/div/div[4]/form/div/div[3]/button/div";
+        WebElement loginButton = driver.findElement(By.xpath(loginButtonLocator));
+        loginButton.click();
+
+        String noPasswordLocator = "//*[@id=\"modal\"]/div/div/div[2]/div/div/div/div[4]/form/div/div[2]/div[3]/span[2]";
+        WebElement noPasswordSpan = driver.findElement(By.xpath(noPasswordLocator));
+        String actual = noPasswordSpan.getText();
+        Assert.assertEquals("Пароль не указан",actual);
+    }
+
+    @Test
+    public void testLoginFormOnlyPass() {
+        String buttonUserAccountLocator = "//button[@class=\"styles_userToolsToggler__c2aHe\"]";
+        WebElement buttonUserAccount = driver.findElement(By.xpath(buttonUserAccountLocator));
+        buttonUserAccount.click();
+
+//        String buttonLoginLocator = "//button[@data-testid=\"loginButton\"]";
+        String buttonLoginLocator = "//*[@id=\"DROP_DOWN_PORTAL\"]/div/div[1]/div[2]/button/div";
+        WebElement buttonLogin = driver.findElement(By.xpath(buttonLoginLocator));
+        buttonLogin.click();
+
+        String passInputLocator = "//*[@id=\"login-password\"]";
+        WebElement passInput = driver.findElement(By.xpath(passInputLocator));
+        passInput.sendKeys("72727");
+
+        String loginButtonLocator = "//*[@id=\"modal\"]/div/div/div[2]/div/div/div/div[4]/form/div/div[3]/button/div";
+        WebElement loginButton = driver.findElement(By.xpath(loginButtonLocator));
+        loginButton.click();
+
+        String noLoginLocator = "//*[@id=\"modal\"]/div/div/div[2]/div/div/div/div[4]/form/div/div[1]/div[3]/span[2]";
+        WebElement noLoginSpan = driver.findElement(By.xpath(noLoginLocator));
+        String actual = noLoginSpan.getText();
+        Assert.assertEquals("Электронная почта не указана",actual);
     }
 
     @AfterEach
