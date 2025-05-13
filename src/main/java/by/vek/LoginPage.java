@@ -8,11 +8,11 @@ public class LoginPage {
 
     private WebDriver driver;
 
-    public LoginPage(WebDriver driver){
+    public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void clickButtonCookie(){
+    public void clickSubmitButtonCookie() {
         WebElement submitButtonCookie = driver.findElement(By.xpath(LoginLocator.SUBMIT_BUTTON_COOKIE));
         submitButtonCookie.click();
     }
@@ -25,5 +25,15 @@ public class LoginPage {
     public String getAllActionTitleText(){
         WebElement allActionsTitle = driver.findElement(By.xpath(LoginLocator.ALL_ACTION_TITLE));
         return allActionsTitle.getText();
+    }
+
+    public void click () {
+        WebElement linkAllActions = driver.findElement(By.xpath(LoginLocator.LINK_ALL_ACTIONS));
+        linkAllActions.click();
+    }
+
+    public void clickLinkButtonRegistration() {
+        WebElement linkButtonRegistration = driver.findElement(By.xpath(LoginLocator.LINK_BUTTON_REGISTRATION));
+        linkButtonRegistration.click();
     }
 }
