@@ -13,8 +13,18 @@ public class LoginPage {
     }
 
     public void clickSubmitButtonCookie() {
-        WebElement submitButtonCookie = driver.findElement(By.xpath(LoginLocator.BUTTON_USER_ACCOUNT));
+        WebElement submitButtonCookie = driver.findElement(By.xpath(LoginLocator.SUBMIT_BUTTON_COOKIE));
         submitButtonCookie.click();
+    }
+
+    public void click () {
+        WebElement linkAllActions = driver.findElement(By.xpath(LoginLocator.LINK_ALL_ACTIONS));
+        linkAllActions.click();
+    }
+
+    public void clickLinkButtonRegistration() {
+        WebElement linkButtonRegistration = driver.findElement(By.xpath(LoginLocator.LINK_BUTTON_REGISTRATION));
+        linkButtonRegistration.click();
     }
 
     public void clickRadioButtonChooseEmail() {
