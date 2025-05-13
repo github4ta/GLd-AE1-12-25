@@ -17,6 +17,16 @@ public class LoginPage {
         submitButtonCookie.click();
     }
 
+    public void clickSubmitButton(){
+        WebElement submitButton = driver.findElement(By.xpath(LoginLocator.SUBMIT_BUTTON));
+        submitButton.click();
+    }
+
+    public String getAllActionTitleText(){
+        WebElement allActionsTitle = driver.findElement(By.xpath(LoginLocator.ALL_ACTION_TITLE));
+        return allActionsTitle.getText();
+    }
+
     public void click () {
         WebElement linkAllActions = driver.findElement(By.xpath(LoginLocator.LINK_ALL_ACTIONS));
         linkAllActions.click();
@@ -25,6 +35,16 @@ public class LoginPage {
     public void clickLinkButtonRegistration() {
         WebElement linkButtonRegistration = driver.findElement(By.xpath(LoginLocator.LINK_BUTTON_REGISTRATION));
         linkButtonRegistration.click();
+    }
+
+    public String getTextTitleRegistration() {
+        WebElement titleRegistration = driver.findElement(By.xpath(LoginLocator.TITLE_REGISTRATION));
+        return titleRegistration.getText();
+    }
+
+    public void clickButtonContinue() {
+        WebElement buttonContinue = driver.findElement(By.xpath(LoginLocator.BUTTON_CONTINUE));
+        buttonContinue.click();
     }
 
     public void clickRadioButtonChooseEmail() {
