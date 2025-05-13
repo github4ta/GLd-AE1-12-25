@@ -55,4 +55,14 @@ public class LoginPage {
         WebElement inputEmailField = driver.findElement(By.xpath(LoginLocator.INPUT_EMAIL_FIELD));
         inputEmailField.sendKeys(email);
     }
+
+    public void clickRadioButtonChooseEmail() {
+        WebElement radioButtonChooseEmail = driver.findElement(By.xpath(LoginLocator.RADIO_BUTTON_CHOOSE_EMAIL));
+    }
+
+    public String getTextErrorMessageEmailEmailInput() {
+        WebElement errorMessageEmailEmailInput = driver.findElement(By.xpath(LoginLocator.ERROR_MESSAGE_EMAIL_INPUT));
+
+        return errorMessageEmailEmailInput.getText();
+    }
 }
