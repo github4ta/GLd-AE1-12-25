@@ -47,11 +47,6 @@ public class LoginPage {
         buttonContinue.click();
     }
 
-    public void clickSubmitButton() {
-        WebElement submitButton = driver.findElement(By.xpath(LoginLocator.SUBMIT_BUTTON));
-        submitButton.click();
-    }
-
     public String getTextErrorMessageNoRegisterEmailInput() {
         return driver.findElement(By.xpath(LoginLocator.ERROR_MESSAGE_NO_REGISTER_EMAIL_INPUT)).getText();
     }
