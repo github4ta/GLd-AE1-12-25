@@ -28,4 +28,14 @@ public class LoginPage {
         WebElement titleLoginForm = driver.findElement(By.xpath(TITLE_LOGIN_FORM));
         return titleLoginForm.getText();
     }
+
+    public void click () {
+        WebElement linkAllActions = driver.findElement(By.xpath(LoginLocator.LINK_ALL_ACTIONS));
+        linkAllActions.click();
+    }
+
+    public void clickLinkButtonRegistration() {
+        WebElement linkButtonRegistration = driver.findElement(By.xpath(LoginLocator.LINK_BUTTON_REGISTRATION));
+        linkButtonRegistration.click();
+    }
 }
