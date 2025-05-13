@@ -19,6 +19,16 @@ public class LoginPage {
         submitButtonCookie.click();
     }
 
+    public void clickSubmitButton(){
+        WebElement submitButton = driver.findElement(By.xpath(LoginLocator.SUBMIT_BUTTON));
+        submitButton.click();
+    }
+
+    public String getAllActionTitleText(){
+        WebElement allActionsTitle = driver.findElement(By.xpath(LoginLocator.ALL_ACTION_TITLE));
+        return allActionsTitle.getText();
+    }
+
     public void clickButtonLogin(){
         WebElement submitButtonLogin = driver.findElement(By.xpath(BUTTON_LOGIN));
         submitButtonLogin.click();
@@ -37,5 +47,24 @@ public class LoginPage {
     public void clickLinkButtonRegistration() {
         WebElement linkButtonRegistration = driver.findElement(By.xpath(LoginLocator.LINK_BUTTON_REGISTRATION));
         linkButtonRegistration.click();
+    }
+
+    public String getTextTitleRegistration() {
+        WebElement titleRegistration = driver.findElement(By.xpath(LoginLocator.TITLE_REGISTRATION));
+        return titleRegistration.getText();
+    }
+
+    public void clickButtonContinue() {
+        WebElement buttonContinue = driver.findElement(By.xpath(LoginLocator.BUTTON_CONTINUE));
+        buttonContinue.click();
+    }
+
+    public String getTextErrorMessageNoRegisterEmailInput() {
+        return driver.findElement(By.xpath(LoginLocator.ERROR_MESSAGE_NO_REGISTER_EMAIL_INPUT)).getText();
+    }
+
+    public void sendKeysInputEmailField(String email) {
+        WebElement inputEmailField = driver.findElement(By.xpath(LoginLocator.INPUT_EMAIL_FIELD));
+        inputEmailField.sendKeys(email);
     }
 }
