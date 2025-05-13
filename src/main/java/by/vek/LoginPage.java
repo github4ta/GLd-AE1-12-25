@@ -17,6 +17,16 @@ public class LoginPage {
         submitButtonCookie.click();
     }
 
+    public void click () {
+        WebElement linkAllActions = driver.findElement(By.xpath(LoginLocator.LINK_ALL_ACTIONS));
+        linkAllActions.click();
+    }
+
+    public void clickLinkButtonRegistration() {
+        WebElement linkButtonRegistration = driver.findElement(By.xpath(LoginLocator.LINK_BUTTON_REGISTRATION));
+        linkButtonRegistration.click();
+    }
+
     public String getTextTitleRegistration() {
         WebElement titleRegistration = driver.findElement(By.xpath(LoginLocator.TITLE_REGISTRATION));
         return titleRegistration.getText();
