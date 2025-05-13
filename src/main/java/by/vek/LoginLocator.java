@@ -1,6 +1,7 @@
 package by.vek;
 
 public class LoginLocator {
+    public static final String SUBMIT_BUTTON_COOKIE = "//button[@class=\"Button-module__button Button-module__blue-primary\"]";
     public static final String BUTTON_USER_ACCOUNT = "//button[@class=\"styles_userToolsToggler__c2aHe\"]";
     public static final String BUTTON_LOGIN = "//button[@data-testid=\"loginButton\"]";
     public static final String RADIO_BUTTON_CHOOSE_EMAIL = "//label[@class=\"BaseRadioButton-module__label BaseRadioButton-module__checkedLabel\"]";
