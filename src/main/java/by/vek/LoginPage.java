@@ -47,6 +47,15 @@ public class LoginPage {
         buttonContinue.click();
     }
 
+    public String getTextErrorMessageNoRegisterEmailInput() {
+        return driver.findElement(By.xpath(LoginLocator.ERROR_MESSAGE_NO_REGISTER_EMAIL_INPUT)).getText();
+    }
+
+    public void sendKeysInputEmailField(String email) {
+        WebElement inputEmailField = driver.findElement(By.xpath(LoginLocator.INPUT_EMAIL_FIELD));
+        inputEmailField.sendKeys(email);
+    }
+
     public void clickRadioButtonChooseEmail() {
         WebElement radioButtonChooseEmail = driver.findElement(By.xpath(LoginLocator.RADIO_BUTTON_CHOOSE_EMAIL));
     }
