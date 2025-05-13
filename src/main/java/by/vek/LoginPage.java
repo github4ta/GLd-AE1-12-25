@@ -16,4 +16,14 @@ public class LoginPage {
         WebElement submitButtonCookie = driver.findElement(By.xpath(LoginLocator.BUTTON_USER_ACCOUNT));
         submitButtonCookie.click();
     }
+
+    public void clickRadioButtonChooseEmail() {
+        WebElement radioButtonChooseEmail = driver.findElement(By.xpath(LoginLocator.RADIO_BUTTON_CHOOSE_EMAIL));
+    }
+
+    public String getErrorMessageEmailEmailInputText() {
+        WebElement errorMessageEmailEmailInput = driver.findElement(By.xpath(LoginLocator.ERROR_MESSAGE_EMAIL_INPUT));
+
+        return errorMessageEmailEmailInput.getText();
+    }
 }
