@@ -60,7 +60,7 @@ public class LoginPage {
         WebElement radioButtonChooseEmail = driver.findElement(By.xpath(LoginLocator.RADIO_BUTTON_CHOOSE_EMAIL));
     }
 
-    public String getErrorMessageEmailEmailInputText() {
+    public String getTextErrorMessageEmailEmailInput() {
         WebElement errorMessageEmailEmailInput = driver.findElement(By.xpath(LoginLocator.ERROR_MESSAGE_EMAIL_INPUT));
 
         return errorMessageEmailEmailInput.getText();
