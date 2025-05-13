@@ -87,6 +87,11 @@ public class LoginPage {
         return getErrorMessagePasswordInputText.getText();
     }
 
+    public String getErrorMessageWrongEmailText() {
+        WebElement getErrorMessageWrongEmailText = driver.findElement(By.xpath(ERROR_MESSAGE_WRONG_EMAIL));
+        return getErrorMessageWrongEmailText.getText();
+    }
+
     public void sendKeysInputPasswordField(String password) {
         driver.findElement(By.xpath(LoginLocator.INPUT_PASSWORD_FIELD)).sendKeys(password);
     }

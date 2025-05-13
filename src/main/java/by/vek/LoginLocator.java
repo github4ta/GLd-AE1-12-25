@@ -14,6 +14,7 @@ public class LoginLocator {
     public static final String LEGAL_INFORMATION_BLOCK = "//div[@class=\"styles_legalInformationBlock__iXOVK\"]";
     public static final String TITLE_LOGIN_FORM = "//div[@class=\"LoginForm_title__OAEXy Text-module__text Text-module__large Text-module__bold\"]";
     public static final String ERROR_MESSAGE_EMAIL_INPUT = "//span[text()[contains(.,'Электронная почта не указана')]]";
+    public static final String ERROR_MESSAGE_WRONG_EMAIL = "//span[text()[contains(.,'Неправильный формат электронной почты')]]";
     public static final String ERROR_MESSAGE_PASSWORD_INPUT = "//span[text()[contains(.,'Пароль не указан')]]";
     public static final String ERROR_MESSAGE_NO_REGISTER_EMAIL_INPUT = "//span[@class=\"ErrorMessageLink_container__7D0yM\"]";
     public static final String LINK_BUTTON_REGISTRATION = "//a[@class=\"LinkButton-module__wrapper LinkButton-module__tiny LinkButton-module__regular LinkButton-module__blue\"]";

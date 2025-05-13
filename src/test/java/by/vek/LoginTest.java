@@ -38,6 +38,16 @@ public class LoginTest {
         Assertions.assertEquals("Пароль не указан", loginPage.getErrorMessagePasswordInputText());
     }
 
+    @Test
+    public void testWithUncorectEmailAndEmptyPassword() {
+
+        loginPage.sendKeysInputEmailField("123@mail");
+        loginPage.clickButtonContinue();
+
+        Assertions.assertEquals("Неправильный формат электронной почты", loginPage.getErrorMessageWrongEmailText());
+        Assertions.assertEquals("Пароль не указан", loginPage.getErrorMessagePasswordInputText());
+    }
+
     @AfterEach
     public void tearDown() {
         driver.quit();
