@@ -8,11 +8,11 @@ public class LoginPage {
 
     private WebDriver driver;
 
-    public LoginPage(WebDriver driver){
+    public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void clickButtonCookie(){
+    public void clickSubmitButtonCookie() {
         WebElement submitButtonCookie = driver.findElement(By.xpath(LoginLocator.SUBMIT_BUTTON_COOKIE));
         submitButtonCookie.click();
     }
