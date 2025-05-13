@@ -21,4 +21,9 @@ public class LoginPage {
         WebElement submitButton = driver.findElement(By.xpath(LoginLocator.SUBMIT_BUTTON));
         submitButton.click();
     }
+
+    public String getAllActionTitleText(){
+        WebElement allActionsTitle = driver.findElement(By.xpath(LoginLocator.ALL_ACTION_TITLE));
+        return allActionsTitle.getText();
+    }
 }
