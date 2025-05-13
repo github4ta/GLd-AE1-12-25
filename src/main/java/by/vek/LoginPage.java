@@ -16,4 +16,19 @@ public class LoginPage {
         WebElement submitButtonCookie = driver.findElement(By.xpath(LoginLocator.SUBMIT_BUTTON_COOKIE));
         submitButtonCookie.click();
     }
+
+    public void clickSubmitButton() {
+        WebElement submitButton = driver.findElement(By.xpath(LoginLocator.SUBMIT_BUTTON));
+        submitButton.click();
+    }
+
+    public void setEmail(String email) {
+        WebElement inputEmailField = driver.findElement(By.xpath(LoginLocator.INPUT_EMAIL_FIELD));
+        inputEmailField.sendKeys(email);
+    }
+
+    public String getErrorMessagePasswordInputText() {
+        WebElement getErrorMessagePasswordInputText = driver.findElement(By.xpath(LoginLocator.ERROR_MESSAGE_PASSWORD_INPUT));
+        return getErrorMessagePasswordInputText.getText();
+    }
 }
