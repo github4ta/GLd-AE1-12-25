@@ -86,4 +86,12 @@ public class LoginPage {
         WebElement getErrorMessagePasswordInputText = driver.findElement(By.xpath(LoginLocator.ERROR_MESSAGE_PASSWORD_INPUT));
         return getErrorMessagePasswordInputText.getText();
     }
+
+    public void sendKeysInputPasswordField(String password) {
+        driver.findElement(By.xpath(LoginLocator.INPUT_PASSWORD_FIELD)).sendKeys(password);
+    }
+
+    public void clickButtonUserAccount() {
+        driver.findElement(By.xpath(BUTTON_USER_ACCOUNT)).click();
+    }
 }
