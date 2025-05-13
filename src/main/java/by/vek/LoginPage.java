@@ -35,8 +35,7 @@ public class LoginPage {
     }
 
     public String getTextTitleLoginForm(){
-        WebElement titleLoginForm = driver.findElement(By.xpath(TITLE_LOGIN_FORM));
-        return titleLoginForm.getText();
+        return driver.findElement(By.xpath(TITLE_LOGIN_FORM)).getText();
     }
 
     public void click () {
