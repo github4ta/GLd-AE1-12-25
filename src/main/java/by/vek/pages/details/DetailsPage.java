@@ -52,7 +52,7 @@ public class DetailsPage {
         submitButtonCookie.click();
     }
 
-    public void openDetailsPage() {
-        driver.get(url);
+    public void openBasePage() {
+        driver.get("https://www.21vek.by/");
     }
 }
