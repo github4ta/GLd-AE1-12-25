@@ -1,20 +1,17 @@
-package by.markdown;
+package by.discount;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import static by.discount.DiscountLocator.INFO_MESSAGE;
+import static by.discount.DiscountLocator.TITLE_ALL_ACTIONS;
 
-import static by.markdown.MarkdownLocator.*;
+public class DiscountPage {
 
-public class VekPage {
     private WebDriver driver;
 
-    public VekPage(WebDriver driver){
+    public DiscountPage(WebDriver driver){
         this.driver = driver;
-    }
-
-    public void clickLinkMarkdown(){
-        driver.findElement(By.xpath(LINK_MARKDOWN)).click();
     }
 
     public String getAllActionTitleText(){
