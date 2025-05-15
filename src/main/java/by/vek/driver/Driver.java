@@ -5,10 +5,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class MyDriver {
+public class Driver {
     private static WebDriver driver;
 
-    private MyDriver() {
+    private Driver() {
     }
 
     public static WebDriver getDriver() {
@@ -23,6 +23,7 @@ public class MyDriver {
     public static void quit() {
         if (driver != null) {
             driver.quit();
+            driver = null;
         }
     }
 }

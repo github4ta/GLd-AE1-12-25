@@ -1,6 +1,6 @@
 package by.vek.pages;
 
-import by.vek.driver.MyDriver;
+import by.vek.driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -11,7 +11,7 @@ public class VekPage {
     private WebDriver driver;
 
     public VekPage(){
-        this.driver = MyDriver.getDriver();
+        this.driver = Driver.getDriver();
     }
 
     public void clickLinkDiscount(){

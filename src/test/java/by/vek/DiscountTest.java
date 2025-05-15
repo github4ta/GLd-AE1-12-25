@@ -1,6 +1,6 @@
 package by.vek;
 
-import by.vek.driver.MyDriver;
+import by.vek.driver.Driver;
 import by.vek.pages.BasePage;
 import by.vek.pages.DiscountPage;
 import by.vek.pages.VekPage;
@@ -38,6 +38,6 @@ public class DiscountTest {
 
     @AfterEach
     public void tearDown() {
-        MyDriver.quit();
+        Driver.quit();
     }
 }
