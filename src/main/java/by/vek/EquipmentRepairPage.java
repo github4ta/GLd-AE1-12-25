@@ -32,7 +32,7 @@ public class EquipmentRepairPage {
 
         // Прокрутка до элемента
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(locator));
+       js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(locator));
 
         // Ждем, пока элемент станет кликабельным
         wait.until(ExpectedConditions.elementToBeClickable(locator));
