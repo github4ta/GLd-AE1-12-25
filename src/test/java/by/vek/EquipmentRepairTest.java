@@ -27,14 +27,13 @@ public class EquipmentRepairTest {
 
         driver.get("https://www.21vek.by");
         loginPage.acceptCookies();
+        loginPage.goToEquipmentRepair();
     }
 
     @Test
     public void testEquipmentRepair() {
-        loginPage.goToEquipmentRepair();
         WebElement header = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[contains(text(), 'Ремонт техники')]")));
         assert header.getText().contains("Ремонт техники");
-        //Assertions.assertEquals("Ремонт техники" );
     }
 
     @Test
