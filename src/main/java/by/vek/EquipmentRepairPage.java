@@ -8,6 +8,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.time.Duration;
 
+import static by.vek.EquipmentRepairLocator.TEXT_1_EQUIPMENT_REPAIR_PAGE;
+import static by.vek.EquipmentRepairLocator.TEXT_2_EQUIPMENT_REPAIR_PAGE;
+
 public class EquipmentRepairPage {
     private WebDriver driver;
 
@@ -44,6 +47,10 @@ public class EquipmentRepairPage {
     }
 
     public String getEquipmentRepairPageText_1() {
-        return driver.findElement(By.xpath()).getText();
+        return driver.findElement(By.xpath(TEXT_1_EQUIPMENT_REPAIR_PAGE)).getText();
+    }
+
+    public String getEquipmentRepairPageText_2() {
+        return driver.findElement(By.xpath(TEXT_2_EQUIPMENT_REPAIR_PAGE)).getText();
     }
 }

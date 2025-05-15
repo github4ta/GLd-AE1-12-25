@@ -36,7 +36,12 @@ public class EquipmentRepairTest {
         assert header.getText().contains("Ремонт техники");
         //Assertions.assertEquals("Ремонт техники", refrigeratorsPage.getTitleRefrigeratorsPageText());
     }
-
+   // @Test
+    //public void checkEquipmentRepairText_1() {
+     //   Assertions.assertEquals("Наша компания предоставляет платные услуги по ремонту бытовой техники в г. Минске.\n" +
+     //           "Вы можете обращаться к нам, если поломка не относится к гарантийным случаям или\n" +
+     //          "срок гарантии на товар уже истёк.", refrigeratorsPage.getTitleRefrigeratorsPageText());
+    //}
     @After
     public void tearDown() {
         if (driver != null) {
