@@ -23,7 +23,7 @@ public class EquipmentRepairPage {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(EquipmentRepairLocator.SUBMIT_BUTTON_COOKIE))).click();
     }
 
-    public void goToEquipmentRepair() {
+    public void clikEquipmentRepair() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         By locator = By.xpath(EquipmentRepairLocator.BUTTON_LINK_EQUIPMENT_REPAIR);
 

@@ -27,7 +27,7 @@ public class EquipmentRepairTest {
 
         driver.get("https://www.21vek.by");
         EquipmentRepairPage.acceptCookies();
-        EquipmentRepairPage.goToEquipmentRepair();
+        EquipmentRepairPage.clikEquipmentRepair();
     }
 
     @Test
