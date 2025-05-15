@@ -1,16 +1,24 @@
 package by.vek.pages.details;
 
+import by.vek.driver.MyDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class DetailsPage {
     private WebDriver driver;
     private final String url;
+    private static Actions actions;
 
-    public DetailsPage(WebDriver driver) {
-        this.driver = driver;
+    public DetailsPage() {
+        this.driver = MyDriver.getDriver();
         url = "https://www.21vek.by/company/details.html";
+        actions = new Actions(MyDriver.getDriver());
     }
 
     public String getUrl() {
@@ -18,7 +26,13 @@ public class DetailsPage {
     }
 
     public void clickAnchorDetails() {
-        driver.findElement(By.xpath(DetailsLocator.ANCHOR_DETAILS)).click();
+        WebDriverWait wait = new WebDriverWait(MyDriver.getDriver(), Duration.ofSeconds(10));
+
+        WebElement temp = wait.until(ExpectedConditions.elementToBeClickable(getAnchorDetailsElement()));
+        actions.scrollToElement(temp).build().perform();
+        wait.until(ExpectedConditions.elementToBeClickable(temp));
+        actions.scrollToElement(temp).moveToElement(temp).build().perform();
+        temp.click();
     }
 
     public WebElement getAnchorDetailsElement() {
@@ -34,7 +48,11 @@ public class DetailsPage {
     }
 
     public void clickSubmitButtonCookie() {
-        WebElement submitButtonCookie = driver.findElement(By.xpath(DetailsLocator.SUBMIT_BUTTON_COOKIE));
+        WebElement submitButtonCookie = driver.findElement(By.xpath(DetailsLocator.BUTTON_SUBMIT_COOKIE));
         submitButtonCookie.click();
+    }
+
+    public void openDetailsPage() {
+        driver.get(url);
     }
 }

@@ -1,46 +1,26 @@
 package by.vek;
 
+import by.vek.driver.MyDriver;
 import by.vek.pages.details.DetailsPage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class DetailsTest {
-    private WebDriver driver;
     private DetailsPage detailsPage;
-    private static Actions actions;
-
     @BeforeEach
     public void setUp() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        actions = new Actions(driver);
-        driver.get("https://www.21vek.by");
-
-        detailsPage = new DetailsPage(driver);
+        detailsPage = new DetailsPage();
+        detailsPage.openDetailsPage();
         detailsPage.clickSubmitButtonCookie();
     }
 
     @Test
-    public void testParagraphDetails() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    public void testHeaderAndParagraphText() {
+        detailsPage.clickAnchorDetails();
 
-        WebElement temp = wait.until(ExpectedConditions.elementToBeClickable(detailsPage.getAnchorDetailsElement()));
-        actions.scrollToElement(temp).build().perform();
-        wait.until(ExpectedConditions.elementToBeClickable(temp));
-        actions.scrollToElement(temp).moveToElement(temp).build().perform();
-        temp.click();
-
-        Assertions.assertEquals(detailsPage.getUrl(), driver.getCurrentUrl());
+        Assertions.assertEquals(detailsPage.getUrl(), MyDriver.getDriver().getCurrentUrl());
 
         Assertions.assertEquals("Реквизиты", detailsPage.getHeaderDetailsText());
 
@@ -55,6 +35,6 @@ public class DetailsTest {
 
     @AfterEach
     public void tearDown() {
-        driver.quit();
+        MyDriver.quit();
     }
 }
