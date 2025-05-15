@@ -9,10 +9,11 @@ import org.junit.jupiter.api.Test;
 
 public class DetailsTest {
     private DetailsPage detailsPage;
+
     @BeforeEach
     public void setUp() {
         detailsPage = new DetailsPage();
-        detailsPage.openDetailsPage();
+        detailsPage.openBasePage();
         detailsPage.clickSubmitButtonCookie();
     }
 
