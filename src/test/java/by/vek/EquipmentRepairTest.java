@@ -36,12 +36,23 @@ public class EquipmentRepairTest {
         assert header.getText().contains("Ремонт техники");
         //Assertions.assertEquals("Ремонт техники", refrigeratorsPage.getTitleRefrigeratorsPageText());
     }
-   // @Test
-    //public void checkEquipmentRepairText_1() {
-     //   Assertions.assertEquals("Наша компания предоставляет платные услуги по ремонту бытовой техники в г. Минске.\n" +
-     //           "Вы можете обращаться к нам, если поломка не относится к гарантийным случаям или\n" +
-     //          "срок гарантии на товар уже истёк.", refrigeratorsPage.getTitleRefrigeratorsPageText());
-    //}
+
+    @Test
+    public void checkEquipmentRepairText_1() {
+        Assertions.assertEquals("Наша компания предоставляет платные услуги по ремонту бытовой техники в г. Минске. Вы можете обращаться к нам, если поломка не относится к гарантийным случаям или срок гарантии на товар уже истёк.", loginPage.getEquipmentRepairPageText_1());
+    }
+
+    @Test
+    public void checkEquipmentRepairText_2() {
+        Assertions.assertEquals("Работы проводятся квалифицированными мастерами по установленным тарифам*.\n" +
+                "Оформить заказ на платный ремонт, а также узнать все подробности о данной услуге можно по телефонам:\n" +
+                "+375 (29) 397−02−87 (администратор);\n" +
+                "+375 (44) 747−50−38.\n" +
+                "При заказе просьба называть 2-часовой интервал, когда вы будете присутствовать в месте проведения работ.\n" +
+                "\n" +
+                "Оплата за расходные материалы рассчитывается отдельно.", loginPage.getEquipmentRepairPageText_2());
+    }
+
     @After
     public void tearDown() {
         if (driver != null) {
