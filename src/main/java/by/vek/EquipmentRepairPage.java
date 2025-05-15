@@ -42,4 +42,8 @@ public class EquipmentRepairPage {
             js.executeScript("arguments[0].click();", driver.findElement(locator));
         }
     }
+
+    public String getEquipmentRepairPageText_1() {
+        return driver.findElement(By.xpath()).getText();
+    }
 }
