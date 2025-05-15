@@ -1,7 +1,6 @@
 package by.vek;
 
 public class RefrigeratorsLocator {
-    public static final String SUBMIT_BUTTON_COOKIE = "//button[@class=\"Button-module__button Button-module__blue-primary\"]";
     public static final String LINK_REFRIGERATORS = "//a[@href=\"/refrigerators/\"]";
     public static final String TITLE_REFRIGERATORS_PAGE = "//h1[@class=\"style_title__QomyX\"]";
     public static final String LINK_FREEZERS = "//a[@href=\"/freezers/\"]";
