@@ -1,5 +1,6 @@
 package by.vek.pages;
 
+import by.vek.driver.MyDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -10,8 +11,8 @@ public class DiscountPage {
 
     private WebDriver driver;
 
-    public DiscountPage(WebDriver driver){
-        this.driver = driver;
+    public DiscountPage(){
+        driver = MyDriver.getDriver();
     }
 
     public String getAllActionTitleText(){
