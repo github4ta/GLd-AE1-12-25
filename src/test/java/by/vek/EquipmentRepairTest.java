@@ -31,7 +31,7 @@ public class EquipmentRepairTest {
     }
 
     @Test
-    public void testEquipmentRepair() {
+    public void testTitleEquipmentRepair() {
         WebElement header = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[contains(text(), 'Ремонт техники')]")));
         assert header.getText().contains("Ремонт техники");
     }
