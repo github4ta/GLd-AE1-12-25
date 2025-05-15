@@ -25,7 +25,7 @@ public class EquipmentRepairPage {
 
     public void clikEquipmentRepair() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-        By locator = By.xpath(EquipmentRepairLocator.BUTTON_LINK_EQUIPMENT_REPAIR);
+        By locator = By.xpath(EquipmentRepairLocator.LINK_EQUIPMENT_REPAIR);
 
         // Ждем появления элемента
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
