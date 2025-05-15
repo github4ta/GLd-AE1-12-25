@@ -32,12 +32,12 @@ public class EquipmentRepairPage {
 
         // Прокрутка до элемента
         JavascriptExecutor js = (JavascriptExecutor) driver;
-       js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(locator));
+        js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(locator));
 
         // Ждем, пока элемент станет кликабельным
-        wait.until(ExpectedConditions.elementToBeClickable(locator));
+        // wait.until(ExpectedConditions.elementToBeClickable(locator)); работает без этого пока-что
 
-        // Попытка кликнуть через JavaScript (если обычный не срабатывает)
+        // кликнуть через JavaScript (если обычный не срабатывает)
         try {
             driver.findElement(locator).click();
         } catch (org.openqa.selenium.ElementClickInterceptedException e) {
