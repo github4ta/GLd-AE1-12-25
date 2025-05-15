@@ -15,7 +15,7 @@ import java.time.Duration;
 
 public class EquipmentRepairTest {
     private WebDriver driver;
-    private EquipmentRepairPage loginPage;
+    private EquipmentRepairPage EquipmentRepairPage;
     private WebDriverWait wait;
 
     @Before
@@ -23,11 +23,11 @@ public class EquipmentRepairTest {
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         driver.manage().window().maximize();
-        loginPage = new EquipmentRepairPage(driver);
+        EquipmentRepairPage = new EquipmentRepairPage(driver);
 
         driver.get("https://www.21vek.by");
-        loginPage.acceptCookies();
-        loginPage.goToEquipmentRepair();
+        EquipmentRepairPage.acceptCookies();
+        EquipmentRepairPage.goToEquipmentRepair();
     }
 
     @Test
@@ -39,7 +39,7 @@ public class EquipmentRepairTest {
     @Test
     public void checkEquipmentRepairText_1() {
         String expectedText = "Наша компания предоставляет платные услуги по ремонту бытовой техники в г. Минске. Вы можете обращаться к нам, если поломка не относится к гарантийным случаям или срок гарантии на товар уже истёк.";
-        String actualText = loginPage.getEquipmentRepairPageText_1();
+        String actualText = EquipmentRepairPage.getEquipmentRepairPageText_1();
 
         Assertions.assertEquals(expectedText, actualText);
     }
@@ -53,7 +53,7 @@ public class EquipmentRepairTest {
                 "При заказе просьба называть 2-часовой интервал, когда вы будете присутствовать в месте проведения работ.\n" +
                 "\n" +
                 "Оплата за расходные материалы рассчитывается отдельно.";
-        String actualText = loginPage.getEquipmentRepairPageText_2();
+        String actualText = EquipmentRepairPage.getEquipmentRepairPageText_2();
 
         Assertions.assertEquals(expectedText, actualText);
     }
