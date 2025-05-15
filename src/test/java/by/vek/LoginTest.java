@@ -51,4 +51,9 @@ public class LoginTest {
     public void tearDown() {
         driver.quit();
     }
+
+    @Test
+    public void testTitleLoginPage() {
+        Assertions.assertEquals("Вход", loginPage.getTextTitleLoginForm());
+    }
 }
