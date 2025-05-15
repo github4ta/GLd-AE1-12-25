@@ -1,5 +1,6 @@
 package by.vek.pages.coffee;
 
+import by.vek.driver.MyDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -11,8 +12,8 @@ public class CoffeePage {
     private final By coffeeTypes = By.xpath("//h2[contains(text(), 'Виды кофе')]");
     private final By coffeeSelection = By.xpath("//h2[contains(text(), 'Какой кофе выбрать')]");
 
-    public CoffeePage(WebDriver driver) {
-        this.driver = driver;
+    public CoffeePage() {
+        this.driver = MyDriver.getDriver();
     }
 
 

@@ -1,5 +1,7 @@
 package by.vek;
 
+import by.vek.driver.MyDriver;
+import by.vek.pages.BasePage;
 import by.vek.pages.coffee.CoffeePage;
 import org.junit.Assert;
 import org.junit.Test;
@@ -15,23 +17,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class CoffeeTest {
-    private  WebDriver driver;
     private CoffeePage coffeePage;
 
     @BeforeEach
     public  void setup() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get( "https://www.21vek.by");
-        coffeePage = new CoffeePage(driver);
+        // driver.get( "https://www.21vek.by");
+        BasePage bp = new BasePage();
+        bp.open();
+        coffeePage = new CoffeePage();
     }
 
     @Test
     public void verifyCoffeeSection() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement button = driver.findElement(By.linkText("Кофе"));
-        wait.until(ExpectedConditions.visibilityOf(button));
-        button.click();
         Assert.assertTrue(coffeePage.isCoffeeHeaderDisplayed());
         Assert.assertTrue(coffeePage.isCoffeeTypesDisplayed());
         Assert.assertTrue(coffeePage.isCoffeeSelectionDisplayed());
@@ -39,6 +36,7 @@ public class CoffeeTest {
 
     @AfterEach
     public void tearDown() {
-        driver.quit();
+        // driver.quit();
+        MyDriver.quit();
     }
 }
