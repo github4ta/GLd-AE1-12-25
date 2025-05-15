@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import static by.vek.LoginLocator.SUBMIT_BUTTON_COOKIE;
 import static by.vek.RefrigeratorsLocator.*;
 public class RefrigeratorsPage {
 
@@ -15,7 +14,7 @@ public class RefrigeratorsPage {
     }
 
     public void clickSubmitButtonCookie() {
-        WebElement submitButtonCookie = driver.findElement(By.xpath(SUBMIT_BUTTON_COOKIE));
+        WebElement submitButtonCookie = driver.findElement(By.xpath(LoginLocator.SUBMIT_BUTTON_COOKIE));
         submitButtonCookie.click();
     }
 
