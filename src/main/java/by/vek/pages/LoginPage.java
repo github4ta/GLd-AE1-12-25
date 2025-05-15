@@ -1,10 +1,10 @@
-package by.vek;
+package by.vek.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import static by.vek.LoginLocator.*;
+import static by.vek.pages.LoginLocator.*;
 
 public class LoginPage {
 
@@ -93,5 +93,10 @@ public class LoginPage {
 
     public void clickButtonUserAccount() {
         driver.findElement(By.xpath(BUTTON_USER_ACCOUNT)).click();
+    }
+
+    public String getErrorMessagePasswordText() {
+        WebElement getErrorMessagePasswordText = driver.findElement(By.xpath(LoginLocator.VALIDATION_ERROR_MESSAGE_PASSWORD));
+        return getErrorMessagePasswordText.getText();
     }
 }

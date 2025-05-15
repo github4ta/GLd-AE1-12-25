@@ -1,12 +1,11 @@
 package by.vek;
 
+import by.vek.pages.LoginPage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
@@ -20,7 +19,7 @@ public class LoginTest {
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
 
         driver.get("https://www.21vek.by");
 
@@ -38,8 +37,29 @@ public class LoginTest {
         Assertions.assertEquals("Пароль не указан", loginPage.getErrorMessagePasswordInputText());
     }
 
+    @Test
+    public void testWithEmptyPassword(){
+        loginPage.sendKeysInputEmailField("test@test.xyz");
+        loginPage.clickButtonContinue();
+        Assertions.assertEquals("Пароль не указан", loginPage.getErrorMessagePasswordInputText());
+    }
+      
+    @Test
+    public void testWithCorrectEmailAndIncorrectPassword() {
+        loginPage.sendKeysInputEmailField("evminova.iryna@yandex.ru");
+        loginPage.sendKeysInputPasswordField("123qwerty");
+        loginPage.clickButtonContinue();
+
+        Assertions.assertEquals("Неправильный пароль. \n" + "Сбросить пароль?",loginPage.getErrorMessagePasswordText());
+    }
+
     @AfterEach
     public void tearDown() {
         driver.quit();
+    }
+
+    @Test
+    public void testTitleLoginPage() {
+        Assertions.assertEquals("Вход", loginPage.getTextTitleLoginForm());
     }
 }

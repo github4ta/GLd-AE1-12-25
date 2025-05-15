@@ -1,4 +1,4 @@
-package by.vek;
+package by.vek.pages;
 
 public class LoginLocator {
     public static final String SUBMIT_BUTTON_COOKIE = "//button[@class=\"Button-module__button Button-module__blue-primary\"]";
@@ -18,4 +18,6 @@ public class LoginLocator {
     public static final String ERROR_MESSAGE_NO_REGISTER_EMAIL_INPUT = "//span[@class=\"ErrorMessageLink_container__7D0yM\"]";
     public static final String LINK_BUTTON_REGISTRATION = "//a[@class=\"LinkButton-module__wrapper LinkButton-module__tiny LinkButton-module__regular LinkButton-module__blue\"]";
     public static final String TITLE_REGISTRATION = "//h5[@class=\"Form-module__formTitle\"]";
+    public static final String VALIDATION_ERROR_MESSAGE_PASSWORD = "//span[contains(@class, 'message') and contains(., 'пароль')]";
+
 }
