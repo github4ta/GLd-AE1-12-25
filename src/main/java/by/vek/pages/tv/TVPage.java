@@ -1,5 +1,6 @@
-package by.vek.pages;
+package by.vek.pages.tv;
 
+import by.vek.driver.MyDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -11,8 +12,8 @@ public class TVPage {
 
     private WebDriver driver;
 
-    public TVPage(WebDriver driver) {
-        this.driver = driver;
+    public TVPage() {
+        driver = MyDriver.getDriver();
     }
 
     public void clickTVCategoryHeaderButton() {

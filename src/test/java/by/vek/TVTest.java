@@ -1,33 +1,25 @@
 package by.vek;
 
-import by.vek.pages.LoginPage;
-import by.vek.pages.TVPage;
+import by.vek.driver.MyDriver;
+import by.vek.pages.BasePage;
+import by.vek.pages.tv.TVPage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TVTest {
 
-    private WebDriver driver;
-    private LoginPage loginPage;
     private TVPage tvPage;
 
     @BeforeEach
     public void setup() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://www.21vek.by");
+        new BasePage().open();
 
-        loginPage = new LoginPage(driver);
-        loginPage.clickSubmitButtonCookie();
-
-        tvPage = new TVPage(driver);
+        tvPage = new TVPage();
         tvPage.clickTVCategoryHeaderButton();
     }
 
@@ -69,6 +61,6 @@ public class TVTest {
 
     @AfterEach
     public void closeDriver() {
-        driver.quit();
+        MyDriver.quit();
     }
 }
