@@ -16,7 +16,11 @@ public class BasePage {
 
     public void open() {
         driver.get( "https://www.21vek.by");
-        clickCloseCookie();
+        try {
+            clickCloseCookie();
+        } catch (Exception e) {
+
+        }
     }
 
     public void clickCloseCookie() {
