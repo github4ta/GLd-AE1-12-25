@@ -1,4 +1,4 @@
-package by.test.vek;
+package by.vek;
 
 import org.junit.After;
 import org.junit.Before;

@@ -1,4 +1,4 @@
-package by.test.vek;
+package by.vek;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
