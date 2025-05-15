@@ -23,9 +23,9 @@ public class EquipmentRepairTest {
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         driver.manage().window().maximize();
-        EquipmentRepairPage = new EquipmentRepairPage(driver);
-
         driver.get("https://www.21vek.by");
+
+        EquipmentRepairPage = new EquipmentRepairPage(driver);
         EquipmentRepairPage.acceptCookies();
         EquipmentRepairPage.clikEquipmentRepair();
     }
