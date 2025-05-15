@@ -19,7 +19,7 @@ public class EquipmentRepairTest {
     private WebDriverWait wait;
 
     @Before
-    public void setUp() {
+    public void Before() {
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         driver.manage().window().maximize();
