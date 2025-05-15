@@ -39,6 +39,13 @@ public class LoginTest {
     }
 
     @Test
+    public void testWithEmptyPassword(){
+        loginPage.sendKeysInputEmailField("test@test.xyz");
+        loginPage.clickButtonContinue();
+        Assertions.assertEquals("Пароль не указан", loginPage.getErrorMessagePasswordInputText());
+    }
+      
+    @Test
     public void testWithCorrectEmailAndIncorrectPassword() {
         loginPage.sendKeysInputEmailField("evminova.iryna@yandex.ru");
         loginPage.sendKeysInputPasswordField("123qwerty");
