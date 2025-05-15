@@ -94,4 +94,9 @@ public class LoginPage {
     public void clickButtonUserAccount() {
         driver.findElement(By.xpath(BUTTON_USER_ACCOUNT)).click();
     }
+
+    public String getErrorMessagePasswordText() {
+        WebElement getErrorMessagePasswordText = driver.findElement(By.xpath(LoginLocator.VALIDATION_ERROR_MESSAGE_PASSWORD));
+        return getErrorMessagePasswordText.getText();
+    }
 }

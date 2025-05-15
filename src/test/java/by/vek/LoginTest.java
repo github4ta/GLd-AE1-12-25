@@ -20,7 +20,7 @@ public class LoginTest {
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
 
         driver.get("https://www.21vek.by");
 
@@ -44,9 +44,23 @@ public class LoginTest {
         loginPage.clickButtonContinue();
         Assertions.assertEquals("Пароль не указан", loginPage.getErrorMessagePasswordInputText());
     }
+      
+    @Test
+    public void testWithCorrectEmailAndIncorrectPassword() {
+        loginPage.sendKeysInputEmailField("evminova.iryna@yandex.ru");
+        loginPage.sendKeysInputPasswordField("123qwerty");
+        loginPage.clickButtonContinue();
+
+        Assertions.assertEquals("Неправильный пароль. \n" + "Сбросить пароль?",loginPage.getErrorMessagePasswordText());
+    }
 
     @AfterEach
     public void tearDown() {
         driver.quit();
+    }
+
+    @Test
+    public void testTitleLoginPage() {
+        Assertions.assertEquals("Вход", loginPage.getTextTitleLoginForm());
     }
 }
