@@ -3,8 +3,11 @@ package by.vek;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -16,19 +19,20 @@ public class EquipmentRepairTest {
 
     @Before
     public void setUp() {
-        // System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         driver.manage().window().maximize();
         loginPage = new EquipmentRepairPage(driver);
+
+        driver.get("https://www.21vek.by");
+        loginPage.acceptCookies();
     }
 
     @Test
     public void testVekVacancies() {
-        driver.get("https://www.21vek.by");
-        loginPage.acceptCookies();
         loginPage.goToEquipmentRepair();
-
+        WebElement header = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[contains(text(), 'Ремонт техники')]")));
+        assert header.getText().contains("Ремонт техники");
     }
 
     @After
