@@ -1,3 +1,5 @@
+package by.vek.pages.coffee;
+
 public class CoffeeLocator {
     public static final String COFFEE_LINK = "//a[contains(text(), 'Кофе')]";
     public static final String COFFEE_HEADER = "//h1[contains(text(), 'Кофе')]";

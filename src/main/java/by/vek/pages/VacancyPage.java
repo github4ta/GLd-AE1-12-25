@@ -1,4 +1,4 @@
-package by.vek;
+package by.vek.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

@@ -1,9 +1,9 @@
 package core;
 
-import by.discount.DiscountPage;
+import by.vek.pages.DiscountPage;
 import by.itacademy.LoginPage;
 import by.itacademy.MainPage;
-import by.discount.VekPage;
+import by.vek.pages.VekPage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;

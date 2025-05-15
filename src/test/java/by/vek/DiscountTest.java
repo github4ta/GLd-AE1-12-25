@@ -1,4 +1,4 @@
-package by.discount;
+package by.vek;
 
 import core.BaseSeleniumTest;
 import org.junit.Assert;

@@ -1,5 +1,6 @@
 package by.vek;
 
+import by.vek.pages.VacancyPage;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

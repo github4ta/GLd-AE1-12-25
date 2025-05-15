@@ -1,4 +1,4 @@
-package by.vek;
+package by.vek.pages;
 
 public class VacuumLocator {
     public static final String SUBMIT_BUTTON_COOKIE = "//button[@class=\"Button-module__button Button-module__blue-primary\"]";

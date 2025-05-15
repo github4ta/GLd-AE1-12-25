@@ -1,4 +1,4 @@
-package by.vek;
+package by.vek.pages.details;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

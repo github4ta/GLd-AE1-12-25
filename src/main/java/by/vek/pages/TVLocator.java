@@ -1,4 +1,4 @@
-package by.vek;
+package by.vek.pages;
 
 public class TVLocator {
 

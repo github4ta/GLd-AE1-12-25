@@ -1,10 +1,10 @@
-package by.discount;
+package by.vek.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static by.discount.DiscountLocator.INFO_MESSAGE;
-import static by.discount.DiscountLocator.TITLE_ALL_ACTIONS;
+import static by.vek.pages.DiscountLocator.INFO_MESSAGE;
+import static by.vek.pages.DiscountLocator.TITLE_ALL_ACTIONS;
 
 public class DiscountPage {
 

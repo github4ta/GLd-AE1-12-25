@@ -1,5 +1,7 @@
 package by.vek;
 
+import by.vek.pages.LoginPage;
+import by.vek.pages.TVPage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

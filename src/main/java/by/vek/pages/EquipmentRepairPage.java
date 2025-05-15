@@ -1,4 +1,4 @@
-package by.vek;
+package by.vek.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -8,8 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.time.Duration;
 
-import static by.vek.EquipmentRepairLocator.TEXT_1_EQUIPMENT_REPAIR_PAGE;
-import static by.vek.EquipmentRepairLocator.TEXT_2_EQUIPMENT_REPAIR_PAGE;
+import static by.vek.pages.EquipmentRepairLocator.TEXT_1_EQUIPMENT_REPAIR_PAGE;
+import static by.vek.pages.EquipmentRepairLocator.TEXT_2_EQUIPMENT_REPAIR_PAGE;
 
 public class EquipmentRepairPage {
     private WebDriver driver;

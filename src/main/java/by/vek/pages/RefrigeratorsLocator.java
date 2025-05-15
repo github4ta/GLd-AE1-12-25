@@ -1,4 +1,4 @@
-package by.vek;
+package by.vek.pages;
 
 public class RefrigeratorsLocator {
     public static final String LINK_REFRIGERATORS = "//a[@href=\"/refrigerators/\"]";
