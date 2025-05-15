@@ -29,7 +29,7 @@ public class EquipmentRepairTest {
     }
 
     @Test
-    public void testVekVacancies() {
+    public void testEquipmentRepair() {
         loginPage.goToEquipmentRepair();
         WebElement header = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[contains(text(), 'Ремонт техники')]")));
         assert header.getText().contains("Ремонт техники");
