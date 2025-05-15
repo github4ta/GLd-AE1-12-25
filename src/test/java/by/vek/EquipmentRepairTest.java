@@ -3,6 +3,7 @@ package by.vek;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -33,6 +34,7 @@ public class EquipmentRepairTest {
         loginPage.goToEquipmentRepair();
         WebElement header = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[contains(text(), 'Ремонт техники')]")));
         assert header.getText().contains("Ремонт техники");
+        //Assertions.assertEquals("Ремонт техники", refrigeratorsPage.getTitleRefrigeratorsPageText());
     }
 
     @After
