@@ -2,7 +2,7 @@ package by.vek;
 
 import by.vek.driver.Driver;
 import by.vek.pages.BasePage;
-import by.vek.pages.DiscountPage;
+import by.vek.pages.discount.DiscountPage;
 import by.vek.pages.VekPage;
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;

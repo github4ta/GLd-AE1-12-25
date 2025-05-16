@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 
-import static by.vek.pages.DiscountLocator.*;
+import static by.vek.pages.discount.DiscountLocator.*;
 
 public class VekPage {
     private WebDriver driver;

@@ -1,10 +1,10 @@
-package by.vek.pages;
+package by.vek.pages.login;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import static by.vek.pages.LoginLocator.*;
+import static by.vek.pages.login.LoginLocator.*;
 
 public class LoginPage {
 

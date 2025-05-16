@@ -1,9 +1,9 @@
-package by.vek.pages;
+package by.vek.pages.vacuum;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static by.vek.pages.VacuumLocator.*;
+import static by.vek.pages.vacuum.VacuumLocator.*;
 
 public class VacuumPage {
 

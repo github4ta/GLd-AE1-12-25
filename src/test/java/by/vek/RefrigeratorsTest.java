@@ -1,7 +1,7 @@
 package by.vek;
 
-import by.vek.pages.LoginPage;
-import by.vek.pages.RefrigeratorsPage;
+import by.vek.pages.login.LoginPage;
+import by.vek.pages.refrigerators.RefrigeratorsPage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

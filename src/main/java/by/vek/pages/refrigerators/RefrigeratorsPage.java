@@ -1,10 +1,11 @@
-package by.vek.pages;
+package by.vek.pages.refrigerators;
 
+import by.vek.pages.login.LoginLocator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import static by.vek.pages.RefrigeratorsLocator.*;
+import static by.vek.pages.refrigerators.RefrigeratorsLocator.*;
 public class RefrigeratorsPage {
 
     private WebDriver driver;

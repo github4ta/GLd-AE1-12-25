@@ -1,6 +1,6 @@
 package by.vek;
 
-import by.vek.pages.EquipmentRepairPage;
+import by.vek.pages.equipment.EquipmentRepairPage;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,7 +16,7 @@ import java.time.Duration;
 
 public class EquipmentRepairTest {
     private WebDriver driver;
-    private by.vek.pages.EquipmentRepairPage EquipmentRepairPage;
+    private by.vek.pages.equipment.EquipmentRepairPage EquipmentRepairPage;
     private WebDriverWait wait;
 
     @Before
