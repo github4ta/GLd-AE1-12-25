@@ -1,9 +1,9 @@
 package by.vek;
 
 import by.vek.pages.vacancy.VacancyPage;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,7 +15,7 @@ public class VacancyTest {
     private VacancyPage loginPage;
     private WebDriverWait wait;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         // System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
         driver = new ChromeDriver();
@@ -32,7 +32,7 @@ public class VacancyTest {
         loginPage.goToSubmitApplication();
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         if (driver != null) {
             driver.quit();

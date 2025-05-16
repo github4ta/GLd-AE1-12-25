@@ -1,10 +1,10 @@
 package by.vek;
 
 import by.vek.pages.equipment.EquipmentRepairPage;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,7 +19,7 @@ public class EquipmentRepairTest {
     private by.vek.pages.equipment.EquipmentRepairPage EquipmentRepairPage;
     private WebDriverWait wait;
 
-    @Before
+    @BeforeEach
     public void Before() {
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
@@ -59,7 +59,7 @@ public class EquipmentRepairTest {
         Assertions.assertEquals(expectedText, actualText);
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         if (driver != null) {
             driver.quit();
