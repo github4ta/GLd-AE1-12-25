@@ -1,4 +1,4 @@
-package by.vek.util;
+package by.vek.driver;
 
 public class Waits {
 
