@@ -1,22 +1,16 @@
 package by.vek.pages.refrigerators;
 
-import by.vek.pages.login.LoginLocator;
+import by.vek.driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 import static by.vek.pages.refrigerators.RefrigeratorsLocator.*;
 public class RefrigeratorsPage {
 
     private WebDriver driver;
 
-    public RefrigeratorsPage(WebDriver driver) {
-        this.driver = driver;
-    }
-
-    public void clickSubmitButtonCookie() {
-        WebElement submitButtonCookie = driver.findElement(By.xpath(LoginLocator.SUBMIT_BUTTON_COOKIE));
-        submitButtonCookie.click();
+    public RefrigeratorsPage() {
+        driver = Driver.getDriver();
     }
 
     public void clickLinkRefrigerators() {
