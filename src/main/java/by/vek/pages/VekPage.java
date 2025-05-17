@@ -9,6 +9,7 @@ public class VekPage {
 
     private final String LINK_COFFEE = "//div[@class='styles_promoList__yozMt']//a[@href='/coffee/']";
     private final String BUTTON_CATALOG = "//button[@class=\"styles_catalogButton__z9L_j\"]";
+    private final String STOVE_ACCESSORIES = "//a[@href='/stove_accessories/']";
 
     private WebDriver driver;
 
@@ -26,5 +27,9 @@ public class VekPage {
 
     public void clickLinkCoffee() {
         driver.findElement(By.xpath(LINK_COFFEE)).click();
+    }
+
+    public void clickStoveAccessories() {
+        driver.findElement(By.xpath(STOVE_ACCESSORIES)).click();
     }
 }
