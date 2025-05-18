@@ -12,7 +12,7 @@ public class RecoveryModalWindowFormTest extends WithRecoveryPageSetupTest{
 
     @BeforeEach
     public void setUp() {
-        RecoveryLoginOrPasswordPage recoveryLoginOrPasswordPage = openRecoveryModalWindowForm("q@q");
+        openRecoveryModalWindowForm("q@q");
         recoveryModalWindowForm = new RecoveryModalWindowForm();
     }
 
@@ -30,12 +30,12 @@ public class RecoveryModalWindowFormTest extends WithRecoveryPageSetupTest{
     @Test
     public void checkButtonCloseClosesModalWindow() {
         recoveryModalWindowForm.clickButtonClose();
-        Assertions.assertTrue(new RecoveryLoginOrPasswordPage().isClosedModalWindowRecovery());
+        Assertions.assertTrue(recoveryModalWindowForm.isClosedModalWindowRecovery());
     }
 
     @Test
     public void checkButtonCrossClosesModalWindow() {
         recoveryModalWindowForm.clickButtonCross();
-        Assertions.assertTrue(new RecoveryLoginOrPasswordPage().isClosedModalWindowRecovery());
+        Assertions.assertTrue(recoveryModalWindowForm.isClosedModalWindowRecovery());
     }
 }

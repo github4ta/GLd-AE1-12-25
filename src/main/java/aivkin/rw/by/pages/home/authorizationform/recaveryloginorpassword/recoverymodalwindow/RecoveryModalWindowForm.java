@@ -45,4 +45,8 @@ public class RecoveryModalWindowForm {
     public void clickButtonCross() {
         driver.findElement(By.xpath(RecoveryModalWindowFormLocator.BUTTON_CROSS)).click();
     }
+
+    public boolean isClosedModalWindowRecovery() {
+        return driver.findElements(By.cssSelector(".popup.pwd-restore")).isEmpty();
+    }
 }

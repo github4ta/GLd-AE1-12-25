@@ -40,8 +40,4 @@ public class RecoveryLoginOrPasswordPage {
     public boolean isDisplayedModalWindowRecovery() {
         return driver.findElement(By.xpath(RecoveryLoginOrPasswordPageLocator.MODAL_WINDOW_RECOVERY)).isDisplayed();
     }
-
-    public boolean isClosedModalWindowRecovery() {
-        return driver.findElements(By.cssSelector(".popup.pwd-restore")).isEmpty();
-    }
 }
