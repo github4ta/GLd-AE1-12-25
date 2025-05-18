@@ -1,26 +1,17 @@
 package aivkin.rw.by;
 
-import aivkin.rw.by.pages.home.HomePage;
 import aivkin.rw.by.pages.home.authorizationform.AuthorizationForm;
-import aivkin.rw.by.pages.home.authorizationform.AuthorizationFormLocator;
-import by.vek.driver.Driver;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
-public class AuthorizationFormTest extends HomeTest {
+public class AuthorizationFormTest extends WithAuthorizationSetupTest {
 
     private AuthorizationForm authorizationForm;
 
     @BeforeEach
     public void setUp() {
-        new HomePage().clickButtonPersonalAccount();
-        new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(4)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(AuthorizationFormLocator.TITLE_AUTHORIZATION)));
+        openAuthorizationForm();
         authorizationForm = new AuthorizationForm();
     }
 
