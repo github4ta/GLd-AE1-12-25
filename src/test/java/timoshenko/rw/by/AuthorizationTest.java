@@ -14,6 +14,10 @@ public class AuthorizationTest extends BaseTest {
     private final String COMMENT_LOGIN_SOCIAL_MEDIA_TEXT = "Войти с помощью соцсетей:";
     private final String COMMENT_NO_ACCOUNT_TEXT = "Нет аккаунта? Зарегистрироваться";
     private final String LINK_REGISTRATION_TEXT = "Зарегистрироваться";
+    private final String MESSAGE_ERROR_TEXT = "Заполните поле";
+    private final String COMMENT_USER_NOT_FOUND_TEXT = "Пользователь не найден";
+    private final String PASSWORD = "123456";
+    private final String LOGIN = "login";
 
     protected AuthorizationPage authorizationPage;
 
@@ -32,5 +36,34 @@ public class AuthorizationTest extends BaseTest {
         Assertions.assertEquals(COMMENT_LOGIN_SOCIAL_MEDIA_TEXT, authorizationPage.getCommentText("social-title"));
         Assertions.assertEquals(COMMENT_NO_ACCOUNT_TEXT, authorizationPage.getCommentText("caption"));
         Assertions.assertEquals(LINK_REGISTRATION_TEXT, authorizationPage.getLinkRegistrationText());
+    }
+
+    @Test
+    public void checkAuthorizationWithoutPassword(){
+        authorizationPage.fillInput("login", LOGIN);
+        authorizationPage.clickButtonLogin();
+        Assertions.assertEquals(MESSAGE_ERROR_TEXT, authorizationPage.getMessageError("password-error"));
+    }
+
+    @Test
+    public void checkAuthorizationWithoutLoginAndPassword(){
+        authorizationPage.clickButtonLogin();
+        Assertions.assertEquals(MESSAGE_ERROR_TEXT, authorizationPage.getMessageError("password-error"));
+        Assertions.assertEquals(MESSAGE_ERROR_TEXT, authorizationPage.getMessageError("login-error"));
+    }
+
+    @Test
+    public void checkAuthorizationWithoutLogin(){
+        authorizationPage.fillInput("password", PASSWORD);
+        authorizationPage.clickButtonLogin();
+        Assertions.assertEquals(MESSAGE_ERROR_TEXT, authorizationPage.getMessageError("login-error"));
+    }
+
+    @Test
+    public void checkAuthorizationWithLoginAndPassword(){
+        authorizationPage.fillInput("password", PASSWORD);
+        authorizationPage.fillInput("login", LOGIN);
+        authorizationPage.clickButtonLogin();
+        Assertions.assertEquals(COMMENT_USER_NOT_FOUND_TEXT, authorizationPage.getCommentUserNotFound());
     }
 }

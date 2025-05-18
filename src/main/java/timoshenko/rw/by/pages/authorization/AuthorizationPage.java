@@ -45,4 +45,20 @@ public class AuthorizationPage {
     public String getLinkRegistrationText(){
         return driver.findElement(By.xpath(AuthorizationLocators.LINK_REGISTRATION)).getText();
     }
+
+    public void fillInput(String inputLocator, String value){
+        driver.findElement(By.xpath(String.format(AuthorizationLocators.INPUT_CREDENTIALS, inputLocator))).sendKeys(value);
+    }
+
+    public void clickButtonLogin(){
+        driver.findElement(By.xpath(AuthorizationLocators.BUTTON_LOGIN)).click();
+    }
+
+    public String getMessageError(String message){
+        return driver.findElement(By.xpath(String.format(AuthorizationLocators.MESSAGE_CREDENTIALS_ERROR, message))).getText();
+    }
+
+    public String getCommentUserNotFound(){
+        return driver.findElement(By.xpath(AuthorizationLocators.COMMENT_USER_NOT_FOUND)).getText();
+    }
 }

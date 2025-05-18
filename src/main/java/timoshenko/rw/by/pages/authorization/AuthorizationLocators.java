@@ -7,10 +7,8 @@ public class AuthorizationLocators {
     public final static String LINK_FORGOT_PASSWORD = "//a[@href='/ru/registration/pwd_restore/']";
     public final static String COMMENT_OTHER_LOGIN = "//div[@class='auth-modal__%s']";
     public final static String LINK_REGISTRATION = "//a[@href='/ru/registration/']";
-    public final static String INPUT_LOGIN = "//input[@name='login']";
-    public final static String INPUT_PASSWORD = "//input[@name='password']";
-    public final static String MESSAGE_LOGIN_ERROR = "//label[@id='login-error']";
-    public final static String MESSAGE_PASSWORD_ERROR = "//label[@id='password-error']";
+    public final static String INPUT_CREDENTIALS = "//input[@name='%s']";
+    public final static String MESSAGE_CREDENTIALS_ERROR = "//label[@id='%s']";
     public final static String COMMENT_USER_NOT_FOUND = "//div[@class='danger standalone']";
     public final static String COMMENT_INCORRECT_LOGIN_OR_PASSWORD = "//div[text()='Неверное имя пользователя или пароль']";
 }
