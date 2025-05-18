@@ -1,4 +1,4 @@
-package aivkin.rw.by;
+package aivkin.rw.by.pages.home;
 
 import by.vek.driver.Driver;
 import org.openqa.selenium.By;

@@ -1,4 +1,4 @@
-package aivkin.rw.by;
+package aivkin.rw.by.pages.home;
 
 public class HomePageLocator {
     public static final String BUTTON_CLOSE_MODAL_WINDOW = "//div[@class=\"notification-modal__header\"]//button[@class=\"close close--black\"]";
