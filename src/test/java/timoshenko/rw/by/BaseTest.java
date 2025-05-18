@@ -3,7 +3,6 @@ package timoshenko.rw.by;
 import by.vek.driver.Driver;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import timoshenko.rw.by.pages.BasePage;
 
 public class BaseTest {
 

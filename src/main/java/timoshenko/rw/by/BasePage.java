@@ -1,4 +1,4 @@
-package timoshenko.rw.by.pages;
+package timoshenko.rw.by;
 
 import by.vek.driver.Driver;
 import org.openqa.selenium.*;
@@ -11,6 +11,7 @@ import java.time.Duration;
 public class BasePage {
     private static final String INFO_MODAL_CLOSE_LOCATOR = "//div[@id='notification-popup']//button[@class='close close--black']";
     private static final String SUBMIT_BUTTON_COOKIE_LOCATOR = "//button[@class='btn btn-default mc-btn-all']";
+    private static final String SUBMIT_BUTTON_LOGIN_PROFILE = "//a[@data-target='#auth-popup']";
 
     protected WebDriver driver;
 
@@ -22,6 +23,7 @@ public class BasePage {
         driver.get("https://pass.rw.by/ru/");
         clickCloseCookie();
         clickCloseModalCheckbox();
+        clickLoginProfile();
     }
 
     public void clickCloseModalCheckbox() {
@@ -36,5 +38,9 @@ public class BasePage {
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(4));
         wait.until(d -> element.isDisplayed());
         element.click();
+    }
+
+    public void clickLoginProfile(){
+        driver.findElement(By.xpath(SUBMIT_BUTTON_LOGIN_PROFILE)).click();
     }
 }

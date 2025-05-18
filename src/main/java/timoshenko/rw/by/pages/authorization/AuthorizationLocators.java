@@ -1,13 +1,11 @@
 package timoshenko.rw.by.pages.authorization;
 
 public class AuthorizationLocators {
-    public final static String TITLE_AUTHORIZATION = "//div[@class='auth-modal__title h3']";
-    public final static String LABEL_LOGIN = "//div[text()='Логин/E-mail']";
-    public final static String LABEL_PASSWORD = "//div[text()='Пароль']";
-    public final static String BUTTON_LOGIN = "//input[@class='btn btn-index btn_submit']";
+    public final static String TITLE_AUTHORIZATION = "//div[@class='auth-modal__title h3']";//div[text()='Авторизация']
+    public final static String LABEL_INPUT = "//div[text()='%s']";
+    public final static String BUTTON_LOGIN = "//div[@class='form-group control-group']//input[@name='dologin']";
     public final static String LINK_FORGOT_PASSWORD = "//a[@href='/ru/registration/pwd_restore/']";
-    public final static String COMMENT_LOGIN_SOCIAL_MEDIA = "//div[@class='auth-modal__social-title']";
-    public final static String COMMENT_NO_ACCOUNT = "//div[@class='auth-modal__caption']";
+    public final static String COMMENT_OTHER_LOGIN = "//div[@class='auth-modal__%s']";
     public final static String LINK_REGISTRATION = "//a[@href='/ru/registration/']";
     public final static String INPUT_LOGIN = "//input[@name='login']";
     public final static String INPUT_PASSWORD = "//input[@name='password']";
