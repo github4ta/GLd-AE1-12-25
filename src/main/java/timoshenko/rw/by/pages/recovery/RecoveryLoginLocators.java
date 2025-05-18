@@ -1,4 +1,4 @@
-package timoshenko.rw.by;
+package timoshenko.rw.by.pages.recovery;
 
 public class RecoveryLoginLocators {
     public final static String TITLE_RECOVERY_PAGE = "//h1[@class='small']";

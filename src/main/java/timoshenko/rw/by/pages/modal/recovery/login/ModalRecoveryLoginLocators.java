@@ -1,4 +1,4 @@
-package timoshenko.rw.by;
+package timoshenko.rw.by.pages.modal.recovery.login;
 
 public class ModalRecoveryLoginLocators {
     public static final String TITLE_RECOVERY_MODAL = "//div[@class='h3 reg-info-modal__title']";

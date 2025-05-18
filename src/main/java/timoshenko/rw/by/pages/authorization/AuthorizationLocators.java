@@ -1,4 +1,4 @@
-package timoshenko.rw.by;
+package timoshenko.rw.by.pages.authorization;
 
 public class AuthorizationLocators {
     public final static String TITLE_AUTHORIZATION = "//div[@class='auth-modal__title h3']";

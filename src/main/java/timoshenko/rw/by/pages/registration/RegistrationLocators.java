@@ -1,4 +1,4 @@
-package timoshenko.rw.by;
+package timoshenko.rw.by.pages.registration;
 
 public class RegistrationLocators {
     public static final String TITLE_REGISTRATION = "//div[@class='text-content']";
