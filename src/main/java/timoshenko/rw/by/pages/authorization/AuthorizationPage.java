@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
 import java.time.Duration;
 
 public class AuthorizationPage {
@@ -60,5 +61,9 @@ public class AuthorizationPage {
 
     public String getCommentUserNotFound(){
         return driver.findElement(By.xpath(AuthorizationLocators.COMMENT_USER_NOT_FOUND)).getText();
+    }
+
+    public void clickLinkForgotPassword(){
+        driver.findElement(By.xpath(AuthorizationLocators.LINK_FORGOT_PASSWORD)).click();
     }
 }
