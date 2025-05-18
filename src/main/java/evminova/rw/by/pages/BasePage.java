@@ -17,17 +17,17 @@ public class BasePage {
     public void open() {
         driver.get("https://pass.rw.by/ru/");
         try {
-            closeTechWorksModal();
+            clickTechWorksModal();
             clickCloseCookies();
         }catch (Exception e) {
         }
     }
 
-    public void closeTechWorksModal() {
-        driver.findElement(By.xpath(BUTTON_SUBMIT_COOKIE)).click();
+    public void clickTechWorksModal() {
+        driver.findElement(By.xpath(CHECKBOX_SUBMIT_INFO_MESSAGE_TECH_WORKS)).click();
     }
 
     public void clickCloseCookies() {
-        driver.findElement(By.xpath(CHECKBOX_SUBMIT_INFO_MESSAGE_TECH_WORKS)).click();
+        driver.findElement(By.xpath(BUTTON_SUBMIT_COOKIE)).click();
     }
 }
