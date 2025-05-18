@@ -8,7 +8,7 @@ import java.time.Duration;
 public class Driver {
     private static WebDriver driver;
 
-    private Driver() {
+    public Driver() {
     }
 
     public static WebDriver getDriver() {
