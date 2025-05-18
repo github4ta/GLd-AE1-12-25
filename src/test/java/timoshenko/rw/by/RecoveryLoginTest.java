@@ -17,7 +17,7 @@ public class RecoveryLoginTest extends BaseTest {
     protected AuthorizationPage authorizationPage;
 
     @BeforeEach
-    public void environmentPreparation(){
+    public void environmentPreparation() {
         authorizationPage = new AuthorizationPage();
         authorizationPage.clickLinkForgotPassword();
         recoveryLoginPage = new RecoveryLoginPage();
@@ -33,7 +33,7 @@ public class RecoveryLoginTest extends BaseTest {
     }
 
     @Test
-    public void checkInputEmail(){
+    public void checkInputEmail() {
         recoveryLoginPage.inputEmail();
         recoveryLoginPage.clickButtonRecovery();
         Assertions.assertEquals(TITLE_RECOVERY_MODAL_TEXT, recoveryLoginPage.getTitleRecoveryModalText());

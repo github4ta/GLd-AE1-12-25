@@ -7,44 +7,43 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
 import java.time.Duration;
 
 public class RecoveryLoginPage {
     private WebDriver driver;
 
-    public RecoveryLoginPage(){
+    public RecoveryLoginPage() {
         driver = Driver.getDriver();
     }
 
-    public String getTitleRecoveryLoginText(){
+    public String getTitleRecoveryLoginText() {
         return driver.findElement(By.xpath(RecoveryLoginLocators.TITLE_RECOVERY_PAGE)).getText();
     }
 
-    public String getCommentInfoEmailText(){
+    public String getCommentInfoEmailText() {
         return driver.findElement(By.xpath(RecoveryLoginLocators.COMMENT_INFO_EMAIL)).getText();
     }
 
-    public String getLabelEmailText(){
+    public String getLabelEmailText() {
         return driver.findElement(By.xpath(RecoveryLoginLocators.LABEL_EMAIL)).getText();
     }
 
-    public String getButtonRecoveryText(){
+    public String getButtonRecoveryText() {
         return driver.findElement(By.xpath(RecoveryLoginLocators.BUTTON_RECOVERY)).getText();
     }
 
-    public void inputEmail(){
+    public void inputEmail() {
         driver.findElement(By.xpath(RecoveryLoginLocators.INPUT_EMAIL)).sendKeys("q@q");
     }
 
-    public void clickButtonRecovery(){
+    public void clickButtonRecovery() {
         WebElement element = driver.findElement(By.xpath(RecoveryLoginLocators.BUTTON_RECOVERY));
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(4));
         wait.until(d -> element.isDisplayed());
         element.click();
     }
 
-    public String getTitleRecoveryModalText(){
+    public String getTitleRecoveryModalText() {
         WebElement element = driver.findElement(By.xpath(RecoveryLoginLocators.TITLE_RECOVERY_MODAL));
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(4));
         wait.until(d -> element.isDisplayed());

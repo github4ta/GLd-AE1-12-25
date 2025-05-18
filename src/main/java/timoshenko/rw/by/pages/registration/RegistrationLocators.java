@@ -1,13 +1,9 @@
 package timoshenko.rw.by.pages.registration;
 
 public class RegistrationLocators {
-    public static final String TITLE_REGISTRATION = "//div[@class='text-content']";
-    public static final String COMMENT_CREATE_PROFILE = "//div[@class='registration__desc']";
-    public static final String LABEL_SURNAME = "//div[text()='Фамилия']";
-    public static final String LABEL_NAME = "//div[text()='Имя']";
-    public static final String LABEL_EMAIL = "//div[text()='E-mail']";
-    public static final String LABEL_PASSWORD = "//div[text()='Введите пароль']";
-    public static final String LABEL_REPEAT_PASSWORD = "//div[text()='Повторите пароль']";
+    public static final String TITLE_REGISTRATION = "//h1[text()='Регистрация']";
+    public static final String COMMENT_CREATE_PROFILE = "//div[@class='text-content']//div[@class='registration__desc']";
+    public static final String LABEL_CREDENTIAL = "//div[text()='%s']";
     public static final String COMMENT_CONFIRM_REGISTRATION = "//div[@class='registration__confirm']";
     public static final String BUTTON_REGISTRATION = "//button[@class='btn btn-default registration__submit']";
     public static final String LINK_REGISTRATION_ENTER = "//a[@class='registration__enter-link']";

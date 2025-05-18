@@ -1,7 +1,7 @@
 package timoshenko.rw.by.pages.authorization;
 
 public class AuthorizationLocators {
-    public final static String TITLE_AUTHORIZATION = "//div[@class='auth-modal__title h3']";//div[text()='Авторизация']
+    public final static String TITLE_AUTHORIZATION = "//div[@class='auth-modal__title h3']";
     public final static String LABEL_INPUT = "//div[text()='%s']";
     public final static String BUTTON_LOGIN = "//div[@class='form-group control-group']//input[@name='dologin']";
     public final static String LINK_FORGOT_PASSWORD = "//a[@href='/ru/registration/pwd_restore/']";

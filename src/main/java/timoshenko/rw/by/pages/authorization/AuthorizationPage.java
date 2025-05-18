@@ -7,21 +7,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
 import java.time.Duration;
 
 public class AuthorizationPage {
     private WebDriver driver;
 
-    public AuthorizationPage(){
+    public AuthorizationPage() {
         driver = Driver.getDriver();
     }
 
-    public String getElementText(String input){
+    public String getElementText(String input) {
         return driver.findElement(By.xpath(String.format(AuthorizationLocators.LABEL_INPUT, input))).getText();
     }
 
-    public String getCommentText(String comment){
+    public String getCommentText(String comment) {
         return driver.findElement(By.xpath(String.format(AuthorizationLocators.COMMENT_OTHER_LOGIN, comment))).getText();
     }
 
@@ -32,38 +31,42 @@ public class AuthorizationPage {
         return element.getText();
     }
 
-    public String getButtonLoginText(){
+    public String getButtonLoginText() {
         WebElement element = driver.findElement(By.xpath(AuthorizationLocators.BUTTON_LOGIN));
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(d -> element.isDisplayed());
         return element.getDomAttribute("value");
     }
 
-    public String getLinkForgotPasswordText(){
+    public String getLinkForgotPasswordText() {
         return driver.findElement(By.xpath(AuthorizationLocators.LINK_FORGOT_PASSWORD)).getText();
     }
 
-    public String getLinkRegistrationText(){
+    public String getLinkRegistrationText() {
         return driver.findElement(By.xpath(AuthorizationLocators.LINK_REGISTRATION)).getText();
     }
 
-    public void fillInput(String inputLocator, String value){
+    public void fillInput(String inputLocator, String value) {
         driver.findElement(By.xpath(String.format(AuthorizationLocators.INPUT_CREDENTIALS, inputLocator))).sendKeys(value);
     }
 
-    public void clickButtonLogin(){
+    public void clickButtonLogin() {
         driver.findElement(By.xpath(AuthorizationLocators.BUTTON_LOGIN)).click();
     }
 
-    public String getMessageError(String message){
+    public String getMessageError(String message) {
         return driver.findElement(By.xpath(String.format(AuthorizationLocators.MESSAGE_CREDENTIALS_ERROR, message))).getText();
     }
 
-    public String getCommentUserNotFound(){
+    public String getCommentUserNotFound() {
         return driver.findElement(By.xpath(AuthorizationLocators.COMMENT_USER_NOT_FOUND)).getText();
     }
 
-    public void clickLinkForgotPassword(){
+    public void clickLinkForgotPassword() {
         driver.findElement(By.xpath(AuthorizationLocators.LINK_FORGOT_PASSWORD)).click();
+    }
+
+    public void clickLinkRegistration() {
+        driver.findElement(By.xpath(AuthorizationLocators.LINK_REGISTRATION)).click();
     }
 }

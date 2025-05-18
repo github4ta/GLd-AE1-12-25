@@ -6,16 +6,16 @@ import org.junit.jupiter.api.Test;
 import timoshenko.rw.by.pages.authorization.AuthorizationPage;
 
 public class AuthorizationTest extends BaseTest {
-    private final String TITLE_AUTHORIZATION_TEXT = "Авторизация";
-    private final String LABEL_LOGIN_TEXT = "Логин/E-mail";
-    private final String LABEL_PASSWORD_TEXT = "Пароль";
-    private final String BUTTON_LOGIN_TEXT = "Войти";
-    private final String LINK_FORGOT_PASSWORD_TEXT = "Забыли пароль?";
-    private final String COMMENT_LOGIN_SOCIAL_MEDIA_TEXT = "Войти с помощью соцсетей:";
-    private final String COMMENT_NO_ACCOUNT_TEXT = "Нет аккаунта? Зарегистрироваться";
-    private final String LINK_REGISTRATION_TEXT = "Зарегистрироваться";
-    private final String MESSAGE_ERROR_TEXT = "Заполните поле";
-    private final String COMMENT_USER_NOT_FOUND_TEXT = "Пользователь не найден";
+    public final static String TITLE_AUTHORIZATION_TEXT = "Авторизация";
+    public final String LABEL_LOGIN_TEXT = "Логин/E-mail";
+    public final String LABEL_PASSWORD_TEXT = "Пароль";
+    public final String BUTTON_LOGIN_TEXT = "Войти";
+    public final String LINK_FORGOT_PASSWORD_TEXT = "Забыли пароль?";
+    public final String COMMENT_LOGIN_SOCIAL_MEDIA_TEXT = "Войти с помощью соцсетей:";
+    public final String COMMENT_NO_ACCOUNT_TEXT = "Нет аккаунта? Зарегистрироваться";
+    public final String LINK_REGISTRATION_TEXT = "Зарегистрироваться";
+    public final String MESSAGE_ERROR_TEXT = "Заполните поле";
+    public final String COMMENT_USER_NOT_FOUND_TEXT = "Пользователь не найден";
     private final String PASSWORD = "123456";
     private final String LOGIN = "login";
 
@@ -39,28 +39,28 @@ public class AuthorizationTest extends BaseTest {
     }
 
     @Test
-    public void checkAuthorizationWithoutPassword(){
+    public void checkAuthorizationWithoutPassword() {
         authorizationPage.fillInput("login", LOGIN);
         authorizationPage.clickButtonLogin();
         Assertions.assertEquals(MESSAGE_ERROR_TEXT, authorizationPage.getMessageError("password-error"));
     }
 
     @Test
-    public void checkAuthorizationWithoutLoginAndPassword(){
+    public void checkAuthorizationWithoutLoginAndPassword() {
         authorizationPage.clickButtonLogin();
         Assertions.assertEquals(MESSAGE_ERROR_TEXT, authorizationPage.getMessageError("password-error"));
         Assertions.assertEquals(MESSAGE_ERROR_TEXT, authorizationPage.getMessageError("login-error"));
     }
 
     @Test
-    public void checkAuthorizationWithoutLogin(){
+    public void checkAuthorizationWithoutLogin() {
         authorizationPage.fillInput("password", PASSWORD);
         authorizationPage.clickButtonLogin();
         Assertions.assertEquals(MESSAGE_ERROR_TEXT, authorizationPage.getMessageError("login-error"));
     }
 
     @Test
-    public void checkAuthorizationWithLoginAndPassword(){
+    public void checkAuthorizationWithLoginAndPassword() {
         authorizationPage.fillInput("password", PASSWORD);
         authorizationPage.fillInput("login", LOGIN);
         authorizationPage.clickButtonLogin();
