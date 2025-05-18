@@ -8,10 +8,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class HomePageTest {
+public class HomePageTest extends BasePage{
     private HomePage homePage;
 
     @BeforeEach
@@ -25,7 +29,10 @@ public class HomePageTest {
     public void testClickButtonCabinet() {
         homePage.clickButtonCabinet();
 
-        boolean isAuthModalDisplayed = Driver.getDriver().findElement(By.xpath(HomePageLocator.AUTH_MODAL_HEADER)).isDisplayed();
+        boolean isAuthModalDisplayed = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(5))
+                .until(ExpectedConditions.visibilityOfElementLocated(
+                        By.xpath(HomePageLocator.AUTH_MODAL_HEADER)
+                )).isDisplayed();
 
         assertTrue(isAuthModalDisplayed, "Авторизация");
     }
