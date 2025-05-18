@@ -38,7 +38,11 @@ public class AuthorizationForm {
     }
 
     public String getButtonLoginText() {
-        return driver.findElement(By.xpath(AuthorizationFormLocator.BUTTON_LOGIN)).getText();
+        return driver.findElement(By.xpath(AuthorizationFormLocator.BUTTON_LOGIN)).getDomAttribute("value");
+    }
+
+    public String getButtonLoginCssValue() {
+        return driver.findElement(By.xpath(AuthorizationFormLocator.BUTTON_LOGIN)).getCssValue("text-transform");
     }
 
     public void clickButtonLogin() {
@@ -69,7 +73,7 @@ public class AuthorizationForm {
         return driver.findElement(By.xpath(AuthorizationFormLocator.ERROR_MESSAGE_INPUT_LOGIN_OR_EMAIL)).getText();
     }
 
-    public String getErrorMessageLoginUnregisteredUserText() {
+    public String getErrorMessageLoginUserText() {
         return driver.findElement(By.xpath(AuthorizationFormLocator.ERROR_MESSAGE_LOGIN)).getText();
     }
 }

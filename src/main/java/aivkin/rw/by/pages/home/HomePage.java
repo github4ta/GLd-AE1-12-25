@@ -24,10 +24,10 @@ public class HomePage {
     }
 
     private void closeCookie() {
-        driver.findElement(By.xpath(HomePageLocator.BUTTON_SUBMIT_COOKIE));
+        driver.findElement(By.xpath(HomePageLocator.BUTTON_SUBMIT_COOKIE)).click();
     }
 
     public void clickButtonPersonalAccount() {
-        driver.findElement(By.xpath(HomePageLocator.BUTTON_PERSONAL_ACCOUNT));
+        driver.findElement(By.xpath(HomePageLocator.BUTTON_PERSONAL_ACCOUNT)).click();
     }
 }
