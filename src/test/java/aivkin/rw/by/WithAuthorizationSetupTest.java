@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class WithAuthorizationSetupTest extends HomeTest{
+abstract class WithAuthorizationSetupTest extends HomeTest{
 
     protected void openAuthorizationForm() {
         new HomePage().clickButtonPersonalAccount();

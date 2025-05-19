@@ -5,7 +5,7 @@ import by.vek.driver.Driver;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
-public class HomeTest {
+abstract class HomeTest {
 
     @BeforeEach
     public void openHomePageCloseModalWindowAndCookie() {
