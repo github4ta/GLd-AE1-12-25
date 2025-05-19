@@ -1,12 +1,9 @@
 package romanovska.rw.by;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-
-public class AuthorizationModal {
+public class AuthorizationModalLocators {
     //поменять названия полей или класса на локаторы
-    private static final String AUTHORIZATION_FORM = "//form[@id='form-auth']";
-    private static final String HEADER_TITLE = "//div[contains(@class,'auth-modal__title h3')]";
+    //private static final String AUTHORIZATION_FORM = "//form[@id='form-auth']";
+    public static final String HEADER_TITLE = "//div[contains(@class,'auth-modal__title h3')]";
     public static final String LOGIN_OR_EMAIL_FIELD = "//input[@name='login']";
     public static final String LOGIN_OR_EMAIL_FIELD_NAME = LOGIN_OR_EMAIL_FIELD + "/ancestor::label//div[@class='name']";
     public static final String PASSWORD_FIELD = "//input[@name='password']";
@@ -22,8 +19,5 @@ public class AuthorizationModal {
     public static final String NO_ACCOUNT_YET_CAPTION = "//div[@class='auth-modal__caption']";
     public static final String REGISTER_LINK = NO_ACCOUNT_YET_CAPTION + "//a[contains(@href,'registration/')]";
 
-    public String getHeaderText(WebDriver driver) {
-        System.out.println("форма отправляет: "+driver.findElement(By.xpath(HEADER_TITLE)).getText());
-        return driver.findElement(By.xpath(HEADER_TITLE)).getText();
-    }
+    public static final String PASSWORD_ERROR_LABEL = "//label[@id='password-error']";
 }
