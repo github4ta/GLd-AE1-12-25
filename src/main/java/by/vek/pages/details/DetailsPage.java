@@ -1,6 +1,6 @@
 package by.vek.pages.details;
 
-import by.vek.driver.MyDriver;
+import by.vek.driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,9 +16,9 @@ public class DetailsPage {
     private static Actions actions;
 
     public DetailsPage() {
-        this.driver = MyDriver.getDriver();
+        this.driver = Driver.getDriver();
         url = "https://www.21vek.by/company/details.html";
-        actions = new Actions(MyDriver.getDriver());
+        actions = new Actions(Driver.getDriver());
     }
 
     public String getUrl() {
@@ -26,7 +26,7 @@ public class DetailsPage {
     }
 
     public void clickAnchorDetails() {
-        WebDriverWait wait = new WebDriverWait(MyDriver.getDriver(), Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
 
         WebElement temp = wait.until(ExpectedConditions.elementToBeClickable(getAnchorDetailsElement()));
         actions.scrollToElement(temp).build().perform();

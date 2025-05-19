@@ -1,6 +1,6 @@
 package by.vek;
 
-import by.vek.driver.MyDriver;
+import by.vek.driver.Driver;
 import by.vek.pages.details.DetailsPage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -21,7 +21,7 @@ public class DetailsTest {
     public void testHeaderAndParagraphText() {
         detailsPage.clickAnchorDetails();
 
-        Assertions.assertEquals(detailsPage.getUrl(), MyDriver.getDriver().getCurrentUrl());
+        Assertions.assertEquals(detailsPage.getUrl(), Driver.getDriver().getCurrentUrl());
 
         Assertions.assertEquals("Реквизиты", detailsPage.getHeaderDetailsText());
 
@@ -36,6 +36,6 @@ public class DetailsTest {
 
     @AfterEach
     public void tearDown() {
-        MyDriver.quit();
+        Driver.quit();
     }
 }
