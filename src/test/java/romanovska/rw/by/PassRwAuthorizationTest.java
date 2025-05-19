@@ -7,21 +7,45 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class PassRwAuthorizationTest {
-    private PassRwHomePage page;
+    private PassRwHomePage homePage;
 
     private final String AUTHORIZATION_MODAL_HEADER_TEXT_CORRECT = "Авторизация";
+    private final String LOGIN_OR_EMAIL_FIELD_NAME_CORRECT = "Логин/E-mail";
+    private final String PASSWORD_FIELD_NAME_CORRECT = "Пароль";
+    private final String LOGIN_BUTTON_TEXT_CORRECT = "Войти";
+    private final String FORGOT_PASSWORD_TEXT_CORRECT = "Забыли пароль?";
+    private final String LOGIN_VIA_SOCIAL_TITLE_TEXT_CORRECT = "Войти с помощью соцсетей:";
+    private final String NO_ACCOUNT_YET_CAPTION_TEXT_CORRECT = "Нет аккаунта?";
+    private final String REGISTER_LINK_TEXT_CORRECT = "Зарегистрироваться";
+
+    private final String LOGIN_OR_EMAIL_VALUE_CORRECT_1 = "login";
+
+    private final String PASSWORD_ERROR_MESSAGE = "Заполните поле";
 
     @BeforeEach
     public void openHomePage() {
-        page = new PassRwHomePage();
-        page.open();
+        homePage = new PassRwHomePage();
+        homePage.open();
+        homePage.clickProfile();
     }
 
     @Test
-    public void testAuthorizationForm() {
-        page.clickProfile();
+    public void testText() {
+        Assertions.assertEquals(AUTHORIZATION_MODAL_HEADER_TEXT_CORRECT, homePage.getAuthorizationModalHeaderText());
+        Assertions.assertEquals(LOGIN_OR_EMAIL_FIELD_NAME_CORRECT, homePage.getAuthorizationModalLoginOrEmailFieldNameText());
+        Assertions.assertEquals(PASSWORD_FIELD_NAME_CORRECT, homePage.getAuthorizationModalPasswordFieldNameText());
+        Assertions.assertEquals(LOGIN_BUTTON_TEXT_CORRECT, homePage.getAuthorizationModalLoginButtonText());
+        Assertions.assertEquals(FORGOT_PASSWORD_TEXT_CORRECT, homePage.getAuthorizationModalForgotPasswordLinkText());
+        Assertions.assertEquals(LOGIN_VIA_SOCIAL_TITLE_TEXT_CORRECT, homePage.getAuthorizationModalLoginViaSocialTitleText());
+        Assertions.assertTrue(homePage.getAuthorizationModalNoAccountYetCaptionText().contains(NO_ACCOUNT_YET_CAPTION_TEXT_CORRECT));
+        Assertions.assertEquals(REGISTER_LINK_TEXT_CORRECT, homePage.getAuthorizationModalRegisterLinkText());
+    }
 
-        Assertions.assertEquals(AUTHORIZATION_MODAL_HEADER_TEXT_CORRECT, page.getAuthorizationModalHeaderText());
+    @Test
+    public void testFillOnlyLoginOrEmailField() {
+        homePage.fillLoginOrEmailField(LOGIN_OR_EMAIL_VALUE_CORRECT_1);
+        homePage.clickLoginButton();
+        Assertions.assertEquals(PASSWORD_ERROR_MESSAGE, homePage.getAuthorizationModalPasswordErrorText());
     }
 
     @AfterEach
