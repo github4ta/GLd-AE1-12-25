@@ -49,4 +49,8 @@ public class RecoveryLoginPage {
         wait.until(d -> element.isDisplayed());
         return element.getText();
     }
+
+    public String getCurrentUrl() {
+        return driver.getCurrentUrl();
+    }
 }

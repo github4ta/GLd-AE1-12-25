@@ -16,8 +16,11 @@ public class AuthorizationTest extends BaseTest {
     public final String LINK_REGISTRATION_TEXT = "Зарегистрироваться";
     public final String MESSAGE_ERROR_TEXT = "Заполните поле";
     public final String COMMENT_USER_NOT_FOUND_TEXT = "Пользователь не найден";
+    public final String COMMENT_INCORRECT_LOGIN_OR_PASSWORD_TEXT = "Неверное имя пользователя или пароль";
     private final String PASSWORD = "123456";
     private final String LOGIN = "login";
+    private final String LOGIN_EMAIL = "maksim-timoshenko-97@mail.ru";
+    private final String INCORRECT_PASSWORD = "1";
 
     protected AuthorizationPage authorizationPage;
 
@@ -65,5 +68,13 @@ public class AuthorizationTest extends BaseTest {
         authorizationPage.fillInput("login", LOGIN);
         authorizationPage.clickButtonLogin();
         Assertions.assertEquals(COMMENT_USER_NOT_FOUND_TEXT, authorizationPage.getCommentUserNotFound());
+    }
+
+    @Test
+    public void checkCommentIncorrectLoginOrPasswordText() {
+        authorizationPage.fillInput("password", INCORRECT_PASSWORD);
+        authorizationPage.fillInput("login", LOGIN_EMAIL);
+        authorizationPage.clickButtonLogin();
+        Assertions.assertEquals(COMMENT_INCORRECT_LOGIN_OR_PASSWORD_TEXT, authorizationPage.getCommentIncorrectLoginOrPasswordText());
     }
 }

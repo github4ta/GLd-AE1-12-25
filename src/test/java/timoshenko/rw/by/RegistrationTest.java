@@ -17,6 +17,9 @@ public class RegistrationTest extends BaseTest {
     private final String LABEL_REPEAT_PASSWORD_TEXT = "Повторите пароль *";
     private final String BUTTON_REGISTRATION_TEXT = "ЗАРЕГИСТРИРОВАТЬСЯ";
     private final String LINK_REGISTRATION_ENTER_TEXT = "Уже есть профиль?";
+    private final String EXCEPTED_URL = "https://pass.rw.by/ru/registration/";
+    private final String ATTRIBUTE_HREF = "https://cms.rw.by/upload/order-rules-full-ru.pdf";
+    private final String MESSAGE_ERROR_TEXT = "Заполните поле";
     private final String COMMENT_CONFIRM_REGISTRATION_TEXT = "Продолжая, Вы подтверждаете, что ознакомлены с Правилами оформления и оплаты проезда";
     private final String COMMENT_CREATE_PROFILE_TEXT = "Заполните свои личные данные, чтобы создать профиль. Профиль будет действителен как для сайта Белорусской железной дороги, так и для мобильного приложения.";
 
@@ -48,5 +51,32 @@ public class RegistrationTest extends BaseTest {
     public void getTitleAuthorizationText() {
         registrationPage.clickLinkRegistrationEnter();
         Assertions.assertEquals(TITLE_AUTHORIZATION_TEXT, authorizationPage.getTitleAuthorizationText());
+    }
+
+    @Test
+    public void checkUrlTest() {
+        Assertions.assertEquals(EXCEPTED_URL, registrationPage.getCurrentUrl());
+    }
+
+    @Test
+    public void getAttributeHrefLinkConfirmRegistration() {
+        Assertions.assertEquals(ATTRIBUTE_HREF, registrationPage.getAttributeInLinkConfirmRegistration());
+    }
+
+    @Test
+    public void getAllTextMessageError() {
+        registrationPage.clickButtonRegistration();
+        Assertions.assertEquals(MESSAGE_ERROR_TEXT, registrationPage.getMessageCredentialErrorText("lastName-error"));
+        Assertions.assertEquals(MESSAGE_ERROR_TEXT, registrationPage.getMessageCredentialErrorText("firstName-error"));
+        Assertions.assertEquals(MESSAGE_ERROR_TEXT, registrationPage.getMessageCredentialErrorText("login-error"));
+        Assertions.assertEquals(MESSAGE_ERROR_TEXT, registrationPage.getMessageCredentialErrorText("password-error"));
+        Assertions.assertEquals(MESSAGE_ERROR_TEXT, registrationPage.getMessageCredentialErrorText("password2-error"));
+    }
+
+    @Test
+    public void testInputCredentialRegistration() {
+        registrationPage.inputCredentialRegistration("lastName", "Ivanov");
+        registrationPage.clickButtonRegistration();
+        Assertions.assertEquals(MESSAGE_ERROR_TEXT, registrationPage.getMessageCredentialErrorText("firstName-error"));
     }
 }

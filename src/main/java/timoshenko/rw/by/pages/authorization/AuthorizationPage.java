@@ -69,4 +69,8 @@ public class AuthorizationPage {
     public void clickLinkRegistration() {
         driver.findElement(By.xpath(AuthorizationLocators.LINK_REGISTRATION)).click();
     }
+
+    public String getCommentIncorrectLoginOrPasswordText() {
+        return driver.findElement(By.xpath(AuthorizationLocators.COMMENT_INCORRECT_LOGIN_OR_PASSWORD)).getText();
+    }
 }

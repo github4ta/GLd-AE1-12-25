@@ -38,4 +38,24 @@ public class RegistrationPage {
     public void clickLinkRegistrationEnter() {
         driver.findElement(By.xpath(RegistrationLocators.LINK_REGISTRATION_ENTER)).click();
     }
+
+    public String getCurrentUrl() {
+        return driver.getCurrentUrl();
+    }
+
+    public String getAttributeInLinkConfirmRegistration() {
+        return driver.findElement(By.linkText("Правилами оформления и оплаты проезда")).getDomAttribute("href");
+    }
+
+    public void clickButtonRegistration() {
+        driver.findElement(By.xpath(RegistrationLocators.BUTTON_REGISTRATION)).click();
+    }
+
+    public String getMessageCredentialErrorText(String inputLocator) {
+        return driver.findElement(By.xpath(String.format(RegistrationLocators.MESSAGE_CREDENTIAL_ERROR, inputLocator))).getText();
+    }
+
+    public void inputCredentialRegistration(String inputLocator, String value) {
+        driver.findElement(By.xpath(String.format(RegistrationLocators.INPUT_CREDENTIAL, inputLocator))).sendKeys(value);
+    }
 }
