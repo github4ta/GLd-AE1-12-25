@@ -58,6 +58,13 @@ public class RegistrationTest {
         assertEquals("Нет аккаунта? ", registrationPage.getTitleNoAccount());
     }
 
+    @Test
+    @DisplayName("заполнить Логин только")
+    public void testLoginField() {
+        String actualErrorMessage = registrationPage.enterFieldLogin("login");
+        assertEquals("Заполните поле", actualErrorMessage);
+    }
+
     @AfterEach
     public void quitAndNullDriver() {
         Driver.quit();

@@ -5,6 +5,7 @@ public class RegistrationLocators {
     public static final String INPUT_FIELD_LOGIN = "//input[@name=\"login\"]";
     public static final String FIELD_NAME_PASSWORD = "//div[@class=\"name\" and text()=\"Пароль\"]";
     public static final String INPUT_FIELD_PASSWORD = "//input[@name=\"password\"]";
+    public static final String MESSAGE_PASSWORD_ERROR = "//label[@id=\"password-error\"]";
     public static final String LINK_REGISTRATION_RESTORE = "//a[@href=\"/ru/registration/pwd_restore/\"]";
     public static final String BUTTON_SUBMIT = "//input[@name=\"dologin\"]";
     public static final String TITLE_SOCIAL_LIST = "//div[@class=\"auth-modal__social-title\" and text()=\"Войти с помощью соцсетей:\"]";
