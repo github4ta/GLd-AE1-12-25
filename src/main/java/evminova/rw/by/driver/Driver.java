@@ -7,15 +7,16 @@ import java.time.Duration;
 
 public class Driver {
     private static WebDriver driver;
+    private static final Duration DEFAULT_IMPLICIT_WAIT = Duration.ofSeconds(5);
 
-    public Driver() {
+    private Driver() {
     }
 
     public static WebDriver getDriver() {
         if (driver == null) {
             driver = new ChromeDriver();
             driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+            driver.manage().timeouts().implicitlyWait(DEFAULT_IMPLICIT_WAIT);
         }
         return driver;
     }

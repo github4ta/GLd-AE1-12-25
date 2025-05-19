@@ -17,7 +17,7 @@ public class HomePage {
         try {
             clickTechWorksModal();
             clickCloseCookies();
-        }catch (Exception e) {
+        } catch (Exception e) {
         }
     }
 
