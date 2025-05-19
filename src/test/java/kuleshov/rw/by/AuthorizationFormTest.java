@@ -1,19 +1,13 @@
 package kuleshov.rw.by;
 
 import by.vek.driver.Driver;
-import kuleshov.rw.by.pages.Header;
 import kuleshov.rw.by.pages.AuthorizationForm;
+import kuleshov.rw.by.pages.Header;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class AuthorizationFormTest {
 
@@ -34,23 +28,23 @@ public class AuthorizationFormTest {
 
     @BeforeEach
     public void setup() throws InterruptedException {
-        new BasePage().setup();
+        new BasePage().openHomePage();
         authorizationForm = new Header().clickOwnCabinetButton();
-
-        Wait<WebDriver> wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(2));
-        wait.until(d -> authorizationForm.getAuthorizationForm().isDisplayed());
+        authorizationForm.waitUntilAuthorizationFormIsDisplayed();
     }
 
     @Test
     public void testLoginFormUIElementsText() {
-        assertEquals(HEADER_TITLE_TEXT, authorizationForm.getTextHeaderTitle());
-        assertEquals(LOGIN_OR_EMAIL_FIELD_NAME_LABEL_TEXT, authorizationForm.getTextLoginOrEmailFieldNameLabel());
-        assertEquals(PASSWORD_FIELD_NAME_LABEL_TEXT, authorizationForm.getTextPasswordFieldNameLabel());
-        assertEquals(SUBMIT_BUTTON_TEXT, authorizationForm.getTextSubmitButton());
-        assertEquals(FORGOT_PASSWORD_BUTTON_TEXT, authorizationForm.getTextForgotPasswordButton());
-        assertEquals(LOGIN_WITH_SOCIAL_TITLE_TEXT, authorizationForm.getTextLoginWithSocialTitle());
-        assertTrue(authorizationForm.getTextFooterTitle().contains(FOOTER_TITLE_TEXT));
-        assertEquals(REGISTRATION_BUTTON_TEXT, authorizationForm.getTextRegistrationButton());
+        assertAll(
+                () -> assertEquals(HEADER_TITLE_TEXT, authorizationForm.getTextHeaderTitle()),
+                () -> assertEquals(LOGIN_OR_EMAIL_FIELD_NAME_LABEL_TEXT, authorizationForm.getTextLoginOrEmailFieldNameLabel()),
+                () -> assertEquals(PASSWORD_FIELD_NAME_LABEL_TEXT, authorizationForm.getTextPasswordFieldNameLabel()),
+                () -> assertEquals(SUBMIT_BUTTON_TEXT, authorizationForm.getTextSubmitButton()),
+                () -> assertEquals(FORGOT_PASSWORD_BUTTON_TEXT, authorizationForm.getTextForgotPasswordButton()),
+                () -> assertEquals(LOGIN_WITH_SOCIAL_TITLE_TEXT, authorizationForm.getTextLoginWithSocialTitle()),
+                () -> assertTrue(authorizationForm.getTextFooterTitle().contains("FOOTER_TITLE_TEXT")),
+                () -> assertEquals(REGISTRATION_BUTTON_TEXT, authorizationForm.getTextRegistrationButton())
+        );
     }
 
     @Test

@@ -8,11 +8,6 @@ import kuleshov.rw.by.pages.PasswordRestorePage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -29,22 +24,21 @@ public class PasswordRestoreModalWindowTest {
 
     @BeforeEach
     public void setup() {
-        new BasePage().setup();
+        new BasePage().openHomePage();
         passwordRestorePage = new Header().clickOwnCabinetButton().clickForgotPasswordButton();
         passwordRestorePage.sendKeysEmailFieldInput(TEST_EMAIL_VALUE);
         passwordRestorePage.clickRestoreSubmitButton();
-
         passwordRestoreModalWindow = new PasswordRestoreModalWindow();
-
-        Wait<WebDriver> wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(5));
-        wait.until(d -> passwordRestoreModalWindow.isPasswordRestoreModalWindowDisplayed());
+        passwordRestoreModalWindow.waitUntilPasswordRestoreModalWindowIsDisplayed();
     }
 
     @Test
     public void testPasswordRestoreModalWindowUIElementsText() {
-        assertEquals(MODAL_WINDOW_TITLE_TEXT, passwordRestoreModalWindow.getTextRestorePasswordModalWindowTitle());
-        assertEquals(MODAL_WINDOW_INFORMATION_BLOCK_TEXT, passwordRestoreModalWindow.getTextInformationTextBlock());
-        assertEquals(MODAL_WINDOW_CLOSE_BUTTON_TEXT, passwordRestoreModalWindow.getTextCloseButton());
+        assertAll(
+                () -> assertEquals(MODAL_WINDOW_TITLE_TEXT, passwordRestoreModalWindow.getTextRestorePasswordModalWindowTitle()),
+                () -> assertEquals(MODAL_WINDOW_INFORMATION_BLOCK_TEXT, passwordRestoreModalWindow.getTextInformationTextBlock()),
+                () -> assertEquals(MODAL_WINDOW_CLOSE_BUTTON_TEXT, passwordRestoreModalWindow.getTextCloseButton())
+        );
     }
 
     @Test

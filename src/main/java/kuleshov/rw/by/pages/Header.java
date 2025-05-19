@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class Header {
 
-    private final By ownCabinetButton = By.xpath("//li[@class=\"item_1 cabinet\"]");
+    private final By OWN_CABINET_BUTTON = By.xpath("//li[@class=\"item_1 cabinet\"]");
 
     protected WebDriver driver;
 
@@ -15,7 +15,7 @@ public class Header {
     }
 
     public AuthorizationForm clickOwnCabinetButton() {
-        driver.findElement(ownCabinetButton).click();
+        driver.findElement(OWN_CABINET_BUTTON).click();
 
         return new AuthorizationForm();
     }

@@ -7,14 +7,8 @@ import kuleshov.rw.by.pages.PasswordRestorePage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PasswordRestorePageTest {
 
@@ -29,7 +23,7 @@ public class PasswordRestorePageTest {
 
     @BeforeEach
     public void setup() {
-        new BasePage().setup();
+        new BasePage().openHomePage();
         passwordRestorePage = new Header().clickOwnCabinetButton().clickForgotPasswordButton();
     }
 
@@ -40,10 +34,12 @@ public class PasswordRestorePageTest {
 
     @Test
     public void testPasswordRestoreUIElementsText() {
-        assertEquals(PAGE_TITLE_TEXT, passwordRestorePage.getTextPageTitle());
-        assertEquals(INFORMATION_BLOCK_TEXT, passwordRestorePage.getTextInformationTextBlock());
-        assertEquals(EMAIL_FIELD_NAME_LABEL_TEXT, passwordRestorePage.getTextEmailFieldNameLabel());
-        assertEquals(RESTORE_SUBMIT_BUTTON_TEXT, passwordRestorePage.getTextRestoreSubmitButton());
+        assertAll(
+                () -> assertEquals(PAGE_TITLE_TEXT, passwordRestorePage.getTextPageTitle()),
+                () -> assertEquals(INFORMATION_BLOCK_TEXT, passwordRestorePage.getTextInformationTextBlock()),
+                () -> assertEquals(EMAIL_FIELD_NAME_LABEL_TEXT, passwordRestorePage.getTextEmailFieldNameLabel()),
+                () -> assertEquals(RESTORE_SUBMIT_BUTTON_TEXT, passwordRestorePage.getTextRestoreSubmitButton())
+        );
     }
 
     @Test
@@ -52,9 +48,7 @@ public class PasswordRestorePageTest {
         passwordRestorePage.clickRestoreSubmitButton();
 
         PasswordRestoreModalWindow passwordRestoreModalWindow = new PasswordRestoreModalWindow();
-
-        Wait<WebDriver> wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-        wait.until(d -> passwordRestoreModalWindow.isPasswordRestoreModalWindowDisplayed());
+        passwordRestoreModalWindow.waitUntilPasswordRestoreModalWindowIsDisplayed();
 
         assertTrue(passwordRestoreModalWindow.isPasswordRestoreModalWindowDisplayed());
     }

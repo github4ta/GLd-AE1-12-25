@@ -6,11 +6,11 @@ import org.openqa.selenium.WebDriver;
 
 public class PasswordRestorePage {
 
-    private final By pageTitle = By.xpath("//h1[@class=\"small\"]");
-    private final By informationTextBlock = By.xpath("//div[@class=\"registration__desc\"]");
-    private final By emailFieldNameLabel  = By.xpath("(//label[@class=\"form-label\"]//div[@class=\"name\"])[1]");
-    private final By emailFieldInput = By.xpath("//input[@id=\"restore-email\"]");
-    private final By restoreSubmitButton  = By.xpath("//button[@class=\"btn btn-index btn_submit\"]");
+    private final By PAGE_TITLE = By.xpath("//h1[@class=\"small\"]");
+    private final By INFORMATION_TEXT_BLOCK = By.xpath("//div[@class=\"registration__desc\"]");
+    private final By EMAIL_FIELD_NAME_LABEL = By.xpath("(//label[@class=\"form-label\"]//div[@class=\"name\"])[1]");
+    private final By EMAIL_FIELD_INPUT = By.xpath("//input[@id=\"restore-email\"]");
+    private final By RESTORE_SUBMIT_BUTTON = By.xpath("//button[@class=\"btn btn-index btn_submit\"]");
 
     protected WebDriver driver;
 
@@ -19,26 +19,26 @@ public class PasswordRestorePage {
     }
 
     public String getTextPageTitle() {
-        return driver.findElement(pageTitle).getText();
+        return driver.findElement(PAGE_TITLE).getText();
     }
 
     public String getTextInformationTextBlock() {
-        return driver.findElement(informationTextBlock).getText();
+        return driver.findElement(INFORMATION_TEXT_BLOCK).getText();
     }
 
     public String getTextEmailFieldNameLabel() {
-        return driver.findElement(emailFieldNameLabel).getText();
+        return driver.findElement(EMAIL_FIELD_NAME_LABEL).getText();
     }
 
     public String getTextRestoreSubmitButton() {
-        return driver.findElement(restoreSubmitButton).getText();
+        return driver.findElement(RESTORE_SUBMIT_BUTTON).getText();
     }
 
     public void sendKeysEmailFieldInput(String emailValue) {
-        driver.findElement(emailFieldInput).sendKeys(emailValue);
+        driver.findElement(EMAIL_FIELD_INPUT).sendKeys(emailValue);
     }
 
     public void clickRestoreSubmitButton() {
-        driver.findElement(restoreSubmitButton).click();
+        driver.findElement(RESTORE_SUBMIT_BUTTON).click();
     }
 }

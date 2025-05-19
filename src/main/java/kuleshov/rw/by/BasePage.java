@@ -16,7 +16,7 @@ public class BasePage extends Header {
         driver = Driver.getDriver();
     }
 
-    public void setup() {
+    public void openHomePage() {
         driver.get("https://pass.rw.by/ru");
         clickCloseNotificationButton();
         clickAcceptCookieButton();
