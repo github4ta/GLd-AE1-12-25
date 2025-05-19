@@ -13,6 +13,10 @@ public class HomePage {
         driver.get("https://pass.rw.by/ru/");
         try {
             closeModalWindow();
+        } catch (Exception ignored) {
+
+        }
+        try {
             closeCookie();
         } catch (Exception ignored) {
 
