@@ -21,5 +21,9 @@ public class RestoreLoginOrPasswordPage extends BasePage {
 
     private static class Locators {
         public static final String HEADER_TITLE = "//h1";
+        public static final String REGISTRATION_DESCRIPTION = "//div[@class='registration__desc']";
+        public static final String RESTORE_FORM = "//form[@id='restore-form']";
+        public static final String EMAIL_FIELD_NAME = RESTORE_FORM + "//div[@class='name']";
+        public static final String SUBMIT_BUTTON = "//button[contains(@class,'btn_submit')]";
     }
 }
