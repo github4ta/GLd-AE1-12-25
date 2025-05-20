@@ -19,6 +19,7 @@ public class PassRwAuthorizationTest {
     private final String REGISTER_LINK_TEXT_CORRECT = "Зарегистрироваться";
 
     private final String LOGIN_OR_EMAIL_VALUE_CORRECT_1 = "login";
+    private final String PASSWORD_VALUE_CORRECT = "123456";
 
     private final String LOGIN_ERROR_MESSAGE = "Заполните поле";
     private final String PASSWORD_ERROR_MESSAGE = "Заполните поле";
@@ -50,9 +51,16 @@ public class PassRwAuthorizationTest {
     }
 
     @Test
+    public void testFillOnlyPasswordField() {
+        homePage.fillPasswordField(PASSWORD_VALUE_CORRECT);
+        homePage.clickLoginButton();
+        Assertions.assertEquals(LOGIN_ERROR_MESSAGE, homePage.getAuthorizationModalLoginOrEmailErrorText());
+    }
+
+    @Test
     public void testFillNoField() {
         homePage.clickLoginButton();
-        Assertions.assertEquals(LOGIN_ERROR_MESSAGE, homePage.getAuthorizationModalLoginErrorText());
+        Assertions.assertEquals(LOGIN_ERROR_MESSAGE, homePage.getAuthorizationModalLoginOrEmailErrorText());
         Assertions.assertEquals(PASSWORD_ERROR_MESSAGE, homePage.getAuthorizationModalPasswordErrorText());
     }
 
