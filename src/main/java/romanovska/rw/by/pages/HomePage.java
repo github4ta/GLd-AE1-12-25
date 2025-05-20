@@ -1,7 +1,6 @@
-package romanovska.rw.by;
+package romanovska.rw.by.pages;
 
 public class HomePage extends BasePage {
-    //private final static String PROFILE_BUTTON = "//a[*[contains(@class, 'profile')]]";
     private final static String ACCEPT_COOKIE_BUTTON = "//div[@class='cookies-popup__btns']//button[contains(@class,'mc-btn-all')]";
     private final static String DO_NOT_SHOW_AGAIN_NOTIFICATION_CHECKBOX = "//div[@class='notification-modal__body']//label[*[contains(@class,'checkbox')]]";
 
@@ -34,10 +33,4 @@ public class HomePage extends BasePage {
     public void clickAcceptCookie() {
         getWebElementFoundByLocatorAfterWait(ACCEPT_COOKIE_BUTTON).click();
     }
-
-    //public void clickProfile() {
-        //getWebElementFoundByLocatorAfterWait(PROFILE_BUTTON).click();
-    //}
-
-
 }

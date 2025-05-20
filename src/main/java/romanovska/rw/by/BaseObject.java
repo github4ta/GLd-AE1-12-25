@@ -9,18 +9,21 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class BaseObject {
-    protected WebDriver driver;
-    protected WebDriverWait wait;
+public abstract class BaseObject {
+    protected static WebDriver driver;
+    protected static WebDriverWait wait;
 
     protected BaseObject(){
-        this.driver = Driver.getDriver();
+        driver = Driver.getDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(4));
     }
 
-    public WebElement getWebElementFoundByLocatorAfterWait(String locator) {
+    protected abstract void open();
+
+    public static WebElement getWebElementFoundByLocatorAfterWait(String locator) {
         WebElement webElement = driver.findElement(By.xpath(locator));
         wait.until(ExpectedConditions.elementToBeClickable(webElement));
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
         return webElement;
     }
 }
