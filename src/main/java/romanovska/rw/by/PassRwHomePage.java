@@ -81,12 +81,16 @@ public class PassRwHomePage extends BasePage {
         getWebElementFoundByLocatorAfterWait(AuthorizationModalLocators.LOGIN_OR_EMAIL_FIELD).sendKeys(loginOrEmail);
     }
 
+    public void fillPasswordField(String password) {
+        getWebElementFoundByLocatorAfterWait(AuthorizationModalLocators.PASSWORD_FIELD).sendKeys(password);
+    }
+
     public void clickLoginButton() {
         getWebElementFoundByLocatorAfterWait(AuthorizationModalLocators.LOGIN_BUTTON).click();
     }
 
-    public String getAuthorizationModalLoginErrorText() {
-        return getWebElementFoundByLocatorAfterWait(AuthorizationModalLocators.LOGIN_ERROR_LABEL).getText();
+    public String getAuthorizationModalLoginOrEmailErrorText() {
+        return getWebElementFoundByLocatorAfterWait(AuthorizationModalLocators.LOGIN_OR_EMAIL_ERROR_LABEL).getText();
     }
 
     public String getAuthorizationModalPasswordErrorText() {
