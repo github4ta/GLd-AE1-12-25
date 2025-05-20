@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 public class PassRwAuthorizationTest {
     private PassRwHomePage homePage;
 
-    private final String AUTHORIZATION_MODAL_HEADER_TEXT_CORRECT = "Авторизация";
+    private final String HEADER_TEXT_CORRECT = "Авторизация";
     private final String LOGIN_OR_EMAIL_FIELD_NAME_CORRECT = "Логин/E-mail";
     private final String PASSWORD_FIELD_NAME_CORRECT = "Пароль";
     private final String LOGIN_BUTTON_TEXT_CORRECT = "Войти";
@@ -32,9 +32,9 @@ public class PassRwAuthorizationTest {
         homePage.clickProfile();
     }
 
-    @Test
-    public void testText() {
-        Assertions.assertEquals(AUTHORIZATION_MODAL_HEADER_TEXT_CORRECT, homePage.getAuthorizationModalHeaderText());
+    @Test//testText()
+    public void testContent() {
+        Assertions.assertEquals(HEADER_TEXT_CORRECT, homePage.getAuthorizationModalHeaderText());
         Assertions.assertEquals(LOGIN_OR_EMAIL_FIELD_NAME_CORRECT, homePage.getAuthorizationModalLoginOrEmailFieldNameText());
         Assertions.assertEquals(PASSWORD_FIELD_NAME_CORRECT, homePage.getAuthorizationModalPasswordFieldNameText());
         Assertions.assertEquals(LOGIN_BUTTON_TEXT_CORRECT, homePage.getAuthorizationModalLoginButtonText());
@@ -44,30 +44,30 @@ public class PassRwAuthorizationTest {
         Assertions.assertEquals(REGISTER_LINK_TEXT_CORRECT, homePage.getAuthorizationModalRegisterLinkText());
     }
 
-    @Test
-    public void testFillAllFieldsWithNonExistentCredentials() {
+    @Test//testFillAllFieldsWithNonExistentCredentials()
+    public void testTryLoginWithNonExistentCredentials() {
         homePage.fillLoginOrEmailField(LOGIN_OR_EMAIL_VALUE_CORRECT_1);
         homePage.fillPasswordField(PASSWORD_VALUE_CORRECT);
         homePage.clickLoginButton();
         Assertions.assertEquals(USER_NOT_FOUND_ERROR_MESSAGE_TEXT_CORRECT, homePage.getAuthorizationModalUserNotFoundErrorText());
     }
 
-    @Test
-    public void testFillOnlyLoginOrEmailField() {
+    @Test//testFillOnlyLoginOrEmailField()
+    public void testTryLoginWithOnlyLoginOrEmailFieldFilled() {
         homePage.fillLoginOrEmailField(LOGIN_OR_EMAIL_VALUE_CORRECT_1);
         homePage.clickLoginButton();
         Assertions.assertEquals(PASSWORD_ERROR_MESSAGE_TEXT_CORRECT, homePage.getAuthorizationModalPasswordErrorText());
     }
 
-    @Test
-    public void testFillOnlyPasswordField() {
+    @Test//testFillOnlyPasswordField()
+    public void testTryLoginWithOnlyPasswordFieldFilled() {
         homePage.fillPasswordField(PASSWORD_VALUE_CORRECT);
         homePage.clickLoginButton();
         Assertions.assertEquals(LOGIN_ERROR_MESSAGE_TEXT_CORRECT, homePage.getAuthorizationModalLoginOrEmailErrorText());
     }
 
-    @Test
-    public void testFillNoFields() {
+    @Test//testFillNoFields()
+    public void testTryLoginWithNoFieldsFilled() {
         homePage.clickLoginButton();
         Assertions.assertEquals(LOGIN_ERROR_MESSAGE_TEXT_CORRECT, homePage.getAuthorizationModalLoginOrEmailErrorText());
         Assertions.assertEquals(PASSWORD_ERROR_MESSAGE_TEXT_CORRECT, homePage.getAuthorizationModalPasswordErrorText());
