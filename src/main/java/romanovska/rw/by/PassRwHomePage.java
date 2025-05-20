@@ -85,6 +85,10 @@ public class PassRwHomePage extends BasePage {
         getWebElementFoundByLocatorAfterWait(AuthorizationModalLocators.LOGIN_BUTTON).click();
     }
 
+    public String getAuthorizationModalLoginErrorText() {
+        return getWebElementFoundByLocatorAfterWait(AuthorizationModalLocators.LOGIN_ERROR_LABEL).getText();
+    }
+
     public String getAuthorizationModalPasswordErrorText() {
         return getWebElementFoundByLocatorAfterWait(AuthorizationModalLocators.PASSWORD_ERROR_LABEL).getText();
     }
