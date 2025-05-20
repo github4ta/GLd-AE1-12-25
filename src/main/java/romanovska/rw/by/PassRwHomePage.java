@@ -90,10 +90,14 @@ public class PassRwHomePage extends BasePage {
     }
 
     public String getAuthorizationModalLoginOrEmailErrorText() {
-        return getWebElementFoundByLocatorAfterWait(AuthorizationModalLocators.LOGIN_OR_EMAIL_ERROR_LABEL).getText();
+        return getWebElementFoundByLocatorAfterWait(AuthorizationModalLocators.LOGIN_OR_EMAIL_ERROR_MESSAGE).getText();
     }
 
     public String getAuthorizationModalPasswordErrorText() {
-        return getWebElementFoundByLocatorAfterWait(AuthorizationModalLocators.PASSWORD_ERROR_LABEL).getText();
+        return getWebElementFoundByLocatorAfterWait(AuthorizationModalLocators.PASSWORD_ERROR_MESSAGE).getText();
+    }
+
+    public String getAuthorizationModalUserNotFoundErrorText() {
+        return getWebElementFoundByLocatorAfterWait(AuthorizationModalLocators.USER_NOT_FOUND_ERROR_MESSAGE).getText();
     }
 }
