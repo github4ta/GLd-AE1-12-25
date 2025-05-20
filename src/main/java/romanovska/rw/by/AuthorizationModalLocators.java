@@ -19,6 +19,7 @@ public class AuthorizationModalLocators {
     public static final String NO_ACCOUNT_YET_CAPTION = "//div[@class='auth-modal__caption']";
     public static final String REGISTER_LINK = NO_ACCOUNT_YET_CAPTION + "//a[contains(@href,'registration/')]";
 
-    public static final String LOGIN_OR_EMAIL_ERROR_LABEL = "//label[@id='login-error']";
-    public static final String PASSWORD_ERROR_LABEL = "//label[@id='password-error']";
+    public static final String LOGIN_OR_EMAIL_ERROR_MESSAGE = "//label[@id='login-error']";
+    public static final String PASSWORD_ERROR_MESSAGE = "//label[@id='password-error']";
+    public static final String USER_NOT_FOUND_ERROR_MESSAGE = "//div[@class='danger standalone']";
 }
