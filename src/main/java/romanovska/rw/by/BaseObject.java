@@ -9,24 +9,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public abstract class BasePage extends BaseObject {
-    protected String URL;
-    //protected WebDriver driver;
-    //protected WebDriverWait wait;
+public class BaseObject {
+    protected WebDriver driver;
+    protected WebDriverWait wait;
 
-    protected BasePage() {
-        //this.driver = Driver.getDriver();
-        //wait = new WebDriverWait(driver, Duration.ofSeconds(4));
-        super();
+    protected BaseObject(){
+        this.driver = Driver.getDriver();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(4));
     }
 
-    public void open() {
-        driver.get(URL);
-    }
-
-    /*public WebElement getWebElementFoundByLocatorAfterWait(String locator) {
+    public WebElement getWebElementFoundByLocatorAfterWait(String locator) {
         WebElement webElement = driver.findElement(By.xpath(locator));
         wait.until(ExpectedConditions.elementToBeClickable(webElement));
         return webElement;
-    }*/
+    }
 }

@@ -1,0 +1,43 @@
+package romanovska.rw.by;
+
+public class HomePage extends BasePage {
+    //private final static String PROFILE_BUTTON = "//a[*[contains(@class, 'profile')]]";
+    private final static String ACCEPT_COOKIE_BUTTON = "//div[@class='cookies-popup__btns']//button[contains(@class,'mc-btn-all')]";
+    private final static String DO_NOT_SHOW_AGAIN_NOTIFICATION_CHECKBOX = "//div[@class='notification-modal__body']//label[*[contains(@class,'checkbox')]]";
+
+    public HomePage() {
+        super();
+        URL = "https://pass.rw.by/";
+    }
+
+    @Override
+    public void open() {
+        super.open();
+
+        try {
+            clickDoNotShowAgain();
+        } catch (Exception e) {
+            System.out.println("Can't click 'Don't show again'");
+        }
+
+        try {
+            clickAcceptCookie();
+        } catch (Exception e) {
+            System.out.println("Can't accept cookie");
+        }
+    }
+
+    public void clickDoNotShowAgain() {
+        getWebElementFoundByLocatorAfterWait(DO_NOT_SHOW_AGAIN_NOTIFICATION_CHECKBOX).click();
+    }
+
+    public void clickAcceptCookie() {
+        getWebElementFoundByLocatorAfterWait(ACCEPT_COOKIE_BUTTON).click();
+    }
+
+    //public void clickProfile() {
+        //getWebElementFoundByLocatorAfterWait(PROFILE_BUTTON).click();
+    //}
+
+
+}
