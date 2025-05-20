@@ -16,6 +16,7 @@ public class AuthorizationTest {
     private final String NO_ACCOUNT_YET_CAPTION_TEXT_CORRECT = "Нет аккаунта?";
     private final String REGISTER_LINK_TEXT_CORRECT = "Зарегистрироваться";
 
+    //может дописать NON_EXISTENT
     private final String LOGIN_OR_EMAIL_VALUE_CORRECT_1 = "login";
     private final String PASSWORD_VALUE_CORRECT = "123456";
 

@@ -73,18 +73,18 @@ public class AuthorizationModal extends BaseObject {
     }
 
     private static class Locators {
-        public static final String HEADER_TITLE = "//div[contains(@class,'auth-modal__title h3')]";
-        public static final String LOGIN_OR_EMAIL_FIELD = "//input[@name='login']";
-        public static final String LOGIN_OR_EMAIL_FIELD_NAME = LOGIN_OR_EMAIL_FIELD + "/ancestor::label//div[@class='name']";
-        public static final String PASSWORD_FIELD = "//input[@name='password']";
-        public static final String PASSWORD_FIELD_NAME = PASSWORD_FIELD + "/ancestor::label//div[@class='name']";
-        public static final String LOGIN_BUTTON = "//input[@name='dologin']";
-        public static final String FORGOT_PASSWORD_LINK = "//a[contains(@href,'/registration/pwd_restore/')]";//ищет по нему!!
-        public static final String LOGIN_VIA_SOCIAL_TITLE = "//div[@class='auth-modal__social-title']";
-        public static final String NO_ACCOUNT_YET_CAPTION = "//div[@class='auth-modal__caption']";
-        public static final String REGISTER_LINK = NO_ACCOUNT_YET_CAPTION + "//a[contains(@href,'registration/')]";
-        public static final String LOGIN_OR_EMAIL_ERROR_MESSAGE = "//label[@id='login-error']";
-        public static final String PASSWORD_ERROR_MESSAGE = "//label[@id='password-error']";
-        public static final String USER_NOT_FOUND_ERROR_MESSAGE = "//div[@class='danger standalone']";
+        private static final String HEADER_TITLE = "//div[contains(@class,'auth-modal__title h3')]";
+        private static final String LOGIN_OR_EMAIL_FIELD = "//input[@name='login']";
+        private static final String LOGIN_OR_EMAIL_FIELD_NAME = LOGIN_OR_EMAIL_FIELD + "/ancestor::label//div[@class='name']";
+        private static final String PASSWORD_FIELD = "//input[@name='password']";
+        private static final String PASSWORD_FIELD_NAME = PASSWORD_FIELD + "/ancestor::label//div[@class='name']";
+        private static final String LOGIN_BUTTON = "//input[@name='dologin']";
+        private static final String FORGOT_PASSWORD_LINK = "//a[contains(@href,'/registration/pwd_restore/')]";
+        private static final String LOGIN_VIA_SOCIAL_TITLE = "//div[@class='auth-modal__social-title']";
+        private static final String NO_ACCOUNT_YET_CAPTION = "//div[@class='auth-modal__caption']";
+        private static final String REGISTER_LINK = NO_ACCOUNT_YET_CAPTION + "//a[contains(@href,'registration/')]";
+        private static final String LOGIN_OR_EMAIL_ERROR_MESSAGE = "//label[@id='login-error']";
+        private static final String PASSWORD_ERROR_MESSAGE = "//label[@id='password-error']";
+        private static final String USER_NOT_FOUND_ERROR_MESSAGE = "//div[@class='danger standalone']";
     }
 }

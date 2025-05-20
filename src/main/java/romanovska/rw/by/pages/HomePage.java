@@ -1,9 +1,6 @@
 package romanovska.rw.by.pages;
 
 public class HomePage extends BasePage {
-    private final static String ACCEPT_COOKIE_BUTTON = "//div[@class='cookies-popup__btns']//button[contains(@class,'mc-btn-all')]";
-    private final static String DO_NOT_SHOW_AGAIN_NOTIFICATION_CHECKBOX = "//div[@class='notification-modal__body']//label[*[contains(@class,'checkbox')]]";
-
     public HomePage() {
         super();
         URL = "https://pass.rw.by/";
@@ -27,10 +24,15 @@ public class HomePage extends BasePage {
     }
 
     public void clickDoNotShowAgain() {
-        getWebElementFoundByLocatorAfterWait(DO_NOT_SHOW_AGAIN_NOTIFICATION_CHECKBOX).click();
+        getWebElementFoundByLocatorAfterWait(Locators.DO_NOT_SHOW_AGAIN_NOTIFICATION_CHECKBOX).click();
     }
 
     public void clickAcceptCookie() {
-        getWebElementFoundByLocatorAfterWait(ACCEPT_COOKIE_BUTTON).click();
+        getWebElementFoundByLocatorAfterWait(Locators.ACCEPT_COOKIE_BUTTON).click();
+    }
+
+    private static class Locators {
+        private static final String ACCEPT_COOKIE_BUTTON = "//div[@class='cookies-popup__btns']//button[contains(@class,'mc-btn-all')]";
+        private static final String DO_NOT_SHOW_AGAIN_NOTIFICATION_CHECKBOX = "//div[@class='notification-modal__body']//label[*[contains(@class,'checkbox')]]";
     }
 }
