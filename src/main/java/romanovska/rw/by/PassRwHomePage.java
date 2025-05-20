@@ -33,10 +33,6 @@ public class PassRwHomePage extends BasePage {
         getWebElementFoundByLocatorAfterWait(DO_NOT_SHOW_AGAIN_NOTIFICATION_CHECKBOX).click();
     }
 
-    private WebElement getAcceptCookieButton() {
-        return getWebElementFoundByLocatorAfterWait(ACCEPT_COOKIE_BUTTON);
-    }
-
     public void clickAcceptCookie() {
         getWebElementFoundByLocatorAfterWait(ACCEPT_COOKIE_BUTTON).click();
     }
