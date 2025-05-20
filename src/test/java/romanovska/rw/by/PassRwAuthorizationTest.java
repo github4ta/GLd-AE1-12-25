@@ -20,6 +20,7 @@ public class PassRwAuthorizationTest {
 
     private final String LOGIN_OR_EMAIL_VALUE_CORRECT_1 = "login";
 
+    private final String LOGIN_ERROR_MESSAGE = "Заполните поле";
     private final String PASSWORD_ERROR_MESSAGE = "Заполните поле";
 
     @BeforeEach
@@ -45,6 +46,13 @@ public class PassRwAuthorizationTest {
     public void testFillOnlyLoginOrEmailField() {
         homePage.fillLoginOrEmailField(LOGIN_OR_EMAIL_VALUE_CORRECT_1);
         homePage.clickLoginButton();
+        Assertions.assertEquals(PASSWORD_ERROR_MESSAGE, homePage.getAuthorizationModalPasswordErrorText());
+    }
+
+    @Test
+    public void testFillNoField() {
+        homePage.clickLoginButton();
+        Assertions.assertEquals(LOGIN_ERROR_MESSAGE, homePage.getAuthorizationModalPasswordErrorText());
         Assertions.assertEquals(PASSWORD_ERROR_MESSAGE, homePage.getAuthorizationModalPasswordErrorText());
     }
 
