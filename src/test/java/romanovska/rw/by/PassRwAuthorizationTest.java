@@ -44,6 +44,11 @@ public class PassRwAuthorizationTest {
         Assertions.assertEquals(REGISTER_LINK_TEXT_CORRECT, homePage.getAuthorizationModalRegisterLinkText());
     }
 
+    @Test
+    public void testTryLoginWithIncorrectCredentials() {
+        //не воспроизводится
+    }
+
     @Test//testFillAllFieldsWithNonExistentCredentials()
     public void testTryLoginWithNonExistentCredentials() {
         homePage.fillLoginOrEmailField(LOGIN_OR_EMAIL_VALUE_CORRECT_1);
