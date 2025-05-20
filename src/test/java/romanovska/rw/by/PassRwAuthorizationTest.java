@@ -52,7 +52,7 @@ public class PassRwAuthorizationTest {
     @Test
     public void testFillNoField() {
         homePage.clickLoginButton();
-        Assertions.assertEquals(LOGIN_ERROR_MESSAGE, homePage.getAuthorizationModalPasswordErrorText());
+        Assertions.assertEquals(LOGIN_ERROR_MESSAGE, homePage.getAuthorizationModalLoginErrorText());
         Assertions.assertEquals(PASSWORD_ERROR_MESSAGE, homePage.getAuthorizationModalPasswordErrorText());
     }
 
