@@ -21,8 +21,9 @@ public class PassRwAuthorizationTest {
     private final String LOGIN_OR_EMAIL_VALUE_CORRECT_1 = "login";
     private final String PASSWORD_VALUE_CORRECT = "123456";
 
-    private final String LOGIN_ERROR_MESSAGE = "Заполните поле";
-    private final String PASSWORD_ERROR_MESSAGE = "Заполните поле";
+    private final String LOGIN_ERROR_MESSAGE_TEXT_CORRECT = "Заполните поле";
+    private final String PASSWORD_ERROR_MESSAGE_TEXT_CORRECT = "Заполните поле";
+    private final String USER_NOT_FOUND_ERROR_MESSAGE_TEXT_CORRECT = "Пользователь не найден";
 
     @BeforeEach
     public void openHomePage() {
@@ -44,24 +45,32 @@ public class PassRwAuthorizationTest {
     }
 
     @Test
+    public void testFillAllFieldsWithNonExistentCredentials() {
+        homePage.fillLoginOrEmailField(LOGIN_OR_EMAIL_VALUE_CORRECT_1);
+        homePage.fillPasswordField(PASSWORD_VALUE_CORRECT);
+        homePage.clickLoginButton();
+        Assertions.assertEquals(USER_NOT_FOUND_ERROR_MESSAGE_TEXT_CORRECT, homePage.getAuthorizationModalUserNotFoundErrorText());
+    }
+
+    @Test
     public void testFillOnlyLoginOrEmailField() {
         homePage.fillLoginOrEmailField(LOGIN_OR_EMAIL_VALUE_CORRECT_1);
         homePage.clickLoginButton();
-        Assertions.assertEquals(PASSWORD_ERROR_MESSAGE, homePage.getAuthorizationModalPasswordErrorText());
+        Assertions.assertEquals(PASSWORD_ERROR_MESSAGE_TEXT_CORRECT, homePage.getAuthorizationModalPasswordErrorText());
     }
 
     @Test
     public void testFillOnlyPasswordField() {
         homePage.fillPasswordField(PASSWORD_VALUE_CORRECT);
         homePage.clickLoginButton();
-        Assertions.assertEquals(LOGIN_ERROR_MESSAGE, homePage.getAuthorizationModalLoginOrEmailErrorText());
+        Assertions.assertEquals(LOGIN_ERROR_MESSAGE_TEXT_CORRECT, homePage.getAuthorizationModalLoginOrEmailErrorText());
     }
 
     @Test
-    public void testFillNoField() {
+    public void testFillNoFields() {
         homePage.clickLoginButton();
-        Assertions.assertEquals(LOGIN_ERROR_MESSAGE, homePage.getAuthorizationModalLoginOrEmailErrorText());
-        Assertions.assertEquals(PASSWORD_ERROR_MESSAGE, homePage.getAuthorizationModalPasswordErrorText());
+        Assertions.assertEquals(LOGIN_ERROR_MESSAGE_TEXT_CORRECT, homePage.getAuthorizationModalLoginOrEmailErrorText());
+        Assertions.assertEquals(PASSWORD_ERROR_MESSAGE_TEXT_CORRECT, homePage.getAuthorizationModalPasswordErrorText());
     }
 
     @AfterEach
