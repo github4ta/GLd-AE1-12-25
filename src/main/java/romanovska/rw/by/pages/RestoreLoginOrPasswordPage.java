@@ -1,6 +1,5 @@
 package romanovska.rw.by.pages;
 
-import org.openqa.selenium.By;
 import romanovska.rw.by.AuthorizationModal;
 
 public class RestoreLoginOrPasswordPage extends BasePage {
@@ -15,8 +14,19 @@ public class RestoreLoginOrPasswordPage extends BasePage {
     }
 
     public static String getHeaderText() {
-        System.out.println(driver.findElement(By.xpath(Locators.HEADER_TITLE)).getText());
         return getWebElementFoundByLocatorAfterWait(Locators.HEADER_TITLE).getText();
+    }
+
+    public static String getRegistrationDescriptionText() {
+        return getWebElementFoundByLocatorAfterWait(Locators.REGISTRATION_DESCRIPTION).getText();
+    }
+
+    public static String getEmailFieldNameText() {
+        return getWebElementFoundByLocatorAfterWait(Locators.EMAIL_FIELD_NAME).getText();
+    }
+
+    public static String getSubmitButtonText() {
+        return getWebElementFoundByLocatorAfterWait(Locators.SUBMIT_BUTTON).getText();
     }
 
     private static class Locators {

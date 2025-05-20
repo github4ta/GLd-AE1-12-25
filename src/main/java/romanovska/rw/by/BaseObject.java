@@ -20,10 +20,13 @@ public abstract class BaseObject {
 
     protected abstract void open();
 
+    public static String getCurrentUrl(){
+        return driver.getCurrentUrl();
+    }
+
     public static WebElement getWebElementFoundByLocatorAfterWait(String locator) {
         WebElement webElement = driver.findElement(By.xpath(locator));
         wait.until(ExpectedConditions.elementToBeClickable(webElement));
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
         return webElement;
     }
 }

@@ -1,9 +1,5 @@
 package romanovska.rw.by;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import romanovska.rw.by.pages.HomePage;
-
 public class Header extends BaseObject {
     private static AuthorizationModal authorizationModal;
 
