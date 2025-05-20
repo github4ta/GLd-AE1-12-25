@@ -1,7 +1,5 @@
 package romanovska.rw.by;
 
-import org.openqa.selenium.WebElement;
-
 public class PassRwHomePage extends BasePage {
     private final static String PROFILE_BUTTON = "//a[*[contains(@class, 'profile')]]";
     private final static String ACCEPT_COOKIE_BUTTON = "//div[@class='cookies-popup__btns']//button[contains(@class,'mc-btn-all')]";
