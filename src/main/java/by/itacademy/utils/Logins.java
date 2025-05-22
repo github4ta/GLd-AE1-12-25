@@ -5,8 +5,6 @@ public class Logins {
     }
 
     public static String generateCorrectLogin() {
-        String correctLogin = "";
-        int numberOfSymbols = (int) (Math.random() * 14 + 3);
         String correctSymbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
         return generateLogin(correctSymbols, 3, 16);
@@ -24,9 +22,7 @@ public class Logins {
 
         for (int i = 0; i < numberOfSymbols; i++) {
             login += symbols.charAt((int) (Math.random() * symbols.length()));
-            correctLogin += correctSymbols.charAt((int)(Math.random() * correctSymbols.length()));
         }
         return login;
-        return correctLogin;
     }
 }
