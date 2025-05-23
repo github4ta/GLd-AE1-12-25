@@ -1,4 +1,4 @@
-package by.vek.pages;
+package by.vek.pages.login;
 
 public class LoginLocator {
     public static final String SUBMIT_BUTTON_COOKIE = "//button[@class=\"Button-module__button Button-module__blue-primary\"]";

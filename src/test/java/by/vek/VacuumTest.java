@@ -1,6 +1,6 @@
 package by.vek;
 
-import by.vek.pages.VacuumPage;
+import by.vek.pages.vacuum.VacuumPage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

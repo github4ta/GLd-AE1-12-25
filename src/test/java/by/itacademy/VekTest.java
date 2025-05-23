@@ -1,7 +1,7 @@
 package by.itacademy;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -38,7 +38,7 @@ public class VekTest {
         WebElement allActionsTitle = driver.findElement(By.xpath(allActionsTitleLocator));
         String actual = allActionsTitle.getText();
 
-        Assert.assertEquals("Все акции", actual);
+        Assertions.assertEquals("Все акции", actual);
     }
 
     @Test
@@ -47,7 +47,7 @@ public class VekTest {
         WebElement legalInformationBlock = driver.findElement(By.xpath(legalInformationBlockLocator));
         String actual = legalInformationBlock.getText();
 
-        Assert.assertTrue(actual.contains("© 2004–2025 21vek.by,"));
+        Assertions.assertTrue(actual.contains("© 2004–2025 21vek.by,"));
     }
 
     @Test
@@ -64,7 +64,7 @@ public class VekTest {
         WebElement titleLoginForm = driver.findElement(By.xpath(titleLoginFormLocator));
         String actual = titleLoginForm.getText();
 
-        Assert.assertEquals("Вход",actual);
+        Assertions.assertEquals("Вход",actual);
     }
 
     @Test
@@ -89,13 +89,13 @@ public class VekTest {
         WebElement validationErrorMessageEmail = driver.findElement(By.xpath(validationErrorMessageEmailLocator));
         String actualEmail = validationErrorMessageEmail.getText();
 
-        Assert.assertEquals("Электронная почта не указана", actualEmail);
+        Assertions.assertEquals("Электронная почта не указана", actualEmail);
 
         String validationErrorMessagePasswordLocator = "//span[contains(@class, 'message') and contains(., 'Пароль')]";
         WebElement validationErrorMessagePassword = driver.findElement(By.xpath(validationErrorMessagePasswordLocator));
         String actualPassword = validationErrorMessagePassword.getText();
 
-        Assert.assertEquals("Пароль не указан", actualPassword);
+        Assertions.assertEquals("Пароль не указан", actualPassword);
     }
 
     @Test
@@ -123,7 +123,7 @@ public class VekTest {
         WebElement validationErrorMessagePassword = driver.findElement(By.xpath(validationErrorMessagePasswordLocator));
         String actualPassword = validationErrorMessagePassword.getText();
 
-        Assert.assertEquals("Пароль не указан", actualPassword);
+        Assertions.assertEquals("Пароль не указан", actualPassword);
     }
 
     @Test
@@ -151,7 +151,7 @@ public class VekTest {
         WebElement validationErrorMessageEmail = driver.findElement(By.xpath(validationErrorMessageEmailLocator));
         String actualEmail = validationErrorMessageEmail.getText();
 
-        Assert.assertEquals("Электронная почта не указана", actualEmail);
+        Assertions.assertEquals("Электронная почта не указана", actualEmail);
     }
 
     @Test
@@ -182,7 +182,7 @@ public class VekTest {
         WebElement validationErrorMessageEmail = driver.findElement(By.xpath(validationErrorMessageEmailLocator));
         String actualEmail = validationErrorMessageEmail.getText();
 
-        Assert.assertEquals("Проверьте электронную почту или \n" +
+        Assertions.assertEquals("Проверьте электронную почту или \n" +
                 "зарегистрируйтесь", actualEmail);
     }
 
@@ -218,7 +218,7 @@ public class VekTest {
         WebElement linkregistration = driver.findElement(By.xpath(linkregistrationLocator));
         String registrationForm = linkregistration.getText();
 
-        Assert.assertEquals("Регистрация", registrationForm);
+        Assertions.assertEquals("Регистрация", registrationForm);
     }
 
     @Test
@@ -246,7 +246,7 @@ public class VekTest {
         WebElement validationErrorMessageEmail = driver.findElement(By.xpath(validationErrorMessageEmailLocator));
         String actualEmail = validationErrorMessageEmail.getText();
 
-        Assert.assertEquals("Неправильный формат электронной почты", actualEmail);
+        Assertions.assertEquals("Неправильный формат электронной почты", actualEmail);
     }
 
     @Test
@@ -277,7 +277,7 @@ public class VekTest {
         WebElement validationErrorMessagePassword = driver.findElement(By.xpath(validationErrorMessagePasswordLocator));
         String actualPassword = validationErrorMessagePassword.getText();
 
-        Assert.assertEquals("Неправильный пароль. \n" + "Сбросить пароль?", actualPassword);
+        Assertions.assertEquals("Неправильный пароль. \n" + "Сбросить пароль?", actualPassword);
     }
 
     @Test
@@ -312,7 +312,7 @@ public class VekTest {
         WebElement linkregistration = driver.findElement(By.xpath(linkregistrationLocator));
         String registrationForm = linkregistration.getText();
 
-        Assert.assertEquals("Сброс пароля", registrationForm);
+        Assertions.assertEquals("Сброс пароля", registrationForm);
     }
 
     @AfterEach

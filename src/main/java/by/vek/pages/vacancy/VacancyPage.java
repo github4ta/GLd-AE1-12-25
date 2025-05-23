@@ -1,4 +1,4 @@
-package by.vek.pages;
+package by.vek.pages.vacancy;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

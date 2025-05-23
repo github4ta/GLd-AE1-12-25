@@ -1,4 +1,4 @@
-package by.vek.pages;
+package by.vek.pages.discount;
 
 public class DiscountLocator {
     public static final String LINK_DISCOUNT = "//a[@href='/special_offers/promo.html?discountTypes=sale']";

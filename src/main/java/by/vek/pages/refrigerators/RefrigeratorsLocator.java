@@ -1,7 +1,7 @@
-package by.vek.pages;
+package by.vek.pages.refrigerators;
 
 public class RefrigeratorsLocator {
-    public static final String LINK_REFRIGERATORS = "//a[@href=\"/refrigerators/\"]";
+    public static final String LINK_REFRIGERATORS = "(//a[@href=\"/refrigerators/\"])[2]";
     public static final String TITLE_REFRIGERATORS_PAGE = "//h1[@class=\"style_title__QomyX\"]";
     public static final String LINK_FREEZERS = "//a[@href=\"/freezers/\"]";
     public static final String LINK_BUILTIN_REFRIGERATORS = "//a[@href=\"/builtin_refrigerators/\"]";
