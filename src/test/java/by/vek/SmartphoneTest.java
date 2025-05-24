@@ -27,13 +27,13 @@ public class SmartphoneTest {
 
     @Test
     @DisplayName("Smartphone page - Verify text title")
-    public void verifySmartphoneSectionTitle() {
+    public void testVerifySmartphoneSectionTitle() {
         Assertions.assertEquals("Смартфоны", smartphonePage.getSmartphoneHeaderText());
     }
 
     @Test
     @DisplayName("Smartphone page - Verify text subtitle")
-    public void verifySmartphoneSectionSubtitle() {
+    public void testVerifySmartphoneSectionSubtitle() {
         Assertions.assertEquals("Какой телефон выбрать", smartphonePage.getSmartphoneChooseText());
         Assertions.assertEquals("Смартфон или мобильный телефон", smartphonePage.getSmartphoneOrMobileText());
     }
