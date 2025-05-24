@@ -18,22 +18,22 @@ public class SmartphonePage {
     }
 
     public void clickSmartphoneLink() {
-        WebElement smartphoneLink = driver.findElement(By.xpath(SmartphoneLocator.SMARTPHONE_LINK));
+        WebElement smartphoneLink = driver.findElement(By.xpath(SmartphoneLocator.BUTTON_SMARTPHONE));
         smartphoneLink.click();
     }
 
     public String getSmartphoneHeaderText(){
-        WebElement smartphoneHeaderText = driver.findElement(By.xpath(SmartphoneLocator.SMARTPHONE_HEADER));
+        WebElement smartphoneHeaderText = driver.findElement(By.xpath(SmartphoneLocator.HEADER_SMARTPHONE));
         return smartphoneHeaderText.getText();
     }
 
     public String getSmartphoneOrMobileText(){
-        WebElement smartphoneOrMobileText = driver.findElement(By.xpath(SmartphoneLocator.SMARTPHONE_OR_MOBILE));
+        WebElement smartphoneOrMobileText = driver.findElement(By.xpath(SmartphoneLocator.TITLE_SMARTPHONE_OR_MOBILE));
         return smartphoneOrMobileText.getText();
     }
 
     public String getSmartphoneChooseText(){
-        WebElement smartphoneChooseText = driver.findElement(By.xpath(SmartphoneLocator.SMARTPHONE_CHOOSE));
+        WebElement smartphoneChooseText = driver.findElement(By.xpath(SmartphoneLocator.TITLE_SMARTPHONE_CHOOSE));
         return smartphoneChooseText.getText();
     }
 }
