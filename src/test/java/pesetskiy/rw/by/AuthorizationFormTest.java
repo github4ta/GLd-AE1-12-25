@@ -13,6 +13,7 @@ public class AuthorizationFormTest {
     public void setUp() {
         new BasePage().open();
         authorizationFormPage = new AuthorizationFormPage();
+        authorizationFormPage.waitUntilAuthorizationFormIsDisplayed();
     }
 
     @Test

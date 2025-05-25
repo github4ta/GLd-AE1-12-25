@@ -33,6 +33,5 @@ public class BasePage {
 
     public void clickButtonCabinet() {
         driver.findElement(By.xpath(BUTTON_CABINET)).click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 }

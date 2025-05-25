@@ -1,6 +1,9 @@
 package pesetskiy.rw.by.pages.authorizationForm;
 
+import org.openqa.selenium.By;
+
 public class AuthorizationFormLocator {
+    public final static String AUTHORIZATION_MODAL_WINDOW = "//*[@id=\"auth-popup\"]//div[@class=\"modal-content\"]";
     public final static String TITLE_HEADER_AUTHORIZATION = "//div[@class='auth-modal__title h3']";
     public final static String TITLE_LABEL_LOGIN = "//div[contains(text(), 'Логин/E-mail')]";
     public final static String TITLE_LABEL_PASSWORD = "//div[contains(text(), 'Пароль')]";
