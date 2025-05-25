@@ -12,10 +12,6 @@ import java.time.Duration;
 
 public class BasePage {
 
-    private static final String BUTTON_ACCEPT_COOKIE = "//button[@class=\"btn btn-default mc-btn-all\"]";
-    private static final String BUTTON_CABINET = "//li[@class=\"item_1 cabinet\"]";
-    private static final String AUTHORIZATION_MODAL_WINDOW = "//*[@id=\"auth-popup\"]//div[@class=\"modal-content\"]";
-
     protected WebDriver driver;
 
     public BasePage() {
@@ -34,15 +30,15 @@ public class BasePage {
     }
 
     public void clickButtonAcceptCookie() {
-        driver.findElement(By.xpath(BUTTON_ACCEPT_COOKIE)).click();
+        driver.findElement(By.xpath(AuthorizationFormLocator.BUTTON_ACCEPT_COOKIE)).click();
     }
 
     public void clickButtonCabinet() {
-        driver.findElement(By.xpath(BUTTON_CABINET)).click();
+        driver.findElement(By.xpath(AuthorizationFormLocator.BUTTON_CABINET)).click();
     }
 
     public WebElement getAuthorizationForm() {
-        return driver.findElement(By.xpath(AUTHORIZATION_MODAL_WINDOW));
+        return driver.findElement(By.xpath(AuthorizationFormLocator.AUTHORIZATION_MODAL_WINDOW));
     }
 
     public void getAuthorizationFormAndWait() {
