@@ -3,11 +3,7 @@ package pesetskiy.rw.by.pages.authorizationForm;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pesetskiy.rw.by.driver.Driver;
-
-import java.time.Duration;
 
 public class AuthorizationFormPage {
 
@@ -15,15 +11,6 @@ public class AuthorizationFormPage {
 
     public AuthorizationFormPage() {
         driver = Driver.getDriver();
-    }
-
-    public WebElement getAuthorizationForm() {
-        return driver.findElement(By.xpath(AuthorizationFormLocator.AUTHORIZATION_MODAL_WINDOW));
-    }
-
-    public void waitUntilAuthorizationFormIsDisplayed() {
-        Wait<WebDriver> wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(2));
-        wait.until(d -> getAuthorizationForm().isDisplayed());
     }
 
     public String getHeaderAuthorizationText() {
