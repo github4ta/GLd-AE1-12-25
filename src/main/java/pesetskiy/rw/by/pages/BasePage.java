@@ -2,7 +2,10 @@ package pesetskiy.rw.by.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pesetskiy.rw.by.driver.Driver;
+
+import java.time.Duration;
 
 public class BasePage {
 
@@ -30,5 +33,6 @@ public class BasePage {
 
     public void clickButtonCabinet() {
         driver.findElement(By.xpath(BUTTON_CABINET)).click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 }
