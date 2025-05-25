@@ -21,7 +21,7 @@ public class AuthorizationFormTest {
         Assertions.assertEquals("Авторизация", authorizationFormPage.getHeaderAuthorizationText());
         Assertions.assertEquals("Логин/E-mail", authorizationFormPage.getLabelLoginText());
         Assertions.assertEquals("Пароль", authorizationFormPage.getLabelPasswordText());
-        //Assertions.assertEquals("ВОЙТИ", authorizationFormPage.getButtonLoginText());
+        Assertions.assertEquals("Войти", authorizationFormPage.getButtonLoginText());
         Assertions.assertEquals("Забыли пароль?", authorizationFormPage.getLinkForgotPasswordText());
         Assertions.assertEquals("Войти с помощью соцсетей:", authorizationFormPage.getLabelOtherLoginText());
         Assertions.assertTrue(authorizationFormPage.getLabelNoAccountText().contains("Нет аккаунта?"));
