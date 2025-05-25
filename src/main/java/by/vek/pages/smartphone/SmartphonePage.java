@@ -1,20 +1,16 @@
 package by.vek.pages.smartphone;
 
+import by.vek.driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class SmartphonePage {
 
-    private WebDriver driver;
+    private final WebDriver driver;
 
-    public SmartphonePage(WebDriver driver) {
-        this.driver = driver;
-    }
-
-    public void clickButtonAcceptCookie() {
-        WebElement buttonAcceptCookie = driver.findElement(By.xpath(SmartphoneLocator.BUTTON_ACCEPT_COOKIE));
-        buttonAcceptCookie.click();
+    public SmartphonePage() {
+        driver = Driver.getDriver();
     }
 
     public void clickSmartphoneLink() {
