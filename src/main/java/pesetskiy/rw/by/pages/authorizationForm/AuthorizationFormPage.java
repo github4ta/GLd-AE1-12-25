@@ -30,7 +30,7 @@ public class AuthorizationFormPage {
 
     public String getButtonLoginText() {
         WebElement buttonLoginText = driver.findElement(By.xpath(AuthorizationFormLocator.BUTTON_LOGIN));
-        return buttonLoginText.getText();
+        return buttonLoginText.getAttribute("value");
     }
 
     public String getLinkForgotPasswordText() {
