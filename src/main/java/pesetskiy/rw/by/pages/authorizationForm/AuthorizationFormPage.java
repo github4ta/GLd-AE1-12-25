@@ -13,62 +13,62 @@ public class AuthorizationFormPage {
         driver = Driver.getDriver();
     }
 
-    public String getHeaderAuthorizationText(){
+    public String getHeaderAuthorizationText() {
         WebElement headerAuthorizationText = driver.findElement(By.xpath(AuthorizationFormLocator.TITLE_HEADER_AUTHORIZATION));
         return headerAuthorizationText.getText();
     }
 
-    public String getLabelLoginText(){
+    public String getLabelLoginText() {
         WebElement labelLoginText = driver.findElement(By.xpath(AuthorizationFormLocator.TITLE_LABEL_LOGIN));
         return labelLoginText.getText();
     }
 
-    public String getLabelPasswordText(){
+    public String getLabelPasswordText() {
         WebElement labelPasswordText = driver.findElement(By.xpath(AuthorizationFormLocator.TITLE_LABEL_PASSWORD));
         return labelPasswordText.getText();
     }
 
-    public String getButtonLoginText(){
+    public String getButtonLoginText() {
         WebElement buttonLoginText = driver.findElement(By.xpath(AuthorizationFormLocator.BUTTON_LOGIN));
         return buttonLoginText.getText();
     }
 
-    public String getLinkForgotPasswordText(){
+    public String getLinkForgotPasswordText() {
         WebElement linkForgotPasswordText = driver.findElement(By.xpath(AuthorizationFormLocator.TITLE_LINK_FORGOT_PASSWORD));
         return linkForgotPasswordText.getText();
     }
 
-    public String getLabelOtherLoginText(){
+    public String getLabelOtherLoginText() {
         WebElement labelOtherLoginText = driver.findElement(By.xpath(AuthorizationFormLocator.TITLE_LABEL_OTHER_LOGIN));
         return labelOtherLoginText.getText();
     }
 
-    public String getLabelNoAccountText(){
+    public String getLabelNoAccountText() {
         WebElement labelNoAccountText = driver.findElement(By.xpath(AuthorizationFormLocator.TITLE_LABEL_NO_ACCOUNT));
         return labelNoAccountText.getText();
     }
 
-    public String getLinkRegistrationText(){
+    public String getLinkRegistrationText() {
         WebElement linkRegistrationText = driver.findElement(By.xpath(AuthorizationFormLocator.TITLE_LINK_REGISTRATION));
         return linkRegistrationText.getText();
     }
 
-    public String getLabelNoLoginText(){
+    public String getLabelNoLoginText() {
         WebElement labelNoLoginText = driver.findElement(By.xpath(AuthorizationFormLocator.TITLE_LABEL_NO_LOGIN));
         return labelNoLoginText.getText();
     }
 
-    public String getLabelNoPasswordText(){
+    public String getLabelNoPasswordText() {
         WebElement labelNoPasswordText = driver.findElement(By.xpath(AuthorizationFormLocator.TITLE_LABEL_NO_PASSWORD));
         return labelNoPasswordText.getText();
     }
 
-    public String getLabelUserNotFoundText(){
+    public String getLabelUserNotFoundText() {
         WebElement labelUserNotFoundText = driver.findElement(By.xpath(AuthorizationFormLocator.TITLE_LABEL_USER_NOT_FOUND));
         return labelUserNotFoundText.getText();
     }
 
-    public String getLabelIncorrectLoginOrPasswordText(){
+    public String getLabelIncorrectLoginOrPasswordText() {
         WebElement labelIncorrectLoginOrPasswordText = driver.findElement(By.xpath(AuthorizationFormLocator.TITLE_LABEL_INCORRECT_LOGIN_OR_PASSWORD));
         return labelIncorrectLoginOrPasswordText.getText();
     }
