@@ -33,7 +33,7 @@ public class AuthorizationFormTest {
     public void checkAuthorizationWithoutPassword() {
         authorizationFormPage.fieldInputPassword("login");
         authorizationFormPage.clickButtonLogin();
-        Assertions.assertEquals("Заполнить поле", authorizationFormPage.getLabelNoPasswordText());
+        Assertions.assertEquals("Заполните поле", authorizationFormPage.getLabelNoPasswordText());
     }
 
     @AfterEach

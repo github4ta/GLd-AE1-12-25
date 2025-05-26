@@ -54,7 +54,7 @@ public class AuthorizationFormPage {
     }
 
     public void clickButtonLogin() {
-        WebElement buttonLogin = driver.findElement(By.xpath(AuthorizationFormLocator.TITLE_LABEL_LOGIN));
+        WebElement buttonLogin = driver.findElement(By.xpath(AuthorizationFormLocator.BUTTON_LOGIN));
         buttonLogin.click();
     }
 
