@@ -52,6 +52,24 @@ public class AuthorizationFormTest {
         Assertions.assertEquals("Заполните поле", authorizationFormPage.getLabelNoLoginText());
     }
 
+    @Test
+    @DisplayName("Check authorization for user not found")
+    public void checkAuthorizationUserNotFound() {
+        authorizationFormPage.inputFieldLogin("login");
+        authorizationFormPage.inputFieldPassword("123456");
+        authorizationFormPage.clickButtonLogin();
+        Assertions.assertEquals("Пользователь не найден", authorizationFormPage.getLabelUserNotFoundText());
+    }
+
+    @Test
+    @DisplayName("Check authorization for user invalid password")
+    public void checkAuthorizationUserInvalidPassword() {
+        authorizationFormPage.inputFieldLogin("ivanov.ivan@yopmail.com");
+        authorizationFormPage.inputFieldPassword("123456");
+        authorizationFormPage.clickButtonLogin();
+        Assertions.assertEquals("Неверное имя пользователя или пароль", authorizationFormPage.getLabelIncorrectLoginOrPasswordText());
+    }
+
     @AfterEach
     public void tearDown() {
         Driver.quit();
