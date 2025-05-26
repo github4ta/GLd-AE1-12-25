@@ -1,5 +1,6 @@
 package pesetskiy.rw.by;
 
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.*;
 import pesetskiy.rw.by.driver.Driver;
 import pesetskiy.rw.by.pages.BasePage;
@@ -8,6 +9,8 @@ import pesetskiy.rw.by.pages.authorizationForm.AuthorizationFormPage;
 public class AuthorizationFormTest {
 
     private AuthorizationFormPage authorizationFormPage;
+
+    Faker faker = new Faker();
 
     @BeforeEach
     public void setUp() {
@@ -31,7 +34,7 @@ public class AuthorizationFormTest {
     @Test
     @DisplayName("Check authorization without password")
     public void checkAuthorizationWithoutPassword() {
-        authorizationFormPage.inputFieldLogin("login");
+        authorizationFormPage.inputFieldLogin(faker.internet().emailAddress());
         authorizationFormPage.clickButtonLogin();
         Assertions.assertEquals("Заполните поле", authorizationFormPage.getLabelNoPasswordText());
     }
@@ -47,7 +50,7 @@ public class AuthorizationFormTest {
     @Test
     @DisplayName("Check authorization without login")
     public void checkAuthorizationWithoutLogin() {
-        authorizationFormPage.inputFieldPassword("123456");
+        authorizationFormPage.inputFieldPassword(faker.internet().password());
         authorizationFormPage.clickButtonLogin();
         Assertions.assertEquals("Заполните поле", authorizationFormPage.getLabelNoLoginText());
     }
@@ -55,8 +58,8 @@ public class AuthorizationFormTest {
     @Test
     @DisplayName("Check authorization for user not found")
     public void checkAuthorizationUserNotFound() {
-        authorizationFormPage.inputFieldLogin("login");
-        authorizationFormPage.inputFieldPassword("123456");
+        authorizationFormPage.inputFieldLogin(faker.internet().emailAddress());
+        authorizationFormPage.inputFieldPassword(faker.internet().password());
         authorizationFormPage.clickButtonLogin();
         Assertions.assertEquals("Пользователь не найден", authorizationFormPage.getLabelUserNotFoundText());
     }
@@ -65,7 +68,7 @@ public class AuthorizationFormTest {
     @DisplayName("Check authorization for user invalid password")
     public void checkAuthorizationUserInvalidPassword() {
         authorizationFormPage.inputFieldLogin("ivanov.ivan@yopmail.com");
-        authorizationFormPage.inputFieldPassword("123456");
+        authorizationFormPage.inputFieldPassword(faker.internet().password());
         authorizationFormPage.clickButtonLogin();
         Assertions.assertEquals("Неверное имя пользователя или пароль", authorizationFormPage.getLabelIncorrectLoginOrPasswordText());
     }
