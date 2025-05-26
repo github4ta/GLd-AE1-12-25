@@ -31,9 +31,25 @@ public class AuthorizationFormTest {
     @Test
     @DisplayName("Check authorization without password")
     public void checkAuthorizationWithoutPassword() {
-        authorizationFormPage.fieldInputPassword("login");
+        authorizationFormPage.inputFieldLogin("login");
         authorizationFormPage.clickButtonLogin();
         Assertions.assertEquals("Заполните поле", authorizationFormPage.getLabelNoPasswordText());
+    }
+
+    @Test
+    @DisplayName("Check authorization with empty fields")
+    public void checkAuthorizationWithEmptyFields() {
+        authorizationFormPage.clickButtonLogin();
+        Assertions.assertEquals("Заполните поле", authorizationFormPage.getLabelNoLoginText());
+        Assertions.assertEquals("Заполните поле", authorizationFormPage.getLabelNoPasswordText());
+    }
+
+    @Test
+    @DisplayName("Check authorization without login")
+    public void checkAuthorizationWithoutLogin() {
+        authorizationFormPage.inputFieldPassword("123456");
+        authorizationFormPage.clickButtonLogin();
+        Assertions.assertEquals("Заполните поле", authorizationFormPage.getLabelNoLoginText());
     }
 
     @AfterEach

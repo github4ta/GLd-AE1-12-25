@@ -58,14 +58,14 @@ public class AuthorizationFormPage {
         buttonLogin.click();
     }
 
-    public void fieldInputLogin(String login) {
-        WebElement inputLogin = driver.findElement(By.xpath(AuthorizationFormLocator.FIELD_INPUT_LOGIN));
-        inputLogin.sendKeys(login);
+    public void inputFieldLogin(String login) {
+        WebElement inputFieldLogin = driver.findElement(By.xpath(AuthorizationFormLocator.FIELD_INPUT_LOGIN));
+        inputFieldLogin.sendKeys(login);
     }
 
-    public void fieldInputPassword(String password) {
-        WebElement inputPassword = driver.findElement(By.xpath(AuthorizationFormLocator.FIELD_INPUT_LOGIN));
-        inputPassword.sendKeys(password);
+    public void inputFieldPassword(String password) {
+        WebElement inputFieldPassword = driver.findElement(By.xpath(AuthorizationFormLocator.FIELD_INPUT_PASSWORD));
+        inputFieldPassword.sendKeys(password);
     }
 
     public String getLabelNoLoginText() {
