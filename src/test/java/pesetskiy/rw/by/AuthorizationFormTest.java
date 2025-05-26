@@ -28,6 +28,14 @@ public class AuthorizationFormTest {
         Assertions.assertTrue(authorizationFormPage.getLinkRegistrationText().contains("Зарегистрироваться"));
     }
 
+ /*   @Test
+    @DisplayName("Check authorization without password")
+    public void checkAuthorizationWithoutPassword() {
+        authorizationFormPage.fillInput("login", LOGIN);
+        authorizationFormPage.clickButtonLogin();
+        Assertions.assertEquals(MESSAGE_ERROR_TEXT, authorizationPage.getMessageError("password-error"));
+    }*/
+
     @AfterEach
     public void tearDown() {
         Driver.quit();

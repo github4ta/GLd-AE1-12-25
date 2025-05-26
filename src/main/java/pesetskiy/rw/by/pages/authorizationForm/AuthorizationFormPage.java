@@ -53,6 +53,16 @@ public class AuthorizationFormPage {
         return linkRegistrationText.getText();
     }
 
+    public void clickButtonLogin() {
+        WebElement buttonLogin = driver.findElement(By.xpath(AuthorizationFormLocator.TITLE_LABEL_LOGIN));
+        buttonLogin.click();
+    }
+
+   /* public void fieldInputLogin(String inputLocator, String value) {
+        WebElement inputLogin = driver.findElement(By.xpath(String.format(AuthorizationFormLocator.INPUT_CREDENTIALS, inputLocator)));
+        inputLogin.sendKeys(value);
+    }*/
+
     public String getLabelNoLoginText() {
         WebElement labelNoLoginText = driver.findElement(By.xpath(AuthorizationFormLocator.TITLE_LABEL_NO_LOGIN));
         return labelNoLoginText.getText();
