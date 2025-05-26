@@ -17,4 +17,6 @@ public class AuthorizationFormLocator {
     public static final String TITLE_LABEL_NO_PASSWORD = "//label[@id=\"password-error\"]";
     public static final String TITLE_LABEL_USER_NOT_FOUND = "//div[contains(text(), 'Пользователь не найден')]";
     public static final String TITLE_LABEL_INCORRECT_LOGIN_OR_PASSWORD = "//div[contains(text(), 'Неверное имя пользователя или пароль')]";
+    public static final String FIELD_INPUT_LOGIN = "//input[@name=\"login\"]";
+    public static final String FIELD_INPUT_PASSWORD = "//input[@name=\"password\"]";
 }

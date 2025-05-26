@@ -59,7 +59,7 @@ public class AuthorizationFormPage {
     }
 
    /* public void fieldInputLogin(String inputLocator, String value) {
-        WebElement inputLogin = driver.findElement(By.xpath(String.format(AuthorizationFormLocator.INPUT_CREDENTIALS, inputLocator)));
+        WebElement inputLogin = driver.findElement(By.xpath(AuthorizationFormLocator.FIELD_INPUT_LOGIN));
         inputLogin.sendKeys(value);
     }*/
 
