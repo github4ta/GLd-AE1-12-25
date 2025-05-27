@@ -17,6 +17,10 @@ public class LoginTest {
 
     @Test
     public void loginTest() {
+        // soft assertions
+        Assertions.assertEquals(300, loginPage.getStatusCode());
+        Assertions.assertEquals(300, loginPage.getStatusCode());
+        Assertions.assertEquals(300, loginPage.getStatusCode());
         Assertions.assertEquals(300, loginPage.getStatusCode());
     }
 
