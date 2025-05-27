@@ -14,6 +14,6 @@ public class LoginTest {
                 .formParam("email", "test1%40test.com")
                 .formParam("password", "fwrew")
                 .when().post("https://www.nashamoda.by/login?act=login")
-                .then().log().all();
+                .then().statusCode(200);
     }
 }
