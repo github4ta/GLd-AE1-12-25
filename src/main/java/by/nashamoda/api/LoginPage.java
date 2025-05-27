@@ -9,11 +9,24 @@ import static io.restassured.RestAssured.given;
 
 public class LoginPage {
 
+    private String email;
+    private String password;
+
     private static String URL_BASE = "https://www.nashamoda.by";
     private static String URL_LOGIN = URL_BASE + "/login?act=login";
 
-    public static Response getResponseForPostRequest(String email, String password) {
+    public LoginPage(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
+    private Response getResponseForPostRequest(String email, String password) {
         return getResponseForPostRequest(URL_LOGIN, getContentTypeHeader(), getFormParams(email, password));
+    }
+
+    public int getStatusCode() {
+        Response response = getResponseForPostRequest(email, password);
+        return response.statusCode();
     }
 
     private static Response getResponseForPostRequest(String endpoint, Map<String, String> headers, Map<String, String> formParams) {
