@@ -30,6 +30,11 @@
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
         </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.4.0</version>
+        </dependency>
     </dependencies>
 
     <build>
