@@ -2,7 +2,6 @@ package by.edostavka.api;
 
 import io.restassured.response.Response;
 
-import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
@@ -28,8 +27,8 @@ public class LoginPage {
         return response.getStatusCode();
     }
 
-    public List<String> getInvalidField(){
+    public String getInvalidField(){
         Response response = getResponse();
-        return response.path("invalidField");
+        return response.path("invalidField[0]");
     }
 }
