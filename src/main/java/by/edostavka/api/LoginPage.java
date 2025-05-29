@@ -24,7 +24,7 @@ public class LoginPage {
                 .header("content-type", "application/json")
                 .body("{\"phone\":\"\",\"password\":\"qwerty\"}")
                 .when().post("https://api2.edostavka.by/api/v2/auth");
-        return getResponse("", "qwerty");
+        return getResponse(DEFAULT_PHONE, DEFAULT_PASSWORD);
     }
 
     private Response getResponse(String phone, String password) {
