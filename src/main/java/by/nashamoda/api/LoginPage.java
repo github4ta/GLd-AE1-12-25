@@ -29,12 +29,15 @@ public class LoginPage {
         return response.statusCode();
     }
 
+
     private static Response getResponseForPostRequest(String endpoint, Map<String, String> headers, Map<String, String> formParams) {
         Response response = given()
-                .headers(headers)
-                .formParams(formParams)
+                .header("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8")
+                .formParam("request_header%5Bmobile%5D", "0")
+                .formParam("email", "test%40test.com")
+                .formParam("password", "123456")
                 .when()
-                .post(endpoint);
+                .post("https://www.nashamoda.by/login?act=login");
         return response;
     }
 
