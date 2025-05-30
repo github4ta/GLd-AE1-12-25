@@ -1,0 +1,39 @@
+package romanovska.rw.by.pages;
+
+import romanovska.rw.by.AuthorizationModal;
+
+public class RestoreLoginOrPasswordPage extends BasePage {
+    public RestoreLoginOrPasswordPage() {
+        super();
+        URL = "https://pass.rw.by/ru/registration/pwd_restore/";
+    }
+
+    @Override
+    public void open() {
+        AuthorizationModal.clickForgotPasswordLink();
+    }
+
+    public static String getHeaderText() {
+        return getWebElementFoundByLocatorAfterWait(Locators.HEADER_TITLE).getText();
+    }
+
+    public static String getRegistrationDescriptionText() {
+        return getWebElementFoundByLocatorAfterWait(Locators.REGISTRATION_DESCRIPTION).getText();
+    }
+
+    public static String getEmailFieldNameText() {
+        return getWebElementFoundByLocatorAfterWait(Locators.EMAIL_FIELD_NAME).getText();
+    }
+
+    public static String getSubmitButtonText() {
+        return getWebElementFoundByLocatorAfterWait(Locators.SUBMIT_BUTTON).getText();
+    }
+
+    private static class Locators {
+        private static final String HEADER_TITLE = "//h1";
+        private static final String REGISTRATION_DESCRIPTION = "//div[@class='registration__desc']";
+        private static final String RESTORE_FORM = "//form[@id='restore-form']";
+        private static final String EMAIL_FIELD_NAME = RESTORE_FORM + "//div[@class='name']";
+        private static final String SUBMIT_BUTTON = "//button[contains(@class,'btn_submit')]";
+    }
+}
