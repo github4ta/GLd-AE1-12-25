@@ -8,9 +8,10 @@ import static io.restassured.RestAssured.given;
 public class CreatePage {
     private static Response response;
 
-    public CreatePage(){
-        response=getResponse();
+    public CreatePage() {
+        response = getResponse();
     }
+
     Response getResponse() {
 
         Response response = given()
@@ -24,21 +25,22 @@ public class CreatePage {
     }
 
     public static int getStatusCode() {
-      return response.getStatusCode();
+        return response.getStatusCode();
     }
 
-    public static String getErrorStatusText(){
+    public static String getErrorStatusText() {
         return response.path("resource_response.error.status");
     }
 
-    public static String getBrowserNameMessage(){
+    public static String getBrowserNameMessage() {
         return response.path("client_context.analysis_ua.browser_name");
     }
 
-    public static String getCountryFromIp(){
+    public static String getCountryFromIp() {
         return response.path("client_context.country_from_ip");
     }
-    public static String getPassword(){
+
+    public static String getPassword() {
         return response.path("resource.options.password");
     }
 }
