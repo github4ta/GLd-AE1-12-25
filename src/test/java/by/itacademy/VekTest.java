@@ -24,7 +24,7 @@ public class VekTest {
         driver.get("https://www.21vek.by");
 
         String submitButtonCookieLocator = "//div[@class=\"Button-module__buttonText\"]";
-        String submitButtonCookieLocator = "//button[@class=\"Button-module__button Button-module__blue-primary\"]";
+        //String submitButtonCookieLocator = "//button[@class=\"Button-module__button Button-module__blue-primary\"]";
         WebElement submitButtonCookie = driver.findElement(By.xpath(submitButtonCookieLocator));
         submitButtonCookie.click();
     }
