@@ -11,8 +11,6 @@ public class CreateTest {
    private final static Response createAccount = CreatePage.getResponseCreateAccount();
     @Test
     public void testLogin() {
-
-
         assertAll(
                 "Grouped Assertions of User Login",
                 () -> assertEquals(401, CreatePage.getStatusCode(login), "StatusCode should be 401"),
