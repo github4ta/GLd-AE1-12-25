@@ -10,6 +10,14 @@
 - Radzetskaya Yuliya
 
 # 21vek
-### Тестовый автоматизированный фреймворк
+> Тестовый автоматизированный фреймворк
 
+`public static void quit() {
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
+    }`
+
+[Официальный сайт 21vek](https://www.21vek.by)
 #### Иванов Иван
