@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class BasePage {
 
-    private static final String SUBMIT_BUTTON_COOKIE_LOCATOR = "//button[@class='Button-module__button Button-module__blue-primary']";
+    private static final String BUTTON_ACCEPT_COOKIE = "//button[@class=\"Button-module__button Button-module__blue-primary\"]";
 
     protected WebDriver driver;
 
@@ -17,13 +17,12 @@ public class BasePage {
     public void open() {
         driver.get( "https://www.21vek.by");
         try {
-            clickCloseCookie();
-        } catch (Exception e) {
-
+            clickButtonAcceptCookie();
+        } catch (Exception ignored) {
         }
     }
 
-    public void clickCloseCookie() {
-        driver.findElement(By.xpath(SUBMIT_BUTTON_COOKIE_LOCATOR)).click();
+    public void clickButtonAcceptCookie() {
+        driver.findElement(By.xpath(BUTTON_ACCEPT_COOKIE)).click();
     }
 }
