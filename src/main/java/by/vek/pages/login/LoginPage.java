@@ -8,6 +8,7 @@ import static by.vek.pages.login.LoginLocator.*;
 
 public class LoginPage {
 
+    //protected static final Logger logger = LogManager.getLogger();
     private WebDriver driver;
 
     public LoginPage(WebDriver driver) {
@@ -15,8 +16,10 @@ public class LoginPage {
     }
 
     public void clickSubmitButtonCookie() {
+        //logger.info("clickSubmitButtonCookie method start");
         WebElement submitButtonCookie = driver.findElement(By.xpath(SUBMIT_BUTTON_COOKIE));
         submitButtonCookie.click();
+        //logger.info("submitButtonCookie clicked");
     }
 
     public void clickSubmitButton(){
@@ -35,7 +38,10 @@ public class LoginPage {
     }
 
     public String getTextTitleLoginForm(){
-        return driver.findElement(By.xpath(TITLE_LOGIN_FORM)).getText();
+        //logger.info("getTextTitleLoginForm start");
+        String text = driver.findElement(By.xpath(TITLE_LOGIN_FORM)).getText();
+        //logger.info("text " + text);
+        return text;
     }
 
     public void click () {
@@ -64,6 +70,7 @@ public class LoginPage {
 
     public void sendKeysInputEmailField(String email) {
         WebElement inputEmailField = driver.findElement(By.xpath(LoginLocator.INPUT_EMAIL_FIELD));
+        //logger.info("email = " + email);
         inputEmailField.sendKeys(email);
     }
 

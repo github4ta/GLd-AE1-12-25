@@ -8,6 +8,7 @@ public class BasePage {
 
     private static final String SUBMIT_BUTTON_COOKIE_LOCATOR = "//button[@class='Button-module__button Button-module__blue-primary']";
 
+    //protected static final Logger logger = LogManager.getLogger();
     protected WebDriver driver;
 
     public BasePage() {
