@@ -8,3 +8,14 @@
 - Bayaranka Yauheniya 
 - Evminova Irina
 - Radzetskaya Yuliya
+
+# 21vek
+> Тестовый автоматизированный фреймворк
+```shell
+public static void quit() {
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
+    }
+   ```
